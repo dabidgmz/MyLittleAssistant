@@ -14,10 +14,12 @@ class RegisterViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         let gradientLayer = CAGradientLayer()
-              gradientLayer.frame = view.bounds
-              gradientLayer.colors = [UIColor(red: 7/255, green: 153/255, blue: 182/255, alpha: 1).cgColor, UIColor.white.cgColor]
-              gradientLayer.locations = [0, 1]
-              view.layer.insertSublayer(gradientLayer, at: 0)
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [UIColor.white.cgColor, UIColor(red: 7/255, green: 153/255, blue: 182/255, alpha: 1).cgColor]
+        gradientLayer.locations = [0.2, 1] 
+        view.layer.insertSublayer(gradientLayer, at: 0)
+
+
     }
     
 
