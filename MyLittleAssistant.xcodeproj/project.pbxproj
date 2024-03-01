@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,27 @@
 		0F44F2D92B923D7E00AB80E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2D72B923D7E00AB80E6 /* Main.storyboard */; };
 		0F44F2DB2B923D8000AB80E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2DA2B923D8000AB80E6 /* Assets.xcassets */; };
 		0F44F2DE2B923D8000AB80E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2DC2B923D8000AB80E6 /* LaunchScreen.storyboard */; };
+		0F44F2E62B923DC600AB80E6 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F44F2E52B923DC600AB80E6 /* RegisterViewController.swift */; };
+		0F44F2FB2B923EBA00AB80E6 /* icons8-arriba-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2E82B923EBA00AB80E6 /* icons8-arriba-50.png */; };
+		0F44F2FC2B923EBA00AB80E6 /* icons8-luz-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2E92B923EBA00AB80E6 /* icons8-luz-30.png */; };
+		0F44F2FD2B923EBA00AB80E6 /* icons8-carro-64.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2EA2B923EBA00AB80E6 /* icons8-carro-64.png */; };
+		0F44F2FE2B923EBA00AB80E6 /* icons8-ojo-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2EB2B923EBA00AB80E6 /* icons8-ojo-50.png */; };
+		0F44F2FF2B923EBA00AB80E6 /* icons8-dentro-de-una-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2EC2B923EBA00AB80E6 /* icons8-dentro-de-una-30.png */; };
+		0F44F3002B923EBA00AB80E6 /* icons8-luz-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2ED2B923EBA00AB80E6 /* icons8-luz-50.png */; };
+		0F44F3012B923EBA00AB80E6 /* icons8-híbrido-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2EE2B923EBA00AB80E6 /* icons8-híbrido-50.png */; };
+		0F44F3022B923EBA00AB80E6 /* icons8-contraseña-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2EF2B923EBA00AB80E6 /* icons8-contraseña-50.png */; };
+		0F44F3032B923EBA00AB80E6 /* icons8-usuario-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2F02B923EBA00AB80E6 /* icons8-usuario-50.png */; };
+		0F44F3042B923EBA00AB80E6 /* icons8-correo-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2F12B923EBA00AB80E6 /* icons8-correo-50.png */; };
+		0F44F3052B923EBA00AB80E6 /* icons8-izquierda-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2F22B923EBA00AB80E6 /* icons8-izquierda-50.png */; };
+		0F44F3062B923EBA00AB80E6 /* icons8-temperatura-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2F32B923EBA00AB80E6 /* icons8-temperatura-50.png */; };
+		0F44F3072B923EBA00AB80E6 /* icons8-camara-educacion-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2F42B923EBA00AB80E6 /* icons8-camara-educacion-50.png */; };
+		0F44F3082B923EBA00AB80E6 /* icons8-básculas-de-cocina-24.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2F52B923EBA00AB80E6 /* icons8-básculas-de-cocina-24.png */; };
+		0F44F3092B923EBA00AB80E6 /* icons8-abajo-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2F62B923EBA00AB80E6 /* icons8-abajo-50.png */; };
+		0F44F30A2B923EBA00AB80E6 /* icons8-velocímetro-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2F72B923EBA00AB80E6 /* icons8-velocímetro-50.png */; };
+		0F44F30B2B923EBA00AB80E6 /* icons8-derecha-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2F82B923EBA00AB80E6 /* icons8-derecha-50.png */; };
+		0F44F30C2B923EBA00AB80E6 /* icons8-me-gusta-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2F92B923EBA00AB80E6 /* icons8-me-gusta-50.png */; };
+		0F44F30D2B923EBA00AB80E6 /* icons8-punto-de-recogida-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2FA2B923EBA00AB80E6 /* icons8-punto-de-recogida-48.png */; };
+		0F44F3102B923EC800AB80E6 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F30F2B923EC800AB80E6 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +45,27 @@
 		0F44F2DA2B923D8000AB80E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F44F2DD2B923D8000AB80E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F44F2DF2B923D8000AB80E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F44F2E52B923DC600AB80E6 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		0F44F2E82B923EBA00AB80E6 /* icons8-arriba-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-arriba-50.png"; sourceTree = "<group>"; };
+		0F44F2E92B923EBA00AB80E6 /* icons8-luz-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-luz-30.png"; sourceTree = "<group>"; };
+		0F44F2EA2B923EBA00AB80E6 /* icons8-carro-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-carro-64.png"; sourceTree = "<group>"; };
+		0F44F2EB2B923EBA00AB80E6 /* icons8-ojo-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-ojo-50.png"; sourceTree = "<group>"; };
+		0F44F2EC2B923EBA00AB80E6 /* icons8-dentro-de-una-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-dentro-de-una-30.png"; sourceTree = "<group>"; };
+		0F44F2ED2B923EBA00AB80E6 /* icons8-luz-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-luz-50.png"; sourceTree = "<group>"; };
+		0F44F2EE2B923EBA00AB80E6 /* icons8-híbrido-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-híbrido-50.png"; sourceTree = "<group>"; };
+		0F44F2EF2B923EBA00AB80E6 /* icons8-contraseña-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-contraseña-50.png"; sourceTree = "<group>"; };
+		0F44F2F02B923EBA00AB80E6 /* icons8-usuario-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-usuario-50.png"; sourceTree = "<group>"; };
+		0F44F2F12B923EBA00AB80E6 /* icons8-correo-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-correo-50.png"; sourceTree = "<group>"; };
+		0F44F2F22B923EBA00AB80E6 /* icons8-izquierda-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-izquierda-50.png"; sourceTree = "<group>"; };
+		0F44F2F32B923EBA00AB80E6 /* icons8-temperatura-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-temperatura-50.png"; sourceTree = "<group>"; };
+		0F44F2F42B923EBA00AB80E6 /* icons8-camara-educacion-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-camara-educacion-50.png"; sourceTree = "<group>"; };
+		0F44F2F52B923EBA00AB80E6 /* icons8-básculas-de-cocina-24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-básculas-de-cocina-24.png"; sourceTree = "<group>"; };
+		0F44F2F62B923EBA00AB80E6 /* icons8-abajo-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-abajo-50.png"; sourceTree = "<group>"; };
+		0F44F2F72B923EBA00AB80E6 /* icons8-velocímetro-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-velocímetro-50.png"; sourceTree = "<group>"; };
+		0F44F2F82B923EBA00AB80E6 /* icons8-derecha-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-derecha-50.png"; sourceTree = "<group>"; };
+		0F44F2F92B923EBA00AB80E6 /* icons8-me-gusta-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-me-gusta-50.png"; sourceTree = "<group>"; };
+		0F44F2FA2B923EBA00AB80E6 /* icons8-punto-de-recogida-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-punto-de-recogida-48.png"; sourceTree = "<group>"; };
+		0F44F30F2B923EC800AB80E6 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "WhatsApp Image 2024-02-29 at 16.57.31.jpeg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +82,8 @@
 		0F44F2C52B923D7E00AB80E6 = {
 			isa = PBXGroup;
 			children = (
+				0F44F30E2B923EC800AB80E6 /* Imgs_app */,
+				0F44F2E72B923EBA00AB80E6 /* Iconos_app */,
 				0F44F2D02B923D7E00AB80E6 /* MyLittleAssistant */,
 				0F44F2CF2B923D7E00AB80E6 /* Products */,
 			);
@@ -59,12 +103,47 @@
 				0F44F2D12B923D7E00AB80E6 /* AppDelegate.swift */,
 				0F44F2D32B923D7E00AB80E6 /* SceneDelegate.swift */,
 				0F44F2D52B923D7E00AB80E6 /* ViewController.swift */,
+				0F44F2E52B923DC600AB80E6 /* RegisterViewController.swift */,
 				0F44F2D72B923D7E00AB80E6 /* Main.storyboard */,
 				0F44F2DA2B923D8000AB80E6 /* Assets.xcassets */,
 				0F44F2DC2B923D8000AB80E6 /* LaunchScreen.storyboard */,
 				0F44F2DF2B923D8000AB80E6 /* Info.plist */,
 			);
 			path = MyLittleAssistant;
+			sourceTree = "<group>";
+		};
+		0F44F2E72B923EBA00AB80E6 /* Iconos_app */ = {
+			isa = PBXGroup;
+			children = (
+				0F44F2E82B923EBA00AB80E6 /* icons8-arriba-50.png */,
+				0F44F2E92B923EBA00AB80E6 /* icons8-luz-30.png */,
+				0F44F2EA2B923EBA00AB80E6 /* icons8-carro-64.png */,
+				0F44F2EB2B923EBA00AB80E6 /* icons8-ojo-50.png */,
+				0F44F2EC2B923EBA00AB80E6 /* icons8-dentro-de-una-30.png */,
+				0F44F2ED2B923EBA00AB80E6 /* icons8-luz-50.png */,
+				0F44F2EE2B923EBA00AB80E6 /* icons8-híbrido-50.png */,
+				0F44F2EF2B923EBA00AB80E6 /* icons8-contraseña-50.png */,
+				0F44F2F02B923EBA00AB80E6 /* icons8-usuario-50.png */,
+				0F44F2F12B923EBA00AB80E6 /* icons8-correo-50.png */,
+				0F44F2F22B923EBA00AB80E6 /* icons8-izquierda-50.png */,
+				0F44F2F32B923EBA00AB80E6 /* icons8-temperatura-50.png */,
+				0F44F2F42B923EBA00AB80E6 /* icons8-camara-educacion-50.png */,
+				0F44F2F52B923EBA00AB80E6 /* icons8-básculas-de-cocina-24.png */,
+				0F44F2F62B923EBA00AB80E6 /* icons8-abajo-50.png */,
+				0F44F2F72B923EBA00AB80E6 /* icons8-velocímetro-50.png */,
+				0F44F2F82B923EBA00AB80E6 /* icons8-derecha-50.png */,
+				0F44F2F92B923EBA00AB80E6 /* icons8-me-gusta-50.png */,
+				0F44F2FA2B923EBA00AB80E6 /* icons8-punto-de-recogida-48.png */,
+			);
+			path = Iconos_app;
+			sourceTree = "<group>";
+		};
+		0F44F30E2B923EC800AB80E6 /* Imgs_app */ = {
+			isa = PBXGroup;
+			children = (
+				0F44F30F2B923EC800AB80E6 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg */,
+			);
+			path = Imgs_app;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,7 +182,7 @@
 				};
 			};
 			buildConfigurationList = 0F44F2C92B923D7E00AB80E6 /* Build configuration list for PBXProject "MyLittleAssistant" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -125,9 +204,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F44F2FC2B923EBA00AB80E6 /* icons8-luz-30.png in Resources */,
+				0F44F30D2B923EBA00AB80E6 /* icons8-punto-de-recogida-48.png in Resources */,
+				0F44F3072B923EBA00AB80E6 /* icons8-camara-educacion-50.png in Resources */,
 				0F44F2DE2B923D8000AB80E6 /* LaunchScreen.storyboard in Resources */,
+				0F44F2FF2B923EBA00AB80E6 /* icons8-dentro-de-una-30.png in Resources */,
+				0F44F3082B923EBA00AB80E6 /* icons8-básculas-de-cocina-24.png in Resources */,
 				0F44F2DB2B923D8000AB80E6 /* Assets.xcassets in Resources */,
 				0F44F2D92B923D7E00AB80E6 /* Main.storyboard in Resources */,
+				0F44F30A2B923EBA00AB80E6 /* icons8-velocímetro-50.png in Resources */,
+				0F44F3022B923EBA00AB80E6 /* icons8-contraseña-50.png in Resources */,
+				0F44F3002B923EBA00AB80E6 /* icons8-luz-50.png in Resources */,
+				0F44F3052B923EBA00AB80E6 /* icons8-izquierda-50.png in Resources */,
+				0F44F30B2B923EBA00AB80E6 /* icons8-derecha-50.png in Resources */,
+				0F44F2FB2B923EBA00AB80E6 /* icons8-arriba-50.png in Resources */,
+				0F44F30C2B923EBA00AB80E6 /* icons8-me-gusta-50.png in Resources */,
+				0F44F3042B923EBA00AB80E6 /* icons8-correo-50.png in Resources */,
+				0F44F3102B923EC800AB80E6 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg in Resources */,
+				0F44F2FE2B923EBA00AB80E6 /* icons8-ojo-50.png in Resources */,
+				0F44F3012B923EBA00AB80E6 /* icons8-híbrido-50.png in Resources */,
+				0F44F2FD2B923EBA00AB80E6 /* icons8-carro-64.png in Resources */,
+				0F44F3032B923EBA00AB80E6 /* icons8-usuario-50.png in Resources */,
+				0F44F3092B923EBA00AB80E6 /* icons8-abajo-50.png in Resources */,
+				0F44F3062B923EBA00AB80E6 /* icons8-temperatura-50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +240,7 @@
 				0F44F2D62B923D7E00AB80E6 /* ViewController.swift in Sources */,
 				0F44F2D22B923D7E00AB80E6 /* AppDelegate.swift in Sources */,
 				0F44F2D42B923D7E00AB80E6 /* SceneDelegate.swift in Sources */,
+				0F44F2E62B923DC600AB80E6 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +394,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,9 +402,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = UTT.MyLittleAssistant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -321,6 +425,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -328,9 +433,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = UTT.MyLittleAssistant;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
