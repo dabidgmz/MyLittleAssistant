@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F1892252B92556E002DE84C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1892242B92556E002DE84C /* MenuViewController.swift */; };
 		0F44F2D22B923D7E00AB80E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F44F2D12B923D7E00AB80E6 /* AppDelegate.swift */; };
 		0F44F2D42B923D7E00AB80E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F44F2D32B923D7E00AB80E6 /* SceneDelegate.swift */; };
 		0F44F2D62B923D7E00AB80E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F44F2D52B923D7E00AB80E6 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F1892242B92556E002DE84C /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		0F44F2CE2B923D7E00AB80E6 /* MyLittleAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLittleAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F44F2D12B923D7E00AB80E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F44F2D32B923D7E00AB80E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				0F44F2D52B923D7E00AB80E6 /* ViewController.swift */,
 				0F44F2E52B923DC600AB80E6 /* RegisterViewController.swift */,
 				0F44F2D72B923D7E00AB80E6 /* Main.storyboard */,
+				0F1892242B92556E002DE84C /* MenuViewController.swift */,
 				0F44F2DA2B923D8000AB80E6 /* Assets.xcassets */,
 				0F44F2DC2B923D8000AB80E6 /* LaunchScreen.storyboard */,
 				0F44F2DF2B923D8000AB80E6 /* Info.plist */,
@@ -238,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F44F2D62B923D7E00AB80E6 /* ViewController.swift in Sources */,
+				0F1892252B92556E002DE84C /* MenuViewController.swift in Sources */,
 				0F44F2D22B923D7E00AB80E6 /* AppDelegate.swift in Sources */,
 				0F44F2D42B923D7E00AB80E6 /* SceneDelegate.swift in Sources */,
 				0F44F2E62B923DC600AB80E6 /* RegisterViewController.swift in Sources */,

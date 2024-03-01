@@ -105,10 +105,10 @@
             </objects>
             <point key="canvasLocation" x="-69.465648854961827" y="4.9295774647887329"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="PGu-7p-BX3">
             <objects>
-                <viewController id="lQ1-de-nw6" customClass="ViewController" customModule="MyLittleAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lQ1-de-nw6" customClass="RegisterViewController" customModule="MyLittleAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zAI-k4-Dig">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -238,10 +238,10 @@
             </objects>
             <point key="canvasLocation" x="638.93129770992368" y="4.9295774647887329"/>
         </scene>
-        <!--View Controller-->
+        <!--Menu View Controller-->
         <scene sceneID="KJj-Bw-P16">
             <objects>
-                <viewController id="WfF-sk-YqX" customClass="ViewController" customModule="MyLittleAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WfF-sk-YqX" customClass="MenuViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XHT-hH-x0X">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -255,7 +255,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MP4-2l-87m"/>
+        <segue reference="U4N-0j-jDU"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icons8-usuario-50.png" width="50" height="50"/>
