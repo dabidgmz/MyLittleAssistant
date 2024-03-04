@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0F1892252B92556E002DE84C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1892242B92556E002DE84C /* MenuViewController.swift */; };
+		0F1989262B96453E003EA731 /* logosinfondo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0F1989232B96453E003EA731 /* logosinfondo.jpeg */; };
+		0F1989272B96453E003EA731 /* carrito.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0F1989242B96453E003EA731 /* carrito.jpeg */; };
+		0F1989282B96453E003EA731 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0F1989252B96453E003EA731 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg */; };
 		0F44F2D22B923D7E00AB80E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F44F2D12B923D7E00AB80E6 /* AppDelegate.swift */; };
 		0F44F2D42B923D7E00AB80E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F44F2D32B923D7E00AB80E6 /* SceneDelegate.swift */; };
 		0F44F2D62B923D7E00AB80E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F44F2D52B923D7E00AB80E6 /* ViewController.swift */; };
@@ -34,11 +37,13 @@
 		0F44F30B2B923EBA00AB80E6 /* icons8-derecha-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2F82B923EBA00AB80E6 /* icons8-derecha-50.png */; };
 		0F44F30C2B923EBA00AB80E6 /* icons8-me-gusta-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2F92B923EBA00AB80E6 /* icons8-me-gusta-50.png */; };
 		0F44F30D2B923EBA00AB80E6 /* icons8-punto-de-recogida-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2FA2B923EBA00AB80E6 /* icons8-punto-de-recogida-48.png */; };
-		0F44F3102B923EC800AB80E6 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F30F2B923EC800AB80E6 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0F1892242B92556E002DE84C /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		0F1989232B96453E003EA731 /* logosinfondo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logosinfondo.jpeg; sourceTree = "<group>"; };
+		0F1989242B96453E003EA731 /* carrito.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = carrito.jpeg; sourceTree = "<group>"; };
+		0F1989252B96453E003EA731 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "WhatsApp Image 2024-02-29 at 16.57.31.jpeg"; sourceTree = "<group>"; };
 		0F44F2CE2B923D7E00AB80E6 /* MyLittleAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLittleAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F44F2D12B923D7E00AB80E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F44F2D32B923D7E00AB80E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,7 +72,6 @@
 		0F44F2F82B923EBA00AB80E6 /* icons8-derecha-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-derecha-50.png"; sourceTree = "<group>"; };
 		0F44F2F92B923EBA00AB80E6 /* icons8-me-gusta-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-me-gusta-50.png"; sourceTree = "<group>"; };
 		0F44F2FA2B923EBA00AB80E6 /* icons8-punto-de-recogida-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-punto-de-recogida-48.png"; sourceTree = "<group>"; };
-		0F44F30F2B923EC800AB80E6 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "WhatsApp Image 2024-02-29 at 16.57.31.jpeg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +85,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F1989222B96453E003EA731 /* Imgs_app */ = {
+			isa = PBXGroup;
+			children = (
+				0F1989232B96453E003EA731 /* logosinfondo.jpeg */,
+				0F1989242B96453E003EA731 /* carrito.jpeg */,
+				0F1989252B96453E003EA731 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg */,
+			);
+			path = Imgs_app;
+			sourceTree = "<group>";
+		};
 		0F44F2C52B923D7E00AB80E6 = {
 			isa = PBXGroup;
 			children = (
-				0F44F30E2B923EC800AB80E6 /* Imgs_app */,
+				0F1989222B96453E003EA731 /* Imgs_app */,
 				0F44F2E72B923EBA00AB80E6 /* Iconos_app */,
 				0F44F2D02B923D7E00AB80E6 /* MyLittleAssistant */,
 				0F44F2CF2B923D7E00AB80E6 /* Products */,
@@ -139,14 +153,6 @@
 				0F44F2FA2B923EBA00AB80E6 /* icons8-punto-de-recogida-48.png */,
 			);
 			path = Iconos_app;
-			sourceTree = "<group>";
-		};
-		0F44F30E2B923EC800AB80E6 /* Imgs_app */ = {
-			isa = PBXGroup;
-			children = (
-				0F44F30F2B923EC800AB80E6 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg */,
-			);
-			path = Imgs_app;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,7 +217,9 @@
 				0F44F30D2B923EBA00AB80E6 /* icons8-punto-de-recogida-48.png in Resources */,
 				0F44F3072B923EBA00AB80E6 /* icons8-camara-educacion-50.png in Resources */,
 				0F44F2DE2B923D8000AB80E6 /* LaunchScreen.storyboard in Resources */,
+				0F1989272B96453E003EA731 /* carrito.jpeg in Resources */,
 				0F44F2FF2B923EBA00AB80E6 /* icons8-dentro-de-una-30.png in Resources */,
+				0F1989282B96453E003EA731 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg in Resources */,
 				0F44F3082B923EBA00AB80E6 /* icons8-básculas-de-cocina-24.png in Resources */,
 				0F44F2DB2B923D8000AB80E6 /* Assets.xcassets in Resources */,
 				0F44F2D92B923D7E00AB80E6 /* Main.storyboard in Resources */,
@@ -222,8 +230,8 @@
 				0F44F30B2B923EBA00AB80E6 /* icons8-derecha-50.png in Resources */,
 				0F44F2FB2B923EBA00AB80E6 /* icons8-arriba-50.png in Resources */,
 				0F44F30C2B923EBA00AB80E6 /* icons8-me-gusta-50.png in Resources */,
+				0F1989262B96453E003EA731 /* logosinfondo.jpeg in Resources */,
 				0F44F3042B923EBA00AB80E6 /* icons8-correo-50.png in Resources */,
-				0F44F3102B923EC800AB80E6 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg in Resources */,
 				0F44F2FE2B923EBA00AB80E6 /* icons8-ojo-50.png in Resources */,
 				0F44F3012B923EBA00AB80E6 /* icons8-híbrido-50.png in Resources */,
 				0F44F2FD2B923EBA00AB80E6 /* icons8-carro-64.png in Resources */,
