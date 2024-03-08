@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var PasswordTxt: UITextField!
+    @IBOutlet weak var EmailText: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         let gradientLayer = CAGradientLayer()
@@ -22,8 +24,7 @@ class ViewController: UIViewController {
                gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
                
                view.layer.insertSublayer(gradientLayer, at: 0)    }
-
+            
+            
 
 }
-
-
