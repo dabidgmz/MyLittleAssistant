@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0F1892252B92556E002DE84C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1892242B92556E002DE84C /* MenuViewController.swift */; };
+		0F2825592BAE99B1006273C2 /* CargaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2825582BAE99B1006273C2 /* CargaViewController.swift */; };
+		0F28255B2BAE9C26006273C2 /* SspViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F28255A2BAE9C26006273C2 /* SspViewController.swift */; };
 		0F2C23222B967C08005BF5E4 /* carrito-fotor-bg-remover-2024030415598.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F2C231F2B967C08005BF5E4 /* carrito-fotor-bg-remover-2024030415598.png */; };
 		0F2C23232B967C08005BF5E4 /* logosinfondo-fotor-bg-remover-20240304155936.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F2C23202B967C08005BF5E4 /* logosinfondo-fotor-bg-remover-20240304155936.png */; };
 		0F2C23242B967C08005BF5E4 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0F2C23212B967C08005BF5E4 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg */; };
@@ -41,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		0F1892242B92556E002DE84C /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		0F2825582BAE99B1006273C2 /* CargaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargaViewController.swift; sourceTree = "<group>"; };
+		0F28255A2BAE9C26006273C2 /* SspViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SspViewController.swift; sourceTree = "<group>"; };
 		0F2C231F2B967C08005BF5E4 /* carrito-fotor-bg-remover-2024030415598.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "carrito-fotor-bg-remover-2024030415598.png"; sourceTree = "<group>"; };
 		0F2C23202B967C08005BF5E4 /* logosinfondo-fotor-bg-remover-20240304155936.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logosinfondo-fotor-bg-remover-20240304155936.png"; sourceTree = "<group>"; };
 		0F2C23212B967C08005BF5E4 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "WhatsApp Image 2024-02-29 at 16.57.31.jpeg"; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 		0F44F2C52B923D7E00AB80E6 = {
 			isa = PBXGroup;
 			children = (
+				0F2825582BAE99B1006273C2 /* CargaViewController.swift */,
 				0F2C231E2B967C08005BF5E4 /* Imgs_app */,
 				0F44F2E72B923EBA00AB80E6 /* Iconos_app */,
 				0F44F2D02B923D7E00AB80E6 /* MyLittleAssistant */,
@@ -122,6 +127,7 @@
 				0F44F2D52B923D7E00AB80E6 /* ViewController.swift */,
 				0F44F2E52B923DC600AB80E6 /* RegisterViewController.swift */,
 				0F44F2D72B923D7E00AB80E6 /* Main.storyboard */,
+				0F28255A2BAE9C26006273C2 /* SspViewController.swift */,
 				0F1892242B92556E002DE84C /* MenuViewController.swift */,
 				0F44F2DA2B923D8000AB80E6 /* Assets.xcassets */,
 				0F44F2DC2B923D8000AB80E6 /* LaunchScreen.storyboard */,
@@ -250,8 +256,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F44F2D62B923D7E00AB80E6 /* ViewController.swift in Sources */,
+				0F28255B2BAE9C26006273C2 /* SspViewController.swift in Sources */,
 				0F1892252B92556E002DE84C /* MenuViewController.swift in Sources */,
 				0F44F2D22B923D7E00AB80E6 /* AppDelegate.swift in Sources */,
+				0F2825592BAE99B1006273C2 /* CargaViewController.swift in Sources */,
 				0F44F2D42B923D7E00AB80E6 /* SceneDelegate.swift in Sources */,
 				0F44F2E62B923DC600AB80E6 /* RegisterViewController.swift in Sources */,
 			);
