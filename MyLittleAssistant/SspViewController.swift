@@ -35,7 +35,7 @@ class SspViewController: UIViewController {
         let colorAnimation = CABasicAnimation(keyPath: "backgroundColor")
         colorAnimation.fromValue = UIColor.clear.cgColor
         colorAnimation.toValue = UIColor.systemBlue.cgColor
-        colorAnimation.duration = 5
+        colorAnimation.duration = 10
         colorAnimation.autoreverses = true
         let groupAnimation = CAAnimationGroup()
         groupAnimation.animations = [rotationAnimation, colorAnimation]
