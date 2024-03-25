@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		0F1892252B92556E002DE84C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1892242B92556E002DE84C /* MenuViewController.swift */; };
 		0F28255B2BAE9C26006273C2 /* SspViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F28255A2BAE9C26006273C2 /* SspViewController.swift */; };
-		0F2C23222B967C08005BF5E4 /* carrito-fotor-bg-remover-2024030415598.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F2C231F2B967C08005BF5E4 /* carrito-fotor-bg-remover-2024030415598.png */; };
-		0F2C23232B967C08005BF5E4 /* logosinfondo-fotor-bg-remover-20240304155936.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F2C23202B967C08005BF5E4 /* logosinfondo-fotor-bg-remover-20240304155936.png */; };
-		0F2C23242B967C08005BF5E4 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0F2C23212B967C08005BF5E4 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg */; };
 		0F4364292BB125600001EC1F /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4364282BB125600001EC1F /* Token.swift */; };
 		0F44F2D22B923D7E00AB80E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F44F2D12B923D7E00AB80E6 /* AppDelegate.swift */; };
 		0F44F2D42B923D7E00AB80E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F44F2D32B923D7E00AB80E6 /* SceneDelegate.swift */; };
@@ -40,14 +37,17 @@
 		0F44F30C2B923EBA00AB80E6 /* icons8-me-gusta-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2F92B923EBA00AB80E6 /* icons8-me-gusta-50.png */; };
 		0F44F30D2B923EBA00AB80E6 /* icons8-punto-de-recogida-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2FA2B923EBA00AB80E6 /* icons8-punto-de-recogida-48.png */; };
 		0F97CE602BAFC0100081D4CE /* nstruccionesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CE5F2BAFC0100081D4CE /* nstruccionesViewController.swift */; };
+		8846D04B2BB1FF490061E209 /* logosinfondo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8846D04A2BB1FF490061E209 /* logosinfondo.jpeg */; };
+		8846D04D2BB1FFBC0061E209 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8846D04C2BB1FFBC0061E209 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg */; };
+		8846D04F2BB202190061E209 /* logooooouu.png in Resources */ = {isa = PBXBuildFile; fileRef = 8846D04E2BB202190061E209 /* logooooouu.png */; };
+		8846D0532BB2038A0061E209 /* carrito.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8846D0522BB2038A0061E209 /* carrito.jpeg */; };
+		8846D0552BB203DF0061E209 /* carritouuu.png in Resources */ = {isa = PBXBuildFile; fileRef = 8846D0542BB203DF0061E209 /* carritouuu.png */; };
+		8846D0572BB208EB0061E209 /* fondoazul.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8846D0562BB208EB0061E209 /* fondoazul.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0F1892242B92556E002DE84C /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		0F28255A2BAE9C26006273C2 /* SspViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SspViewController.swift; sourceTree = "<group>"; };
-		0F2C231F2B967C08005BF5E4 /* carrito-fotor-bg-remover-2024030415598.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "carrito-fotor-bg-remover-2024030415598.png"; sourceTree = "<group>"; };
-		0F2C23202B967C08005BF5E4 /* logosinfondo-fotor-bg-remover-20240304155936.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logosinfondo-fotor-bg-remover-20240304155936.png"; sourceTree = "<group>"; };
-		0F2C23212B967C08005BF5E4 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "WhatsApp Image 2024-02-29 at 16.57.31.jpeg"; sourceTree = "<group>"; };
 		0F4364282BB125600001EC1F /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		0F44F2CE2B923D7E00AB80E6 /* MyLittleAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLittleAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F44F2D12B923D7E00AB80E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +78,12 @@
 		0F44F2F92B923EBA00AB80E6 /* icons8-me-gusta-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-me-gusta-50.png"; sourceTree = "<group>"; };
 		0F44F2FA2B923EBA00AB80E6 /* icons8-punto-de-recogida-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-punto-de-recogida-48.png"; sourceTree = "<group>"; };
 		0F97CE5F2BAFC0100081D4CE /* nstruccionesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nstruccionesViewController.swift; sourceTree = "<group>"; };
+		8846D04A2BB1FF490061E209 /* logosinfondo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = logosinfondo.jpeg; path = ../../../Downloads/logosinfondo.jpeg; sourceTree = "<group>"; };
+		8846D04C2BB1FFBC0061E209 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "WhatsApp Image 2024-02-29 at 16.57.31.jpeg"; path = "../../../Downloads/WhatsApp Image 2024-02-29 at 16.57.31.jpeg"; sourceTree = "<group>"; };
+		8846D04E2BB202190061E209 /* logooooouu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logooooouu.png; path = ../../../Downloads/logooooouu.png; sourceTree = "<group>"; };
+		8846D0522BB2038A0061E209 /* carrito.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = carrito.jpeg; path = ../../../Downloads/carrito.jpeg; sourceTree = "<group>"; };
+		8846D0542BB203DF0061E209 /* carritouuu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = carritouuu.png; path = ../../../Downloads/carritouuu.png; sourceTree = "<group>"; };
+		8846D0562BB208EB0061E209 /* fondoazul.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = fondoazul.jpeg; path = ../../../Downloads/fondoazul.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,21 +97,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0F2C231E2B967C08005BF5E4 /* Imgs_app */ = {
-			isa = PBXGroup;
-			children = (
-				0F2C231F2B967C08005BF5E4 /* carrito-fotor-bg-remover-2024030415598.png */,
-				0F2C23202B967C08005BF5E4 /* logosinfondo-fotor-bg-remover-20240304155936.png */,
-				0F2C23212B967C08005BF5E4 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg */,
-			);
-			name = Imgs_app;
-			path = ../../Imgs_app;
-			sourceTree = "<group>";
-		};
 		0F44F2C52B923D7E00AB80E6 = {
 			isa = PBXGroup;
 			children = (
-				0F2C231E2B967C08005BF5E4 /* Imgs_app */,
+				8846D0472BB1FF1F0061E209 /* images */,
 				0F44F2E72B923EBA00AB80E6 /* Iconos_app */,
 				0F44F2D02B923D7E00AB80E6 /* MyLittleAssistant */,
 				0F44F2CF2B923D7E00AB80E6 /* Products */,
@@ -163,6 +158,19 @@
 				0F44F2FA2B923EBA00AB80E6 /* icons8-punto-de-recogida-48.png */,
 			);
 			path = Iconos_app;
+			sourceTree = "<group>";
+		};
+		8846D0472BB1FF1F0061E209 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				8846D0562BB208EB0061E209 /* fondoazul.jpeg */,
+				8846D0542BB203DF0061E209 /* carritouuu.png */,
+				8846D0522BB2038A0061E209 /* carrito.jpeg */,
+				8846D04E2BB202190061E209 /* logooooouu.png */,
+				8846D04C2BB1FFBC0061E209 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg */,
+				8846D04A2BB1FF490061E209 /* logosinfondo.jpeg */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,13 +231,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8846D0572BB208EB0061E209 /* fondoazul.jpeg in Resources */,
 				0F44F2FC2B923EBA00AB80E6 /* icons8-luz-30.png in Resources */,
 				0F44F30D2B923EBA00AB80E6 /* icons8-punto-de-recogida-48.png in Resources */,
 				0F44F3072B923EBA00AB80E6 /* icons8-camara-educacion-50.png in Resources */,
 				0F44F2DE2B923D8000AB80E6 /* LaunchScreen.storyboard in Resources */,
 				0F44F2FF2B923EBA00AB80E6 /* icons8-dentro-de-una-30.png in Resources */,
+				8846D0552BB203DF0061E209 /* carritouuu.png in Resources */,
+				8846D04F2BB202190061E209 /* logooooouu.png in Resources */,
+				8846D04D2BB1FFBC0061E209 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg in Resources */,
 				0F44F3082B923EBA00AB80E6 /* icons8-básculas-de-cocina-24.png in Resources */,
-				0F2C23242B967C08005BF5E4 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg in Resources */,
 				0F44F2DB2B923D8000AB80E6 /* Assets.xcassets in Resources */,
 				0F44F2D92B923D7E00AB80E6 /* Main.storyboard in Resources */,
 				0F44F30A2B923EBA00AB80E6 /* icons8-velocímetro-50.png in Resources */,
@@ -237,16 +248,16 @@
 				0F44F3002B923EBA00AB80E6 /* icons8-luz-50.png in Resources */,
 				0F44F3052B923EBA00AB80E6 /* icons8-izquierda-50.png in Resources */,
 				0F44F30B2B923EBA00AB80E6 /* icons8-derecha-50.png in Resources */,
+				8846D04B2BB1FF490061E209 /* logosinfondo.jpeg in Resources */,
 				0F44F2FB2B923EBA00AB80E6 /* icons8-arriba-50.png in Resources */,
 				0F44F30C2B923EBA00AB80E6 /* icons8-me-gusta-50.png in Resources */,
-				0F2C23232B967C08005BF5E4 /* logosinfondo-fotor-bg-remover-20240304155936.png in Resources */,
 				0F44F3042B923EBA00AB80E6 /* icons8-correo-50.png in Resources */,
 				0F44F2FE2B923EBA00AB80E6 /* icons8-ojo-50.png in Resources */,
 				0F44F3012B923EBA00AB80E6 /* icons8-híbrido-50.png in Resources */,
-				0F2C23222B967C08005BF5E4 /* carrito-fotor-bg-remover-2024030415598.png in Resources */,
 				0F44F2FD2B923EBA00AB80E6 /* icons8-carro-64.png in Resources */,
 				0F44F3032B923EBA00AB80E6 /* icons8-usuario-50.png in Resources */,
 				0F44F3092B923EBA00AB80E6 /* icons8-abajo-50.png in Resources */,
+				8846D0532BB2038A0061E209 /* carrito.jpeg in Resources */,
 				0F44F3062B923EBA00AB80E6 /* icons8-temperatura-50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,8 +428,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -448,8 +459,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
