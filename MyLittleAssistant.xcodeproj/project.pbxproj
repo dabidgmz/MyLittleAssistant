@@ -12,6 +12,7 @@
 		0F2C23222B967C08005BF5E4 /* carrito-fotor-bg-remover-2024030415598.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F2C231F2B967C08005BF5E4 /* carrito-fotor-bg-remover-2024030415598.png */; };
 		0F2C23232B967C08005BF5E4 /* logosinfondo-fotor-bg-remover-20240304155936.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F2C23202B967C08005BF5E4 /* logosinfondo-fotor-bg-remover-20240304155936.png */; };
 		0F2C23242B967C08005BF5E4 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0F2C23212B967C08005BF5E4 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg */; };
+		0F4364292BB125600001EC1F /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4364282BB125600001EC1F /* Token.swift */; };
 		0F44F2D22B923D7E00AB80E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F44F2D12B923D7E00AB80E6 /* AppDelegate.swift */; };
 		0F44F2D42B923D7E00AB80E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F44F2D32B923D7E00AB80E6 /* SceneDelegate.swift */; };
 		0F44F2D62B923D7E00AB80E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F44F2D52B923D7E00AB80E6 /* ViewController.swift */; };
@@ -39,7 +40,6 @@
 		0F44F30C2B923EBA00AB80E6 /* icons8-me-gusta-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2F92B923EBA00AB80E6 /* icons8-me-gusta-50.png */; };
 		0F44F30D2B923EBA00AB80E6 /* icons8-punto-de-recogida-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2FA2B923EBA00AB80E6 /* icons8-punto-de-recogida-48.png */; };
 		0F97CE602BAFC0100081D4CE /* nstruccionesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CE5F2BAFC0100081D4CE /* nstruccionesViewController.swift */; };
-		0FE2D7022BAFE52F005BCF7E /* VerificacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE2D7012BAFE52F005BCF7E /* VerificacionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +48,7 @@
 		0F2C231F2B967C08005BF5E4 /* carrito-fotor-bg-remover-2024030415598.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "carrito-fotor-bg-remover-2024030415598.png"; sourceTree = "<group>"; };
 		0F2C23202B967C08005BF5E4 /* logosinfondo-fotor-bg-remover-20240304155936.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logosinfondo-fotor-bg-remover-20240304155936.png"; sourceTree = "<group>"; };
 		0F2C23212B967C08005BF5E4 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "WhatsApp Image 2024-02-29 at 16.57.31.jpeg"; sourceTree = "<group>"; };
+		0F4364282BB125600001EC1F /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		0F44F2CE2B923D7E00AB80E6 /* MyLittleAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLittleAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F44F2D12B923D7E00AB80E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F44F2D32B923D7E00AB80E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,7 +78,6 @@
 		0F44F2F92B923EBA00AB80E6 /* icons8-me-gusta-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-me-gusta-50.png"; sourceTree = "<group>"; };
 		0F44F2FA2B923EBA00AB80E6 /* icons8-punto-de-recogida-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-punto-de-recogida-48.png"; sourceTree = "<group>"; };
 		0F97CE5F2BAFC0100081D4CE /* nstruccionesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nstruccionesViewController.swift; sourceTree = "<group>"; };
-		0FE2D7012BAFE52F005BCF7E /* VerificacionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificacionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +128,7 @@
 				0F44F2D52B923D7E00AB80E6 /* ViewController.swift */,
 				0F44F2E52B923DC600AB80E6 /* RegisterViewController.swift */,
 				0F44F2D72B923D7E00AB80E6 /* Main.storyboard */,
-				0FE2D7012BAFE52F005BCF7E /* VerificacionViewController.swift */,
+				0F4364282BB125600001EC1F /* Token.swift */,
 				0F97CE5F2BAFC0100081D4CE /* nstruccionesViewController.swift */,
 				0F28255A2BAE9C26006273C2 /* SspViewController.swift */,
 				0F1892242B92556E002DE84C /* MenuViewController.swift */,
@@ -258,7 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FE2D7022BAFE52F005BCF7E /* VerificacionViewController.swift in Sources */,
+				0F4364292BB125600001EC1F /* Token.swift in Sources */,
 				0F44F2D62B923D7E00AB80E6 /* ViewController.swift in Sources */,
 				0F28255B2BAE9C26006273C2 /* SspViewController.swift in Sources */,
 				0F1892252B92556E002DE84C /* MenuViewController.swift in Sources */,

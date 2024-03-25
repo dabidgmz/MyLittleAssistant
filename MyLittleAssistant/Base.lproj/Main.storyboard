@@ -607,7 +607,7 @@
                                     <color key="baseBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="2PR-3Y-dMQ" kind="presentation" modalPresentationStyle="fullScreen" id="gqI-6P-lCA"/>
+                                    <segue destination="IF9-0f-eyF" kind="presentation" modalPresentationStyle="fullScreen" id="Ayz-aS-Pzi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -625,93 +625,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vgB-SV-myR" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1490.8396946564885" y="-9.1549295774647899"/>
-        </scene>
-        <!--Verificacion View Controller-->
-        <scene sceneID="ZpR-XH-aiv">
-            <objects>
-                <viewController id="2PR-3Y-dMQ" customClass="VerificacionViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="dgO-dd-AD6">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Código de verificación" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SX7-ve-pX3">
-                                <rect key="frame" x="94.666666666666686" y="139" width="204" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="204" id="3EV-OJ-Z1J"/>
-                                    <constraint firstAttribute="height" constant="26" id="Wga-FL-acN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Por favor, introduce el código de verificación que fue enviado al teléfono que proporcionaste." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dHD-Rh-5ol">
-                                <rect key="frame" x="76.666666666666686" y="187" width="240" height="71"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="8TP-bf-7Ym"/>
-                                    <constraint firstAttribute="height" constant="71" id="mIv-KX-RDK"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="Zrr-5Z-Brb">
-                                <rect key="frame" x="113" y="308" width="167" height="34"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8OQ-Vz-ULd">
-                                        <rect key="frame" x="0.0" y="0.0" width="32" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zbx-bO-nDA">
-                                        <rect key="frame" x="45" y="0.0" width="32" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zLj-fR-iVa">
-                                        <rect key="frame" x="90" y="0.0" width="32" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hT6-dj-WuI">
-                                        <rect key="frame" x="135" y="0.0" width="32" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="N7m-gT-ydu"/>
-                                    <constraint firstAttribute="width" constant="167" id="rXz-rn-cXX"/>
-                                </constraints>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ip-5v-X9q">
-                                <rect key="frame" x="153" y="432" width="87" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="32L-iP-IgS"/>
-                                    <constraint firstAttribute="width" constant="87" id="DSl-kg-7AP"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Verificar">
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="k2O-yh-KFA"/>
-                        <constraints>
-                            <constraint firstItem="Zrr-5Z-Brb" firstAttribute="centerX" secondItem="dgO-dd-AD6" secondAttribute="centerX" id="0jl-gN-QAN"/>
-                            <constraint firstItem="Zrr-5Z-Brb" firstAttribute="top" secondItem="dHD-Rh-5ol" secondAttribute="bottom" constant="50" id="BL2-g2-ypu"/>
-                            <constraint firstItem="SX7-ve-pX3" firstAttribute="top" secondItem="k2O-yh-KFA" secondAttribute="top" constant="80" id="Nhy-cr-Clz"/>
-                            <constraint firstItem="1Ip-5v-X9q" firstAttribute="centerX" secondItem="dgO-dd-AD6" secondAttribute="centerX" id="YaE-Mr-Zwf"/>
-                            <constraint firstItem="dHD-Rh-5ol" firstAttribute="centerX" secondItem="dgO-dd-AD6" secondAttribute="centerX" id="jg5-KF-tgL"/>
-                            <constraint firstItem="SX7-ve-pX3" firstAttribute="centerX" secondItem="dgO-dd-AD6" secondAttribute="centerX" id="lZU-0x-5i1"/>
-                            <constraint firstItem="1Ip-5v-X9q" firstAttribute="top" secondItem="Zrr-5Z-Brb" secondAttribute="bottom" constant="90" id="vIA-Re-Jhc"/>
-                            <constraint firstItem="dHD-Rh-5ol" firstAttribute="top" secondItem="SX7-ve-pX3" secondAttribute="bottom" constant="22" id="yvE-3w-jNh"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XeS-HA-Xdu" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2322.9007633587785" y="-9.1549295774647899"/>
         </scene>
         <!--User Perfil View Controller-->
         <scene sceneID="0up-0b-o7d">
@@ -742,6 +655,80 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DpC-wt-S7S" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="975" y="825"/>
+        </scene>
+        <!--Token-->
+        <scene sceneID="cyk-x1-ocL">
+            <objects>
+                <viewController id="IF9-0f-eyF" customClass="Token" customModule="MyLittleAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zB5-4a-N4Z">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Codigo De Verificacion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gis-fo-CtX">
+                                <rect key="frame" x="83" y="139" width="227" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="227" id="2Cd-Kb-9l6"/>
+                                    <constraint firstAttribute="height" constant="28" id="DEg-Cq-3jv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Por favor, introduce el código de verificación que fue enviado al teléfono que proporcionaste." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IUO-Ja-0U6">
+                                <rect key="frame" x="76.666666666666686" y="207" width="240" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="SaZ-a0-A0o"/>
+                                    <constraint firstAttribute="height" constant="62" id="vLD-Jv-1j9"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="w71-TR-DGk">
+                                <rect key="frame" x="120.66666666666669" y="299" width="152" height="34"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bIQ-I6-3Re">
+                                        <rect key="frame" x="0.0" y="0.0" width="152" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="bIQ-I6-3Re" firstAttribute="centerY" secondItem="w71-TR-DGk" secondAttribute="centerY" id="IU6-nk-iUM"/>
+                                    <constraint firstAttribute="width" constant="152" id="ReH-TY-c3Y"/>
+                                    <constraint firstAttribute="height" constant="34" id="ud1-qw-8xn"/>
+                                    <constraint firstItem="bIQ-I6-3Re" firstAttribute="centerX" secondItem="w71-TR-DGk" secondAttribute="centerX" id="una-Mn-Dp6"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mS-q8-MO5">
+                                <rect key="frame" x="153" y="403" width="87" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="87" id="HGJ-pR-fc6"/>
+                                    <constraint firstAttribute="height" constant="35" id="zIf-pE-xVp"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Verificar">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xpw-Sc-Ng7"/>
+                        <constraints>
+                            <constraint firstItem="IUO-Ja-0U6" firstAttribute="top" secondItem="Gis-fo-CtX" secondAttribute="bottom" constant="40" id="TJH-si-mnS"/>
+                            <constraint firstItem="8mS-q8-MO5" firstAttribute="top" secondItem="w71-TR-DGk" secondAttribute="bottom" constant="70" id="UPJ-nv-sLy"/>
+                            <constraint firstItem="w71-TR-DGk" firstAttribute="top" secondItem="IUO-Ja-0U6" secondAttribute="bottom" constant="30" id="fJL-KC-wkG"/>
+                            <constraint firstItem="Gis-fo-CtX" firstAttribute="top" secondItem="xpw-Sc-Ng7" secondAttribute="top" constant="80" id="jaw-nB-Bld"/>
+                            <constraint firstItem="IUO-Ja-0U6" firstAttribute="centerX" secondItem="zB5-4a-N4Z" secondAttribute="centerX" id="pFC-QZ-eaj"/>
+                            <constraint firstItem="w71-TR-DGk" firstAttribute="centerX" secondItem="zB5-4a-N4Z" secondAttribute="centerX" id="pkV-dU-ou6"/>
+                            <constraint firstItem="Gis-fo-CtX" firstAttribute="centerX" secondItem="zB5-4a-N4Z" secondAttribute="centerX" id="yM0-ji-hEl"/>
+                            <constraint firstItem="8mS-q8-MO5" firstAttribute="centerX" secondItem="zB5-4a-N4Z" secondAttribute="centerX" id="zJa-rd-5SQ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LlW-me-4Hr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2265" y="-9"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
