@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -354,14 +355,23 @@
                     <view key="view" contentMode="scaleToFill" id="nUw-Q7-2Gg">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="fondoazul.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="5d3-tJ-oAe">
+                                <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="BM7-km-5su"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BM7-km-5su" firstAttribute="trailing" secondItem="5d3-tJ-oAe" secondAttribute="trailing" id="7md-z6-cXZ"/>
+                            <constraint firstItem="5d3-tJ-oAe" firstAttribute="leading" secondItem="BM7-km-5su" secondAttribute="leading" id="fXr-33-Xgl"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="plus" catalog="system" id="QUV-it-akf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q0e-aR-nQE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5619" y="428"/>
+            <point key="canvasLocation" x="5616.2790697674418" y="427.46781115879833"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="WtM-Zx-6eA">
@@ -404,12 +414,26 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqd-hI-PCt">
-                                <rect key="frame" x="90" y="371" width="75" height="35"/>
+                                <rect key="frame" x="232" y="486" width="90" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="speedometer" catalog="system"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5j-sh-NPX">
+                                <rect key="frame" x="192" y="662" width="75" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button">
                                     <backgroundConfiguration key="background"/>
                                 </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKh-MM-nWe">
+                                <rect key="frame" x="279" y="735" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vmQ-6Z-5a0"/>
@@ -428,7 +452,9 @@
                             <constraint firstItem="cBw-sN-Lk6" firstAttribute="centerY" secondItem="8tH-Tl-29N" secondAttribute="centerY" multiplier="0.15" id="vfE-la-jyu"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="car.side.rear.open.fill" catalog="system" id="eZi-SS-TLc"/>
+                    <tabBarItem key="tabBarItem" tag="-1" title="" id="eZi-SS-TLc">
+                        <imageReference key="image" image="car.side.rear.open.fill" catalog="system" variableValue="1"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZFr-dU-w8B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -442,6 +468,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="systemBlueColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="XAD-Lu-D7b" kind="relationship" relationship="viewControllers" id="3uL-Qw-Yq5"/>
@@ -842,8 +869,12 @@
         <image name="location.fill" catalog="system" width="128" height="119"/>
         <image name="logooooouu.png" width="500" height="500"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="speedometer" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
