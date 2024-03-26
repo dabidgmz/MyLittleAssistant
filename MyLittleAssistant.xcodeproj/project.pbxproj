@@ -37,12 +37,12 @@
 		0F44F30C2B923EBA00AB80E6 /* icons8-me-gusta-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2F92B923EBA00AB80E6 /* icons8-me-gusta-50.png */; };
 		0F44F30D2B923EBA00AB80E6 /* icons8-punto-de-recogida-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F44F2FA2B923EBA00AB80E6 /* icons8-punto-de-recogida-48.png */; };
 		0F97CE602BAFC0100081D4CE /* nstruccionesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CE5F2BAFC0100081D4CE /* nstruccionesViewController.swift */; };
-		8846D04B2BB1FF490061E209 /* logosinfondo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8846D04A2BB1FF490061E209 /* logosinfondo.jpeg */; };
-		8846D04D2BB1FFBC0061E209 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8846D04C2BB1FFBC0061E209 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg */; };
-		8846D04F2BB202190061E209 /* logooooouu.png in Resources */ = {isa = PBXBuildFile; fileRef = 8846D04E2BB202190061E209 /* logooooouu.png */; };
-		8846D0532BB2038A0061E209 /* carrito.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8846D0522BB2038A0061E209 /* carrito.jpeg */; };
-		8846D0552BB203DF0061E209 /* carritouuu.png in Resources */ = {isa = PBXBuildFile; fileRef = 8846D0542BB203DF0061E209 /* carritouuu.png */; };
-		8846D0572BB208EB0061E209 /* fondoazul.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8846D0562BB208EB0061E209 /* fondoazul.jpeg */; };
+		0FDAD83A2BB2427E00EE8A0F /* carrito-removebg-preview.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FDAD8342BB2427D00EE8A0F /* carrito-removebg-preview.png */; };
+		0FDAD83B2BB2427E00EE8A0F /* fondoazul.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0FDAD8352BB2427D00EE8A0F /* fondoazul.jpeg */; };
+		0FDAD83C2BB2427E00EE8A0F /* carrito.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0FDAD8362BB2427D00EE8A0F /* carrito.jpeg */; };
+		0FDAD83D2BB2427E00EE8A0F /* logooooouu.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FDAD8372BB2427D00EE8A0F /* logooooouu.png */; };
+		0FDAD83E2BB2427E00EE8A0F /* WhatsApp Image 2024-02-29 at 16.57.31 (1).jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0FDAD8382BB2427D00EE8A0F /* WhatsApp Image 2024-02-29 at 16.57.31 (1).jpeg */; };
+		0FDAD83F2BB2427E00EE8A0F /* carritouuu.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FDAD8392BB2427E00EE8A0F /* carritouuu.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,12 +78,12 @@
 		0F44F2F92B923EBA00AB80E6 /* icons8-me-gusta-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-me-gusta-50.png"; sourceTree = "<group>"; };
 		0F44F2FA2B923EBA00AB80E6 /* icons8-punto-de-recogida-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-punto-de-recogida-48.png"; sourceTree = "<group>"; };
 		0F97CE5F2BAFC0100081D4CE /* nstruccionesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nstruccionesViewController.swift; sourceTree = "<group>"; };
-		8846D04A2BB1FF490061E209 /* logosinfondo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = logosinfondo.jpeg; path = ../../../Downloads/logosinfondo.jpeg; sourceTree = "<group>"; };
-		8846D04C2BB1FFBC0061E209 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "WhatsApp Image 2024-02-29 at 16.57.31.jpeg"; path = "../../../Downloads/WhatsApp Image 2024-02-29 at 16.57.31.jpeg"; sourceTree = "<group>"; };
-		8846D04E2BB202190061E209 /* logooooouu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logooooouu.png; path = ../../../Downloads/logooooouu.png; sourceTree = "<group>"; };
-		8846D0522BB2038A0061E209 /* carrito.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = carrito.jpeg; path = ../../../Downloads/carrito.jpeg; sourceTree = "<group>"; };
-		8846D0542BB203DF0061E209 /* carritouuu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = carritouuu.png; path = ../../../Downloads/carritouuu.png; sourceTree = "<group>"; };
-		8846D0562BB208EB0061E209 /* fondoazul.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = fondoazul.jpeg; path = ../../../Downloads/fondoazul.jpeg; sourceTree = "<group>"; };
+		0FDAD8342BB2427D00EE8A0F /* carrito-removebg-preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "carrito-removebg-preview.png"; sourceTree = "<group>"; };
+		0FDAD8352BB2427D00EE8A0F /* fondoazul.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fondoazul.jpeg; sourceTree = "<group>"; };
+		0FDAD8362BB2427D00EE8A0F /* carrito.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = carrito.jpeg; sourceTree = "<group>"; };
+		0FDAD8372BB2427D00EE8A0F /* logooooouu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logooooouu.png; sourceTree = "<group>"; };
+		0FDAD8382BB2427D00EE8A0F /* WhatsApp Image 2024-02-29 at 16.57.31 (1).jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "WhatsApp Image 2024-02-29 at 16.57.31 (1).jpeg"; sourceTree = "<group>"; };
+		0FDAD8392BB2427E00EE8A0F /* carritouuu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carritouuu.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,12 +163,12 @@
 		8846D0472BB1FF1F0061E209 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				8846D0562BB208EB0061E209 /* fondoazul.jpeg */,
-				8846D0542BB203DF0061E209 /* carritouuu.png */,
-				8846D0522BB2038A0061E209 /* carrito.jpeg */,
-				8846D04E2BB202190061E209 /* logooooouu.png */,
-				8846D04C2BB1FFBC0061E209 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg */,
-				8846D04A2BB1FF490061E209 /* logosinfondo.jpeg */,
+				0FDAD8342BB2427D00EE8A0F /* carrito-removebg-preview.png */,
+				0FDAD8362BB2427D00EE8A0F /* carrito.jpeg */,
+				0FDAD8392BB2427E00EE8A0F /* carritouuu.png */,
+				0FDAD8352BB2427D00EE8A0F /* fondoazul.jpeg */,
+				0FDAD8372BB2427D00EE8A0F /* logooooouu.png */,
+				0FDAD8382BB2427D00EE8A0F /* WhatsApp Image 2024-02-29 at 16.57.31 (1).jpeg */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -231,15 +231,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8846D0572BB208EB0061E209 /* fondoazul.jpeg in Resources */,
 				0F44F2FC2B923EBA00AB80E6 /* icons8-luz-30.png in Resources */,
 				0F44F30D2B923EBA00AB80E6 /* icons8-punto-de-recogida-48.png in Resources */,
 				0F44F3072B923EBA00AB80E6 /* icons8-camara-educacion-50.png in Resources */,
 				0F44F2DE2B923D8000AB80E6 /* LaunchScreen.storyboard in Resources */,
+				0FDAD83C2BB2427E00EE8A0F /* carrito.jpeg in Resources */,
 				0F44F2FF2B923EBA00AB80E6 /* icons8-dentro-de-una-30.png in Resources */,
-				8846D0552BB203DF0061E209 /* carritouuu.png in Resources */,
-				8846D04F2BB202190061E209 /* logooooouu.png in Resources */,
-				8846D04D2BB1FFBC0061E209 /* WhatsApp Image 2024-02-29 at 16.57.31.jpeg in Resources */,
+				0FDAD83D2BB2427E00EE8A0F /* logooooouu.png in Resources */,
 				0F44F3082B923EBA00AB80E6 /* icons8-básculas-de-cocina-24.png in Resources */,
 				0F44F2DB2B923D8000AB80E6 /* Assets.xcassets in Resources */,
 				0F44F2D92B923D7E00AB80E6 /* Main.storyboard in Resources */,
@@ -248,16 +246,18 @@
 				0F44F3002B923EBA00AB80E6 /* icons8-luz-50.png in Resources */,
 				0F44F3052B923EBA00AB80E6 /* icons8-izquierda-50.png in Resources */,
 				0F44F30B2B923EBA00AB80E6 /* icons8-derecha-50.png in Resources */,
-				8846D04B2BB1FF490061E209 /* logosinfondo.jpeg in Resources */,
 				0F44F2FB2B923EBA00AB80E6 /* icons8-arriba-50.png in Resources */,
 				0F44F30C2B923EBA00AB80E6 /* icons8-me-gusta-50.png in Resources */,
+				0FDAD83E2BB2427E00EE8A0F /* WhatsApp Image 2024-02-29 at 16.57.31 (1).jpeg in Resources */,
 				0F44F3042B923EBA00AB80E6 /* icons8-correo-50.png in Resources */,
 				0F44F2FE2B923EBA00AB80E6 /* icons8-ojo-50.png in Resources */,
+				0FDAD83F2BB2427E00EE8A0F /* carritouuu.png in Resources */,
+				0FDAD83A2BB2427E00EE8A0F /* carrito-removebg-preview.png in Resources */,
 				0F44F3012B923EBA00AB80E6 /* icons8-híbrido-50.png in Resources */,
 				0F44F2FD2B923EBA00AB80E6 /* icons8-carro-64.png in Resources */,
+				0FDAD83B2BB2427E00EE8A0F /* fondoazul.jpeg in Resources */,
 				0F44F3032B923EBA00AB80E6 /* icons8-usuario-50.png in Resources */,
 				0F44F3092B923EBA00AB80E6 /* icons8-abajo-50.png in Resources */,
-				8846D0532BB2038A0061E209 /* carrito.jpeg in Resources */,
 				0F44F3062B923EBA00AB80E6 /* icons8-temperatura-50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
