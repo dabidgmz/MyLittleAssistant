@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ayf-6I-jjk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rky-ZJ-Gk2">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -67,6 +67,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Login"/>
+                                <connections>
+                                    <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ng7-Fb-VRO"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have an account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cay-Gt-gTF">
                                 <rect key="frame" x="93.666666666666686" y="520" width="206" height="21"/>
@@ -91,6 +94,16 @@
                                     <segue destination="lQ1-de-nw6" kind="presentation" modalPresentationStyle="fullScreen" id="7Ih-t6-q8c"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdV-I0-UZE">
+                                <rect key="frame" x="35.666666666666657" y="631" width="322" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="75P-7D-w5n"/>
+                                    <constraint firstAttribute="width" constant="322" id="Scb-xX-CMh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -105,10 +118,17 @@
                             <constraint firstItem="fBF-Z6-jCO" firstAttribute="top" secondItem="UO0-cp-mH6" secondAttribute="bottom" constant="60" id="SFX-Pi-kqA"/>
                             <constraint firstItem="UBk-9M-WdD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ScQ-EI-U6D"/>
                             <constraint firstItem="cay-Gt-gTF" firstAttribute="top" secondItem="fBF-Z6-jCO" secondAttribute="bottom" constant="40" id="UR9-KD-EI5"/>
+                            <constraint firstItem="DdV-I0-UZE" firstAttribute="top" secondItem="OTP-vz-OPH" secondAttribute="bottom" constant="50" id="ZhA-qr-zUb"/>
                             <constraint firstItem="UO0-cp-mH6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fVh-Oq-Ncl"/>
+                            <constraint firstItem="DdV-I0-UZE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fdd-lQ-Zl0"/>
                             <constraint firstItem="fBF-Z6-jCO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xd3-48-6zl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Email_TxT" destination="UBk-9M-WdD" id="8aK-hx-0f9"/>
+                        <outlet property="Errores_lbl" destination="DdV-I0-UZE" id="gv8-6q-8CL"/>
+                        <outlet property="Password_txt" destination="UO0-cp-mH6" id="Hba-3P-Agk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -205,7 +225,7 @@
                                     <color key="baseBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="DrH-P2-prC" kind="presentation" modalPresentationStyle="fullScreen" id="kQt-tJ-QFY"/>
+                                    <action selector="Register_btn:" destination="lQ1-de-nw6" eventType="touchUpInside" id="a1f-wE-MRH"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You already have an account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZe-Ba-pcn">
@@ -229,15 +249,27 @@
                                     <color key="baseForegroundColor" red="0.078431372550000003" green="0.27058823529999998" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWw-Xo-fff">
+                                <rect key="frame" x="21" y="648" width="351" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="351" id="9EC-Tb-xJc"/>
+                                    <constraint firstAttribute="height" constant="21" id="SNQ-Yh-X1e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Wvu-dp-75A"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="egX-uW-mYf" firstAttribute="centerX" secondItem="zAI-k4-Dig" secondAttribute="centerX" id="5EM-1A-mf2"/>
+                            <constraint firstItem="hWw-Xo-fff" firstAttribute="centerX" secondItem="zAI-k4-Dig" secondAttribute="centerX" id="8Ed-Ic-fOo"/>
                             <constraint firstItem="FxR-4c-eor" firstAttribute="centerX" secondItem="zAI-k4-Dig" secondAttribute="centerX" id="AAb-M0-QSH"/>
                             <constraint firstItem="pLQ-oi-44p" firstAttribute="top" secondItem="FxR-4c-eor" secondAttribute="bottom" constant="10" id="ARc-WA-3FZ"/>
                             <constraint firstItem="FxR-4c-eor" firstAttribute="top" secondItem="egX-uW-mYf" secondAttribute="bottom" constant="60" id="ATI-6y-2nc"/>
                             <constraint firstItem="fZe-Ba-pcn" firstAttribute="top" secondItem="9ba-ZH-3Oj" secondAttribute="bottom" constant="30" id="Aqy-I7-z9U"/>
+                            <constraint firstItem="hWw-Xo-fff" firstAttribute="top" secondItem="XSg-Hw-OeS" secondAttribute="bottom" constant="29" id="CEz-Jb-2Uo"/>
                             <constraint firstItem="XSg-Hw-OeS" firstAttribute="top" secondItem="fZe-Ba-pcn" secondAttribute="bottom" constant="5" id="Cms-ea-Cme"/>
                             <constraint firstItem="SmW-lI-rMY" firstAttribute="top" secondItem="pLQ-oi-44p" secondAttribute="bottom" constant="10" id="FWL-xw-av7"/>
                             <constraint firstItem="XSg-Hw-OeS" firstAttribute="centerX" secondItem="zAI-k4-Dig" secondAttribute="centerX" id="HHV-2B-CM9"/>
@@ -251,6 +283,14 @@
                             <constraint firstItem="fZe-Ba-pcn" firstAttribute="centerX" secondItem="zAI-k4-Dig" secondAttribute="centerX" id="uTg-RS-eoW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Confirm_Password_Txt" destination="trE-XZ-dAi" id="rIw-Xd-OrW"/>
+                        <outlet property="Email_Txt" destination="pLQ-oi-44p" id="Pnd-QM-6Ai"/>
+                        <outlet property="Errores_lbl" destination="hWw-Xo-fff" id="hWS-UB-oIM"/>
+                        <outlet property="Name_Txt" destination="FxR-4c-eor" id="dcS-Ns-rzo"/>
+                        <outlet property="Password_Txt" destination="SmW-lI-rMY" id="TEF-hc-Xch"/>
+                        <segue destination="DrH-P2-prC" kind="presentation" identifier="sgRegister" modalPresentationStyle="fullScreen" id="FxJ-rW-f3x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOB-yY-Oxv" sceneMemberID="firstResponder"/>
             </objects>
@@ -366,7 +406,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZFr-dU-w8B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4975.8139534883721" y="-299.35622317596568"/>
+            <point key="canvasLocation" x="5534" y="-485"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="9zv-yT-lza">
@@ -408,6 +448,7 @@
                         <outlet property="Logo" destination="n4o-Cz-ekZ" id="zUT-dH-whr"/>
                         <outlet property="logo" destination="n4o-Cz-ekZ" id="72o-PI-VOk"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="sgSplash" modalPresentationStyle="fullScreen" id="9Y2-ZX-7oJ"/>
+                        <segue destination="5Sk-Vx-GwR" kind="presentation" identifier="sgLogin" modalPresentationStyle="fullScreen" id="7ni-hn-Jp2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqO-Cj-KYH" sceneMemberID="firstResponder"/>
@@ -740,6 +781,9 @@
             <point key="canvasLocation" x="-920.28985507246387" y="825"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="7ni-hn-Jp2"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="car.side.rear.open.fill" catalog="system" width="128" height="56"/>
         <image name="carritouuu.png" width="1280" height="720"/>
