@@ -387,32 +387,10 @@
                                     <backgroundConfiguration key="background" image="logooooouu.png"/>
                                 </buttonConfiguration>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CQl-2B-p3m">
-                                <rect key="frame" x="166" y="556.33333333333326" width="96" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <imageReference key="image" image="car.side.fill" catalog="system" renderingMode="hierarchical">
-                                    <hierarchicalColors>
-                                        <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </hierarchicalColors>
-                                </imageReference>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hfd-st-NSI">
-                                <rect key="frame" x="169" y="686" width="91" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <imageReference key="image" image="speedometer" catalog="system" renderingMode="hierarchical">
-                                    <hierarchicalColors>
-                                        <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </hierarchicalColors>
-                                </imageReference>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VPf-e4-gu6">
-                                <rect key="frame" x="253" y="367.66666666666674" width="85" height="53"/>
+                                <rect key="frame" x="74" y="283.33333333333326" width="85" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <imageReference key="image" image="lineweight" catalog="system" renderingMode="hierarchical">
+                                <imageReference key="image" image="scalemass.fill" catalog="system" renderingMode="hierarchical">
                                     <hierarchicalColors>
                                         <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -420,8 +398,58 @@
                                     </hierarchicalColors>
                                 </imageReference>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="50 gr." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umJ-nt-Ef0">
+                                <rect key="frame" x="167" y="291" width="95" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cvb-NW-5xn">
+                                <rect key="frame" x="105" y="378" width="309" height="149"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.66274511810000003" green="0.88235294819999999" blue="0.96078431610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.66274511810000003" green="0.88235294819999999" blue="0.96078431610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oi9-sh-u4F">
+                                <rect key="frame" x="20" y="551" width="388" height="128"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CQl-2B-p3m">
+                                        <rect key="frame" x="148" y="75.333333333333371" width="93" height="33"/>
+                                        <imageReference key="image" image="car.side.fill" catalog="system" renderingMode="hierarchical">
+                                            <hierarchicalColors>
+                                                <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </hierarchicalColors>
+                                        </imageReference>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.66274511810000003" green="0.88235294819999999" blue="0.96078431610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="CQl-2B-p3m" firstAttribute="centerX" secondItem="oi9-sh-u4F" secondAttribute="centerX" id="p8X-Ys-orZ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xag-4G-6FC">
+                                <rect key="frame" x="20" y="701" width="388" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hfd-st-NSI">
+                                        <rect key="frame" x="165" y="73" width="58" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageReference key="image" image="speedometer" catalog="system" renderingMode="hierarchical">
+                                            <hierarchicalColors>
+                                                <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </hierarchicalColors>
+                                        </imageReference>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.66274511810000003" green="0.88235294819999999" blue="0.96078431610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iCZ-YA-Kcm">
-                                <rect key="frame" x="114" y="356" width="69" height="78"/>
+                                <rect key="frame" x="20" y="414" width="69" height="78"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <imageReference key="image" image="thermometer.transmission" catalog="system" renderingMode="hierarchical">
                                     <hierarchicalColors>
@@ -435,11 +463,14 @@
                         <viewLayoutGuide key="safeArea" id="vmQ-6Z-5a0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="oi9-sh-u4F" firstAttribute="centerX" secondItem="8tH-Tl-29N" secondAttribute="centerX" id="8RG-Im-TUS"/>
                             <constraint firstItem="ISW-5T-ftl" firstAttribute="leading" secondItem="vmQ-6Z-5a0" secondAttribute="leading" id="Cbp-co-9PN"/>
                             <constraint firstItem="h8k-10-4Iv" firstAttribute="width" secondItem="h8k-10-4Iv" secondAttribute="height" multiplier="317:198" id="DAL-PW-Iop"/>
                             <constraint firstAttribute="bottom" secondItem="ISW-5T-ftl" secondAttribute="bottom" id="O1X-Ph-yRd"/>
+                            <constraint firstItem="oi9-sh-u4F" firstAttribute="leading" secondItem="vmQ-6Z-5a0" secondAttribute="leading" constant="20" id="O5G-Jo-BLq"/>
                             <constraint firstItem="h8k-10-4Iv" firstAttribute="centerX" secondItem="8tH-Tl-29N" secondAttribute="centerX" id="RCH-cA-EOX"/>
                             <constraint firstItem="ISW-5T-ftl" firstAttribute="top" secondItem="8tH-Tl-29N" secondAttribute="top" id="SCp-Sx-Bl3"/>
+                            <constraint firstItem="vmQ-6Z-5a0" firstAttribute="trailing" secondItem="oi9-sh-u4F" secondAttribute="trailing" constant="20" id="chM-Ot-SRn"/>
                             <constraint firstItem="h8k-10-4Iv" firstAttribute="top" secondItem="8tH-Tl-29N" secondAttribute="top" constant="50" id="ehU-mP-OaP"/>
                             <constraint firstItem="vmQ-6Z-5a0" firstAttribute="trailing" secondItem="9Bb-Lv-vCT" secondAttribute="trailing" constant="20" id="hJa-vt-ecK"/>
                             <constraint firstItem="cBw-sN-Lk6" firstAttribute="leading" secondItem="vmQ-6Z-5a0" secondAttribute="leading" constant="20" id="iIf-3a-nv4"/>
@@ -867,11 +898,11 @@
         <image name="car.side.fill" catalog="system" width="128" height="58"/>
         <image name="carritouuu.png" width="1280" height="720"/>
         <image name="fondoazul.jpeg" width="828" height="1600"/>
-        <image name="lineweight" catalog="system" width="128" height="109"/>
         <image name="location.fill" catalog="system" width="128" height="119"/>
         <image name="logooooouu.png" width="500" height="500"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="scalemass.fill" catalog="system" width="128" height="121"/>
         <image name="speedometer" catalog="system" width="128" height="123"/>
         <image name="thermometer.transmission" catalog="system" width="128" height="122"/>
         <systemColor name="secondaryLabelColor">

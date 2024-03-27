@@ -6,25 +6,38 @@
 //
 
 import UIKit
+import Charts
 
-class MenuViewController: UIViewController {
+class MenuViewController: UIViewController, ChartViewDelegate {
+    
 
-    @IBOutlet weak var srcGraficas: UIScrollView!
+  var lineChart = LineChartView()
     override func viewDidLoad() {
         super.viewDidLoad()
+        lineChart.delegate = self
 
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLayoutSubviews() {
+        let h =  view.frame.width * 1.0/3.0
+        lineChart.frame = CGRect(x: 0, y:(view.frame.height - h)/2.0,width: view.frame.width * 2.0/3.0,height: h)
+        
+       
+        lineChart.center = view.center
+        view.addSubview(lineChart)
+        
+        var entries = [ChartDataEntry]()
+        
+        for x in 0..<10{
+            entries.append(ChartDataEntry(x: Double(x),y: Double(x))
+            )
+        }
+        let set = LineChartDataSet(entries:entries)
+        set.colors = ChartColorTemplates.material()
+            let data = LineChartData(dataSet: set)
+        lineChart.data = data
     }
-    */
+
+   
 
 }

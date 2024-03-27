@@ -48,6 +48,8 @@
 		8874B24E2BB483E300265AD3 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8874B24D2BB483E300265AD3 /* CameraViewController.swift */; };
 		8874B2502BB4932C00265AD3 /* azul.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8874B24F2BB4932C00265AD3 /* azul.jpeg */; };
 		8874B2542BB4948000265AD3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8874B2532BB4948000265AD3 /* MenuViewController.swift */; };
+		8874B2562BB4B7F700265AD3 /* GraficaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8874B2552BB4B7F700265AD3 /* GraficaViewController.swift */; };
+		C78F27094FA1941AEC3DCD36 /* Pods_MyLittleAssistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0447BA9C616E118BB769583 /* Pods_MyLittleAssistant.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,9 +93,13 @@
 		0FDAD8382BB2427D00EE8A0F /* WhatsApp Image 2024-02-29 at 16.57.31 (1).jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "WhatsApp Image 2024-02-29 at 16.57.31 (1).jpeg"; sourceTree = "<group>"; };
 		0FDAD8392BB2427E00EE8A0F /* carritouuu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carritouuu.png; sourceTree = "<group>"; };
 		0FEBF2312BB27AD3001BC41C /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		6CA299AFF6B685D3D092BB64 /* Pods-MyLittleAssistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyLittleAssistant.release.xcconfig"; path = "Target Support Files/Pods-MyLittleAssistant/Pods-MyLittleAssistant.release.xcconfig"; sourceTree = "<group>"; };
+		77907D984B70D800883B99E2 /* Pods-MyLittleAssistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyLittleAssistant.debug.xcconfig"; path = "Target Support Files/Pods-MyLittleAssistant/Pods-MyLittleAssistant.debug.xcconfig"; sourceTree = "<group>"; };
 		8874B24D2BB483E300265AD3 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		8874B24F2BB4932C00265AD3 /* azul.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = azul.jpeg; sourceTree = "<group>"; };
 		8874B2532BB4948000265AD3 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		8874B2552BB4B7F700265AD3 /* GraficaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficaViewController.swift; sourceTree = "<group>"; };
+		B0447BA9C616E118BB769583 /* Pods_MyLittleAssistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyLittleAssistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C78F27094FA1941AEC3DCD36 /* Pods_MyLittleAssistant.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +129,8 @@
 				0F44F2E72B923EBA00AB80E6 /* Iconos_app */,
 				0F44F2D02B923D7E00AB80E6 /* MyLittleAssistant */,
 				0F44F2CF2B923D7E00AB80E6 /* Products */,
+				C29831C88627266B76DA12E9 /* Pods */,
+				548A09250825D61972E64190 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,6 +161,7 @@
 				0F33D85F2BB3C5E0009BE586 /* Models */,
 				8874B24D2BB483E300265AD3 /* CameraViewController.swift */,
 				8874B2532BB4948000265AD3 /* MenuViewController.swift */,
+				8874B2552BB4B7F700265AD3 /* GraficaViewController.swift */,
 			);
 			path = MyLittleAssistant;
 			sourceTree = "<group>";
@@ -182,6 +192,14 @@
 			path = Iconos_app;
 			sourceTree = "<group>";
 		};
+		548A09250825D61972E64190 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B0447BA9C616E118BB769583 /* Pods_MyLittleAssistant.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8846D0472BB1FF1F0061E209 /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +214,15 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		C29831C88627266B76DA12E9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				77907D984B70D800883B99E2 /* Pods-MyLittleAssistant.debug.xcconfig */,
+				6CA299AFF6B685D3D092BB64 /* Pods-MyLittleAssistant.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -203,9 +230,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0F44F2E22B923D8000AB80E6 /* Build configuration list for PBXNativeTarget "MyLittleAssistant" */;
 			buildPhases = (
+				5883EB89E1321E8BF9287DE1 /* [CP] Check Pods Manifest.lock */,
 				0F44F2CA2B923D7E00AB80E6 /* Sources */,
 				0F44F2CB2B923D7E00AB80E6 /* Frameworks */,
 				0F44F2CC2B923D7E00AB80E6 /* Resources */,
+				5BC9EFC16D77A8247CD7B71A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -288,6 +317,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5883EB89E1321E8BF9287DE1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyLittleAssistant-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5BC9EFC16D77A8247CD7B71A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyLittleAssistant/Pods-MyLittleAssistant-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyLittleAssistant/Pods-MyLittleAssistant-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyLittleAssistant/Pods-MyLittleAssistant-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0F44F2CA2B923D7E00AB80E6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -295,6 +366,7 @@
 			files = (
 				0F4364292BB125600001EC1F /* Token.swift in Sources */,
 				0FEBF2322BB27AD3001BC41C /* UserViewController.swift in Sources */,
+				8874B2562BB4B7F700265AD3 /* GraficaViewController.swift in Sources */,
 				0F44F2D62B923D7E00AB80E6 /* ViewController.swift in Sources */,
 				0F28255B2BAE9C26006273C2 /* SspViewController.swift in Sources */,
 				8874B24E2BB483E300265AD3 /* CameraViewController.swift in Sources */,
@@ -446,6 +518,7 @@
 		};
 		0F44F2E32B923D8000AB80E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77907D984B70D800883B99E2 /* Pods-MyLittleAssistant.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -477,6 +550,7 @@
 		};
 		0F44F2E42B923D8000AB80E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CA299AFF6B685D3D092BB64 /* Pods-MyLittleAssistant.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
