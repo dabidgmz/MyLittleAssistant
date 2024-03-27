@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F1892252B92556E002DE84C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1892242B92556E002DE84C /* MenuViewController.swift */; };
 		0F28255B2BAE9C26006273C2 /* SspViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F28255A2BAE9C26006273C2 /* SspViewController.swift */; };
 		0F4364292BB125600001EC1F /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4364282BB125600001EC1F /* Token.swift */; };
 		0F44F2D22B923D7E00AB80E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F44F2D12B923D7E00AB80E6 /* AppDelegate.swift */; };
@@ -47,10 +46,11 @@
 		0FDAD83F2BB2427E00EE8A0F /* carritouuu.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FDAD8392BB2427E00EE8A0F /* carritouuu.png */; };
 		0FEBF2322BB27AD3001BC41C /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEBF2312BB27AD3001BC41C /* UserViewController.swift */; };
 		8874B24E2BB483E300265AD3 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8874B24D2BB483E300265AD3 /* CameraViewController.swift */; };
+		8874B2502BB4932C00265AD3 /* azul.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8874B24F2BB4932C00265AD3 /* azul.jpeg */; };
+		8874B2542BB4948000265AD3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8874B2532BB4948000265AD3 /* MenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0F1892242B92556E002DE84C /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		0F28255A2BAE9C26006273C2 /* SspViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SspViewController.swift; sourceTree = "<group>"; };
 		0F4364282BB125600001EC1F /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		0F44F2CE2B923D7E00AB80E6 /* MyLittleAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLittleAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +92,8 @@
 		0FDAD8392BB2427E00EE8A0F /* carritouuu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carritouuu.png; sourceTree = "<group>"; };
 		0FEBF2312BB27AD3001BC41C /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		8874B24D2BB483E300265AD3 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		8874B24F2BB4932C00265AD3 /* azul.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = azul.jpeg; sourceTree = "<group>"; };
+		8874B2532BB4948000265AD3 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,13 +113,6 @@
 				0F5F1FA42BB3DF930009F8F9 /* User.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		0F33D8602BB3C616009BE586 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		0F44F2C52B923D7E00AB80E6 = {
@@ -143,7 +138,6 @@
 			children = (
 				0F44F2D12B923D7E00AB80E6 /* AppDelegate.swift */,
 				0F44F2D32B923D7E00AB80E6 /* SceneDelegate.swift */,
-				0F1892242B92556E002DE84C /* MenuViewController.swift */,
 				0F44F2D52B923D7E00AB80E6 /* ViewController.swift */,
 				0F44F2E52B923DC600AB80E6 /* RegisterViewController.swift */,
 				0FEBF2312BB27AD3001BC41C /* UserViewController.swift */,
@@ -156,8 +150,8 @@
 				0F44F2DC2B923D8000AB80E6 /* LaunchScreen.storyboard */,
 				0F44F2DF2B923D8000AB80E6 /* Info.plist */,
 				0F33D85F2BB3C5E0009BE586 /* Models */,
-				0F33D8602BB3C616009BE586 /* Controllers */,
 				8874B24D2BB483E300265AD3 /* CameraViewController.swift */,
+				8874B2532BB4948000265AD3 /* MenuViewController.swift */,
 			);
 			path = MyLittleAssistant;
 			sourceTree = "<group>";
@@ -191,6 +185,7 @@
 		8846D0472BB1FF1F0061E209 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				8874B24F2BB4932C00265AD3 /* azul.jpeg */,
 				0FDAD8342BB2427D00EE8A0F /* carrito-removebg-preview.png */,
 				0FDAD8362BB2427D00EE8A0F /* carrito.jpeg */,
 				0FDAD8392BB2427E00EE8A0F /* carritouuu.png */,
@@ -274,6 +269,7 @@
 				0F44F3002B923EBA00AB80E6 /* icons8-luz-50.png in Resources */,
 				0F44F3052B923EBA00AB80E6 /* icons8-izquierda-50.png in Resources */,
 				0F44F30B2B923EBA00AB80E6 /* icons8-derecha-50.png in Resources */,
+				8874B2502BB4932C00265AD3 /* azul.jpeg in Resources */,
 				0F44F2FB2B923EBA00AB80E6 /* icons8-arriba-50.png in Resources */,
 				0F44F30C2B923EBA00AB80E6 /* icons8-me-gusta-50.png in Resources */,
 				0FDAD83E2BB2427E00EE8A0F /* WhatsApp Image 2024-02-29 at 16.57.31 (1).jpeg in Resources */,
@@ -301,10 +297,10 @@
 				0FEBF2322BB27AD3001BC41C /* UserViewController.swift in Sources */,
 				0F44F2D62B923D7E00AB80E6 /* ViewController.swift in Sources */,
 				0F28255B2BAE9C26006273C2 /* SspViewController.swift in Sources */,
-				0F1892252B92556E002DE84C /* MenuViewController.swift in Sources */,
 				8874B24E2BB483E300265AD3 /* CameraViewController.swift in Sources */,
 				0F5F1FA72BB3E04C0009F8F9 /* UserData.swift in Sources */,
 				0F44F2D22B923D7E00AB80E6 /* AppDelegate.swift in Sources */,
+				8874B2542BB4948000265AD3 /* MenuViewController.swift in Sources */,
 				0F97CE602BAFC0100081D4CE /* nstruccionesViewController.swift in Sources */,
 				0F44F2D42B923D7E00AB80E6 /* SceneDelegate.swift in Sources */,
 				0F5F1FA52BB3DF930009F8F9 /* User.swift in Sources */,

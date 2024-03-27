@@ -9,7 +9,6 @@ import UIKit
 
 class MenuViewController: UIViewController {
 
-    @IBOutlet weak var srcGraficas: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
