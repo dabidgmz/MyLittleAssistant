@@ -19,8 +19,14 @@ class MenuViewController: UIViewController, ChartViewDelegate {
         // Do any additional setup after loading the view.
     }
     override func viewDidLayoutSubviews() {
-        let h =  view.frame.width * 1.0/3.0
-        lineChart.frame = CGRect(x: 0, y:(view.frame.height - h)/2.0,width: view.frame.width * 2.0/3.0,height: h)
+            let h = view.frame.width * 1.0 / 3.0
+            let chartWidth = view.frame.width * 2.0 / 3.0 // Ancho del gráfico
+            let chartHeight = h // Alto del gráfico
+            let chartX = view.frame.width - chartWidth - 50 
+        let chartY = (view.frame.height - h) / 1.5 // Posición Y del gráfico
+            
+            lineChart.frame = CGRect(x: chartX, y: chartY, width: chartWidth, height: chartHeight)
+            
         
        
         lineChart.center = view.center
