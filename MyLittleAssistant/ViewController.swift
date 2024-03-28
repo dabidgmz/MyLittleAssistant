@@ -92,76 +92,111 @@ class ViewController: UIViewController {
           }
       }
       
-      func login() {
-          let url = URL(string: "https:/login")! 
-          var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
-          request.httpMethod = "POST"
+    func login() {
+        let url = URL(string: "https://")!
+        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
+        request.httpMethod = "POST"
+        
+        let email = Email_TxT.text!
+        let password = Password_txt.text!
           
-          let email = Email_TxT.text!
-          let password = Password_txt.text!
+        let requestBody: [String: Any] = [
+            "email": email,
+            "password": password
+        ]
+        
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: requestBody, options: [])
+            request.httpBody = jsonData
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        } catch {
+            print("Error al convertir el cuerpo del request a JSON: \(error)")
+            return
+        }
           
-          let requestBody: [String: Any] = [
-              "email": email,
-              "password": password
-          ]
-          
-          do {
-              let jsonData = try JSONSerialization.data(withJSONObject: requestBody, options: [])
-              request.httpBody = jsonData
-              request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-          } catch {
-              print("Error al convertir el cuerpo del request a JSON: \(error)")
-              return
-          }
-          
-          let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-              if let error = error {
-                  print("Error en el request: \(error)")
-                  return
-              }
-              
-              guard let data = data else {
-                  print("No se recibió data en la respuesta")
-                  return
-              }
-              
-              if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
-                  do {
-                      let responseJSON = try JSONSerialization.jsonObject(with: data, options: [])
-                      print("Respuesta: \(responseJSON)")
-                      
-                      if let jsonDict = responseJSON as? [String: Any], let jwt = jsonDict["jwt"] as? String {
-                          DispatchQueue.main.async {
-                              self.hasErrors = false
-                              self.userData.jwt = jwt
-                              self.performSegue(withIdentifier: "sgLogin", sender: self)
-                          }
-                      }
-                  } catch {
-                      print("Error al convertir la respuesta a JSON: \(error)")
-                  }
-              } else {
-                  do {
-                      let responseJSON = try JSONSerialization.jsonObject(with: data, options: [])
-                      print("Respuesta: \(responseJSON)")
-                      
-                      if let jsonDict = responseJSON as? [String: Any], let message = jsonDict["message"] as? String {
-                          DispatchQueue.main.async {
-                              let error = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-                              let ok = UIAlertAction(title: "Aceptar", style: .default)
-                              error.addAction(ok)
-                              self.present(error, animated: true)
-                          }
-                      }
-                  } catch {
-                      print("Error al convertir la respuesta a JSON: \(error)")
-                  }
-              }
-          }
-          
-          task.resume()
-      }
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print("Error en el request: \(error)")
+                return
+            }
+            
+            guard let data = data else {
+                print("No se recibió data en la respuesta")
+                return
+            }
+            
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+                do {
+                    let responseJSON = try JSONSerialization.jsonObject(with: data, options: [])
+                    print("Respuesta: \(responseJSON)")
+                    
+                    if let jsonDict = responseJSON as? [String: Any],
+                       let token = jsonDict["token"] as? String {
+                        DispatchQueue.main.async {
+                            self.hasErrors = false
+                            self.userData.jwt = token
+                            self.performSegue(withIdentifier: "sgLogin", sender: self)
+                        }
+                    }
+                } catch {
+                    print("Error al convertir la respuesta a JSON: \(error)")
+                }
+            } else {
+                do {
+                    let responseJSON = try JSONSerialization.jsonObject(with: data, options: [])
+                    print("Respuesta: \(responseJSON)")
+                    
+                    if let jsonDict = responseJSON as? [String: Any],
+                       let message = jsonDict["message"] as? String {
+                        DispatchQueue.main.async {
+                            let error = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+                            let ok = UIAlertAction(title: "Aceptar", style: .default)
+                            error.addAction(ok)
+                            self.present(error, animated: true)
+                        }
+                    }
+                } catch {
+                    print("Error al convertir la respuesta a JSON: \(error)")
+                }
+            }
+        }
+        
+        task.resume()
+    }
     
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "sgLogin" {
+            if !hasErrors {
+                return true
+            }
+            
+            return false
+        }
+            
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == Email_TxT {
+            Password_txt.becomeFirstResponder()
+        } else if textField == Password_txt {
+            Password_txt.resignFirstResponder()
+        }
+        
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let maxLenght = maxLenghts[textField] ?? Int.max
+        let currentString: NSString = textField.text! as NSString
+        let newString: NSString = currentString.replacingCharacters(in: range, with: string) as NSString
+    
+        return newString.length <= maxLenght
+    }
 }
-
 
