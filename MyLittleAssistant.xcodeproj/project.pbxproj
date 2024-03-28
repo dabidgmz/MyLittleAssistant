@@ -46,7 +46,6 @@
 		0FDAD83F2BB2427E00EE8A0F /* carritouuu.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FDAD8392BB2427E00EE8A0F /* carritouuu.png */; };
 		0FEBF2322BB27AD3001BC41C /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEBF2312BB27AD3001BC41C /* UserViewController.swift */; };
 		8874B24E2BB483E300265AD3 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8874B24D2BB483E300265AD3 /* CameraViewController.swift */; };
-		8874B2502BB4932C00265AD3 /* azul.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8874B24F2BB4932C00265AD3 /* azul.jpeg */; };
 		8874B2542BB4948000265AD3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8874B2532BB4948000265AD3 /* MenuViewController.swift */; };
 		8874B2562BB4B7F700265AD3 /* GraficaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8874B2552BB4B7F700265AD3 /* GraficaViewController.swift */; };
 		C78F27094FA1941AEC3DCD36 /* Pods_MyLittleAssistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0447BA9C616E118BB769583 /* Pods_MyLittleAssistant.framework */; };
@@ -96,7 +95,6 @@
 		6CA299AFF6B685D3D092BB64 /* Pods-MyLittleAssistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyLittleAssistant.release.xcconfig"; path = "Target Support Files/Pods-MyLittleAssistant/Pods-MyLittleAssistant.release.xcconfig"; sourceTree = "<group>"; };
 		77907D984B70D800883B99E2 /* Pods-MyLittleAssistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyLittleAssistant.debug.xcconfig"; path = "Target Support Files/Pods-MyLittleAssistant/Pods-MyLittleAssistant.debug.xcconfig"; sourceTree = "<group>"; };
 		8874B24D2BB483E300265AD3 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		8874B24F2BB4932C00265AD3 /* azul.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = azul.jpeg; sourceTree = "<group>"; };
 		8874B2532BB4948000265AD3 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		8874B2552BB4B7F700265AD3 /* GraficaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficaViewController.swift; sourceTree = "<group>"; };
 		B0447BA9C616E118BB769583 /* Pods_MyLittleAssistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyLittleAssistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,7 +201,6 @@
 		8846D0472BB1FF1F0061E209 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				8874B24F2BB4932C00265AD3 /* azul.jpeg */,
 				0FDAD8342BB2427D00EE8A0F /* carrito-removebg-preview.png */,
 				0FDAD8362BB2427D00EE8A0F /* carrito.jpeg */,
 				0FDAD8392BB2427E00EE8A0F /* carritouuu.png */,
@@ -298,7 +295,6 @@
 				0F44F3002B923EBA00AB80E6 /* icons8-luz-50.png in Resources */,
 				0F44F3052B923EBA00AB80E6 /* icons8-izquierda-50.png in Resources */,
 				0F44F30B2B923EBA00AB80E6 /* icons8-derecha-50.png in Resources */,
-				8874B2502BB4932C00265AD3 /* azul.jpeg in Resources */,
 				0F44F2FB2B923EBA00AB80E6 /* icons8-arriba-50.png in Resources */,
 				0F44F30C2B923EBA00AB80E6 /* icons8-me-gusta-50.png in Resources */,
 				0FDAD83E2BB2427E00EE8A0F /* WhatsApp Image 2024-02-29 at 16.57.31 (1).jpeg in Resources */,
