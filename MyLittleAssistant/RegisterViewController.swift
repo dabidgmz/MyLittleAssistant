@@ -35,6 +35,11 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var Errores_lbl: UILabel!
     
     
+    
+    
+    
+    
+    
     let userData = UserData.sharedData()
     var hasErrors = true
     var maxLenghts = [UITextField: Int]()
@@ -73,12 +78,9 @@ class RegisterViewController: UIViewController {
         Email_Txt.layer.shadowOffset = CGSize(width: 0, height: 2)
         Email_Txt.layer.shadowOpacity = 0.5
         Email_Txt.layer.shadowRadius = 2
-                
-        
         maxLenghts[Name_Txt] = 40
         maxLenghts[Password_Txt] = 20
         maxLenghts[Confirm_Password_Txt] = 20
-        
         let gradientLayer = CAGradientLayer()
              gradientLayer.frame = view.bounds
              gradientLayer.colors = [
@@ -90,24 +92,28 @@ class RegisterViewController: UIViewController {
                gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
                
                view.layer.insertSublayer(gradientLayer, at: 0)
+    
         
     }
     
+    
     func register() {
+        let url = URL(string: "http://backend.mylittleasistant.online:8000/api/user/register")!
+        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 50)
+        request.httpMethod = "POST"
+        
         let name = Name_Txt.text!
         let email = Email_Txt.text!
         let password = Password_Txt.text!
-        let Confirm_Password = Confirm_Password_Txt.text!
-        let url = URL(string: "https://")!
-        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
-        request.httpMethod = "POST"
-        
+        let password_confirmation = Confirm_Password_Txt.text!
+          
         let requestBody: [String: Any] = [
             "name": name,
             "email": email,
             "password": password,
-            "Confirm_Password": Confirm_Password
+            "password_confirmation" : password_confirmation
         ]
+        
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: requestBody, options: [])
             request.httpBody = jsonData
@@ -116,46 +122,55 @@ class RegisterViewController: UIViewController {
             print("Error al convertir el cuerpo del request a JSON: \(error)")
             return
         }
+          
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 print("Error en el request: \(error)")
-                  
+                self.hasErrors = true
                 return
             }
-            guard let data = data else {
-                print("No se recibió data en la respuesta")
+              
+            guard let httpResponse = response as? HTTPURLResponse else {
+                print("No se recibió una respuesta HTTP válida")
+                
+                self.hasErrors = true
                 return
             }
-            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 201 {
+            
+            let statusCode = httpResponse.statusCode
+            print("Código de estado HTTP recibido: \(statusCode)")
+            
+            if let data = data {
                 do {
                     let responseJSON = try JSONSerialization.jsonObject(with: data, options: [])
-                    print("Respuesta: \(responseJSON)")
-                    
-                    if let jsonDict = responseJSON as? [String: Any], let signedRoute = jsonDict["url"] as? String {
-                        DispatchQueue.main.async {
-                            self.hasErrors = false
-                            self.userData.name = name
-                            self.userData.email = email
-                            self.userData.password = password
-                            self.performSegue(withIdentifier: "sgRegister", sender: self)
-                        }
-                    }
+                    print("Respuesta JSON: \(responseJSON)")
                 } catch {
                     print("Error al convertir la respuesta a JSON: \(error)")
                 }
             } else {
-                DispatchQueue.main.async {
-                    let error = UIAlertController(title: "Error", message: "El correo electrónico ya está en uso", preferredStyle: .alert)
-                    let ok = UIAlertAction(title: "Aceptar", style: .default)
-                    error.addAction(ok)
-                    self.present(error, animated: true)
+                print("No se recibió data en la respuesta")
+            }
+            
+            if statusCode == 201 {
+                if let data = data,
+                   let jsonDict = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                   let signedRoute = jsonDict["url"] as? String {
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "sgRegister", sender: self)
+                        self.hasErrors = false
+                        self.userData.name = name
+                        self.userData.email = email
+                        self.userData.signedRoute = signedRoute
+                    }
                 }
+            } else {
+                print("Error en la solicitud: Código de estado HTTP \(statusCode)")
+                self.hasErrors = true
             }
         }
         
         task.resume()
-
-      }
+    }
 
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -169,6 +184,7 @@ class RegisterViewController: UIViewController {
             
         return false
     }
+
     
     func validateAndRegister() {
         guard let name = Name_Txt.text, let email = Email_Txt.text, let password = Password_Txt.text, let confirmPassword = Confirm_Password_Txt.text else {
@@ -195,7 +211,6 @@ class RegisterViewController: UIViewController {
             showError(message: confirmPasswordError)
             return
         }
-
         register()
     }
 

@@ -93,7 +93,7 @@ class ViewController: UIViewController {
       }
       
     func login() {
-        let url = URL(string: "https://")!
+        let url = URL(string: "http://backend.mylittleasistant.online:8000/api/user/login")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
         
