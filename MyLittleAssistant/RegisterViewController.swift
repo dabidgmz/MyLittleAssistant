@@ -37,6 +37,8 @@ class RegisterViewController: UIViewController {
     
     
     
+  
+    
     let userData = UserData.sharedData()
     var hasErrors = true
     var maxLenghts = [UITextField: Int]()
@@ -87,7 +89,7 @@ class RegisterViewController: UIViewController {
                 gradientLayer.locations = [0.1, 0.2]
                 gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
                gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
-               
+           
                view.layer.insertSublayer(gradientLayer, at: 0)
     
         
@@ -149,17 +151,18 @@ class RegisterViewController: UIViewController {
             }
             
             if statusCode == 201 {
-                if let data = data,
-                   let jsonDict = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-                   let signedRoute = jsonDict["url"] as? String {
-                    DispatchQueue.main.async {
+                self.showSuccess(message: "Registrado correctamente")
+                DispatchQueue.main.async {
                         self.performSegue(withIdentifier: "sgRegister", sender: self)
-                        self.hasErrors = false
-                        self.userData.name = name
-                        self.userData.email = email
-                        self.userData.signedRoute = signedRoute
+                        if let data = data,
+                           let jsonDict = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                           let signedRoute = jsonDict["url"] as? String {
+                            self.hasErrors = false
+                            self.userData.name = name
+                            self.userData.email = email
+                            self.userData.signedRoute = signedRoute
+                        }
                     }
-                }
             } else {
                 print("Error en la solicitud: Código de estado HTTP \(statusCode)")
                 self.hasErrors = true
@@ -268,5 +271,16 @@ class RegisterViewController: UIViewController {
             }
         }
     }
+    func showSuccess(message: String) {
+        DispatchQueue.main.async {
+            self.Errores_lbl.isHidden = false
+            self.Errores_lbl.textColor = .green
+            self.Errores_lbl.text = message
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                self.Errores_lbl.isHidden = true
+            }
+        }
+    }
+
     
 }
