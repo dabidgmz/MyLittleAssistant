@@ -916,6 +916,9 @@
                                 <buttonConfiguration key="configuration" style="plain" image="pencil" catalog="system" title="Edit profile">
                                     <color key="baseForegroundColor" red="0.078431372550000003" green="0.27058823529999998" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="EdD-Zs-aaR" kind="presentation" modalPresentationStyle="fullScreen" id="gGY-1T-2oy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LSy-Tz-Ubu"/>
