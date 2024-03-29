@@ -65,47 +65,47 @@ class UserViewController: UIViewController {
     }
     
     func getUser() {
-          guard let url = URL(string: "https://getuser") else {
-              print("URL inválida")
-              return
-          }
-          var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
-          request.httpMethod = "GET"
-          if let token = userData.jwt {
-              request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-              request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-          } else {
-              print("No se encontró token de autenticación")
-              return
-          }
-          let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-              if let error = error {
-                  print("Error en el request: \(error)")
-                  return
-              }
-              guard let data = data else {
-                  print("No se recibió data en la respuesta")
-                  return
-              }
-              do {
-                  let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-
-                  if let userData = json?["data"] as? [String: Any],
-                     let name = userData["name"] as? String,
-                     let email = userData["email"] as? String {
-                      DispatchQueue.main.async {
-                          self.name_txt.text = name
-                          self.email_txt.text = email
-                      }
-                  } else {
-                      print("No se pudo obtener la información del usuario desde la respuesta")
-                  }
-              } catch {
-                  print("Error al convertir la respuesta a JSON: \(error)")
-              }
-          }
-
-          task.resume()
-      }
+        let url = URL(string: "https://securebot.ninja/api/v1/user")!
+        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
+        request.httpMethod = "GET"
+        
+        let token = userData.jwt
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print("Error en el request: \(error)")
+                return
+            }
+            
+            guard let data = data else {
+                print("No se recibió data en la respuesta")
+                return
+            }
+            
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+                do {
+                    let responseJSON = try JSONSerialization.jsonObject(with: data, options: [])
+                    print("Respuesta: \(responseJSON)")
+                    
+                    if let jsonDict = responseJSON as? [String: Any],
+                       let dataDict = jsonDict["data"] as? [String: Any],
+                       let name = dataDict["name"] as? String, let email = dataDict["email"] as? String {
+                        DispatchQueue.main.async {
+                            self.name_txt.text = name
+                            self.email_txt.text = email
+                            self.userName = name
+                            self.emailUser = email
+                        }
+                    }
+                } catch {
+                    print("Error al convertir la respuesta a JSON: \(error)")
+                }
+            }
+        }
+        
+        task.resume()
+    }
     
 }

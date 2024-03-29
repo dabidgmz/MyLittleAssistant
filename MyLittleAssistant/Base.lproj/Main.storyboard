@@ -129,6 +129,7 @@
                         <outlet property="Email_TxT" destination="UBk-9M-WdD" id="8aK-hx-0f9"/>
                         <outlet property="Errores_lbl" destination="DdV-I0-UZE" id="gv8-6q-8CL"/>
                         <outlet property="Password_txt" destination="UO0-cp-mH6" id="Hba-3P-Agk"/>
+                        <segue destination="xrA-Zo-p3X" kind="presentation" identifier="sgLogin" modalPresentationStyle="fullScreen" id="c4I-vQ-BVl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -504,7 +505,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qpT-J2-EiK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3977" y="-201"/>
+            <point key="canvasLocation" x="2115" y="-612"/>
         </scene>
         <!--Ssp View Controller-->
         <scene sceneID="hJN-Ef-eX7">
@@ -526,7 +527,6 @@
                         <outlet property="Logo" destination="n4o-Cz-ekZ" id="zUT-dH-whr"/>
                         <outlet property="logo" destination="n4o-Cz-ekZ" id="72o-PI-VOk"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="sgSplash" modalPresentationStyle="fullScreen" id="9Y2-ZX-7oJ"/>
-                        <segue destination="5Sk-Vx-GwR" kind="presentation" identifier="sgLogin" modalPresentationStyle="fullScreen" id="7ni-hn-Jp2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqO-Cj-KYH" sceneMemberID="firstResponder"/>
@@ -948,7 +948,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7ni-hn-Jp2"/>
         <segue reference="9Y2-ZX-7oJ"/>
     </inferredMetricsTieBreakers>
     <resources>

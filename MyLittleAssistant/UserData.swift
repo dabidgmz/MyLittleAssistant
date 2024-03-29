@@ -12,7 +12,7 @@ class UserData: NSObject {
     var name: String
     var email: String
     var password: String
-    var jwt: String?
+    var jwt: String
     var signedRoute: String
     static var userData: UserData!
     
@@ -21,7 +21,7 @@ class UserData: NSObject {
         name = ""
         email = ""
         password = ""
-        jwt = nil
+        jwt = ""
         signedRoute = ""
     }
     static func sharedData()->UserData {

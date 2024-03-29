@@ -94,7 +94,7 @@ class ViewController: UIViewController {
       
     func login() {
         let url = URL(string: "http://backend.mylittleasistant.online:8000/api/user/login")!
-        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
+        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 50)
         request.httpMethod = "POST"
         
         let email = Email_TxT.text!
@@ -125,34 +125,31 @@ class ViewController: UIViewController {
                 return
             }
             
-            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+            if let httpResponse = response as? HTTPURLResponse {
+                print("Código de estado HTTP recibido: \(httpResponse.statusCode)")
+                
                 do {
                     let responseJSON = try JSONSerialization.jsonObject(with: data, options: [])
-                    print("Respuesta: \(responseJSON)")
+                    print("Respuesta JSON: \(responseJSON)")
                     
-                    if let jsonDict = responseJSON as? [String: Any],
-                       let token = jsonDict["token"] as? String {
-                        DispatchQueue.main.async {
-                            self.hasErrors = false
-                            self.userData.jwt = token
-                            self.performSegue(withIdentifier: "sgLogin", sender: self)
+                    if httpResponse.statusCode == 200 {
+                        if let jsonDict = responseJSON as? [String: Any],
+                           let token = jsonDict["jwt"] as? String {
+                            DispatchQueue.main.async {
+                                self.hasErrors = false
+                                self.userData.jwt = token
+                                self.performSegue(withIdentifier: "sgLogin", sender: self)
+                            }
                         }
-                    }
-                } catch {
-                    print("Error al convertir la respuesta a JSON: \(error)")
-                }
-            } else {
-                do {
-                    let responseJSON = try JSONSerialization.jsonObject(with: data, options: [])
-                    print("Respuesta: \(responseJSON)")
-                    
-                    if let jsonDict = responseJSON as? [String: Any],
-                       let message = jsonDict["message"] as? String {
-                        DispatchQueue.main.async {
-                            let error = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-                            let ok = UIAlertAction(title: "Aceptar", style: .default)
-                            error.addAction(ok)
-                            self.present(error, animated: true)
+                    } else {
+                        if let jsonDict = responseJSON as? [String: Any],
+                           let message = jsonDict["message"] as? String {
+                            DispatchQueue.main.async {
+                                let error = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+                                let ok = UIAlertAction(title: "Aceptar", style: .default)
+                                error.addAction(ok)
+                                self.present(error, animated: true)
+                            }
                         }
                     }
                 } catch {
@@ -163,7 +160,6 @@ class ViewController: UIViewController {
         
         task.resume()
     }
-    
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "sgLogin" {
