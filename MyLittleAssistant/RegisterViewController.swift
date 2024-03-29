@@ -26,17 +26,14 @@ class RegisterViewController: UIViewController {
     
     
     
-    @IBAction func Register_btn(_ sender: Any) {
-        validateAndRegister()
+    @IBAction func Register(_ sender: Any) {
+        register()
     }
     
     
     
+    
     @IBOutlet weak var Errores_lbl: UILabel!
-    
-    
-    
-    
     
     
     
