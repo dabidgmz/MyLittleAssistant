@@ -250,6 +250,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Login">
                                     <color key="baseForegroundColor" red="0.078431372550000003" green="0.27058823529999998" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="G0e-9c-bPh"/>
+                                </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWw-Xo-fff">
                                 <rect key="frame" x="21" y="648" width="351" height="21"/>
@@ -599,6 +602,9 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="IX3-8k-IsY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mKl-ml-3tX"/>
@@ -614,7 +620,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vgB-SV-myR" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="824" y="238"/>
+            <point key="canvasLocation" x="802" y="227"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="0up-0b-o7d">
@@ -832,14 +838,14 @@
                             <view alpha="0.75" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8fE-iP-2cy">
                                 <rect key="frame" x="20" y="172" width="388" height="489"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="Por favor, introduce el código de verificación que fue enviado al teléfono que proporcionaste." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Aq2-li-ihc">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="Por favor, introduce el código de verificación que fue enviado a tu correo personal que proporcionaste." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Aq2-li-ihc">
                                         <rect key="frame" x="62" y="96" width="264" height="73.333333333333314"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="73.329999999999998" id="9dS-Vv-h2Q"/>
                                             <constraint firstAttribute="width" constant="263.67000000000002" id="rRh-sc-kEm"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="ubF-rN-mWl">
