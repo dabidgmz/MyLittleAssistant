@@ -1118,6 +1118,36 @@
             </objects>
             <point key="canvasLocation" x="-1237" y="1975"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="r1W-9l-oGF">
+            <objects>
+                <viewController id="a4z-Ky-dT7" customClass="ViewController" customModule="MyLittleAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N4S-x3-ZGw">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="pXg-wv-Na5"/>
+                        <color key="backgroundColor" red="0.65490196079999996" green="0.81568627449999997" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z2x-Uz-bvH" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-448" y="1308"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qtC-Ei-SFI">
+            <objects>
+                <viewController id="4dQ-og-exT" customClass="ViewController" customModule="MyLittleAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hb0-L9-xeh">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="YiB-yU-TjW"/>
+                        <color key="backgroundColor" red="0.65490196079999996" green="0.81568627449999997" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7tX-sG-fNQ" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1237" y="1308"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="zZT-Mm-CNt"/>
