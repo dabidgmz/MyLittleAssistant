@@ -28,6 +28,13 @@ class UserViewController: UIViewController {
     
     
     
+    
+    @IBAction func LogOut(_ sender: Any) {
+        logout()
+    }
+    
+    
+    
     let userData = UserData.sharedData()
     var user: User = User(id: 0, name: "", email: "")
     var userName = ""
@@ -103,4 +110,56 @@ class UserViewController: UIViewController {
            
            task.resume()
        }
+    
+    func logout() {
+        let url = URL(string:"http://backend.mylittleasistant.online:8000/api/user/logout")!
+        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
+        request.httpMethod = "GET"
+        
+        let token = userData.jwt
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print("Error en el request: \(error)")
+                return
+            }
+            
+            guard let data = data else {
+                print("No se recibió data en la respuesta")
+                return
+            }
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                print("Código de estado HTTP recibido: \(httpResponse.statusCode)")
+                
+                if httpResponse.statusCode == 200 {
+                    do {
+                        let responseJSON = try JSONSerialization.jsonObject(with: data, options: [])
+                        print("Respuesta del servidor: \(responseJSON)")
+                        
+                        DispatchQueue.main.async {
+                            self.userData.jwt = ""
+                            self.userData.rememberMe = false
+                            self.performSegue(withIdentifier: "sgLogout", sender: self)
+                        }
+                    } catch {
+                        print("Error al convertir la respuesta a JSON: \(error)")
+                    }
+                } else {
+                    print("Error en la solicitud: Código de estado HTTP \(httpResponse.statusCode)")
+                }
+            } else {
+                print("No se recibió una respuesta HTTP válida")
+            }
+            
+            print("El usuario ha abandonado My Little Assistant")
+        }
+        
+        task.resume()
+    }
+
+    
+    
 }

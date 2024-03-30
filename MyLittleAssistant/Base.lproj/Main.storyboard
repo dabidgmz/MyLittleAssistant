@@ -891,6 +891,10 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="LogOut:" destination="Ayf-6I-jjk" eventType="touchUpInside" id="oQO-6m-beG"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="sgLogout" modalPresentationStyle="fullScreen" id="EL0-wJ-ejt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLb-A7-RBq">
                                 <rect key="frame" x="121.66666666666669" y="518" width="150" height="35"/>
@@ -934,7 +938,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oiG-37-3NC" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1314" y="218"/>
+            <point key="canvasLocation" x="1286" y="247"/>
         </scene>
         <!--Tokens-->
         <scene sceneID="BKV-eH-U68">
@@ -1155,7 +1159,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9Y2-ZX-7oJ"/>
+        <segue reference="EL0-wJ-ejt"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="car.side.fill" catalog="system" width="128" height="58"/>

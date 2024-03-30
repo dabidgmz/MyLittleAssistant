@@ -14,6 +14,7 @@ class UserData: NSObject {
     var password: String
     var jwt: String
     var signedRoute: String
+    var rememberMe: Bool
     static var userData: UserData!
     
     override init() {
@@ -23,6 +24,7 @@ class UserData: NSObject {
         password = ""
         jwt = ""
         signedRoute = ""
+        rememberMe = false
     }
     static func sharedData()->UserData {
         if userData == nil {
