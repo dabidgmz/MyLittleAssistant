@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rky-ZJ-Gk2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wVL-2u-87C">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -1240,6 +1240,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DpC-wt-S7S" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2020" y="1308"/>
+        </scene>
+        <!--Scrol Divice View Controller-->
+        <scene sceneID="8K3-CR-RSj">
+            <objects>
+                <viewController id="wVL-2u-87C" customClass="ScrolDiviceViewController" customModule="MyLittleAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fl3-4h-ef0">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Divice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIA-xE-4UY">
+                                <rect key="frame" x="119" y="69" width="155" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="lId-zr-wzT"/>
+                                    <constraint firstAttribute="width" constant="155" id="m4h-GF-sLN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QdO-jj-RzG">
+                                <rect key="frame" x="0.0" y="116" width="393" height="702"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="MFY-8e-G3v"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="39i-5K-JUb"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9jJ-yv-6WL"/>
+                        <constraints>
+                            <constraint firstItem="TIA-xE-4UY" firstAttribute="centerX" secondItem="Fl3-4h-ef0" secondAttribute="centerX" id="nAY-wK-6aO"/>
+                            <constraint firstItem="TIA-xE-4UY" firstAttribute="top" secondItem="9jJ-yv-6WL" secondAttribute="top" constant="10" id="tYN-lj-FZx"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rKc-WZ-ciq" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2373" y="129"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
