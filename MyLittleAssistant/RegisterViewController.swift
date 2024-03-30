@@ -39,6 +39,13 @@ class RegisterViewController: UIViewController {
     
   
     
+   
+    @IBAction func loginButton(_ sender: Any) {
+        performSegue(withIdentifier: "sgLogin", sender: self)
+    }
+    
+    
+    
     let userData = UserData.sharedData()
     var hasErrors = true
     var maxLenghts = [UITextField: Int]()

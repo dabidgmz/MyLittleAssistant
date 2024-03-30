@@ -129,6 +129,7 @@ class EditUserViewController: UIViewController {
             if statusCode == 200 {
                 self.showSuccess(message: "Actualizado correctamente")
                 DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "sgEditUser", sender: self)
                     if let data = data,
                        let jsonDict = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
                        let signedRoute = jsonDict["url"] as? String {
@@ -168,6 +169,17 @@ class EditUserViewController: UIViewController {
                 self.Errors_lbl.isHidden = true
             }
         }
+    }
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "sgEditUser" {
+            if !hasErrors {
+                return true
+            }
+            
+            return false
+        }
+            
+        return false
     }
 
 }

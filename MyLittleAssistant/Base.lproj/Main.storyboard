@@ -251,7 +251,8 @@
                                     <color key="baseForegroundColor" red="0.078431372550000003" green="0.27058823529999998" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="G0e-9c-bPh"/>
+                                    <action selector="loginButton:" destination="lQ1-de-nw6" eventType="touchUpInside" id="ItR-EP-Ihw"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="sgLogin" modalPresentationStyle="fullScreen" id="NYW-fY-Jhg"/>
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWw-Xo-fff">
@@ -725,6 +726,7 @@
                         <outlet property="Email_txt" destination="BUO-a6-Qkr" id="c7P-dY-fCu"/>
                         <outlet property="Errors_lbl" destination="zvi-pl-M3k" id="NtW-HH-nhc"/>
                         <outlet property="Name_txt" destination="92O-8H-KZN" id="GvP-qW-29x"/>
+                        <segue destination="xrA-Zo-p3X" kind="presentation" identifier="sgEditUser" modalPresentationStyle="fullScreen" id="VyG-KO-bKq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UWl-Mc-QQi" sceneMemberID="firstResponder"/>
@@ -1153,7 +1155,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="G0e-9c-bPh"/>
+        <segue reference="NYW-fY-Jhg"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="car.side.fill" catalog="system" width="128" height="58"/>
