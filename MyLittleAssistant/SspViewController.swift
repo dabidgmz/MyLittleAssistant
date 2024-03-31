@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import UserNotifications
 class SspViewController: UIViewController {
 
     @IBOutlet weak var Logo: UIImageView!
@@ -23,6 +23,8 @@ class SspViewController: UIViewController {
                 self.performSegue(withIdentifier: "sgSplash", sender: nil)
             }
         }
+        
+        requestNotificationAuthorization()
     }
     
     func startRotationAnimation() {
@@ -43,4 +45,14 @@ class SspViewController: UIViewController {
         groupAnimation.repeatCount = .infinity
         Logo.layer.add(groupAnimation, forKey: "rotationAndColorAnimation")
     }
+    func requestNotificationAuthorization() {
+           let center = UNUserNotificationCenter.current()
+           center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+               if granted {
+                   print("Permiso concedido para mostrar notificaciones")
+               } else {
+                   print("Permiso denegado para mostrar notificaciones")
+               }
+           }
+       }
 }

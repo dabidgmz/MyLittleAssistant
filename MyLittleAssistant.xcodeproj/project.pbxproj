@@ -40,6 +40,12 @@
 		0F5F1FA52BB3DF930009F8F9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F1FA42BB3DF930009F8F9 /* User.swift */; };
 		0F5F1FA72BB3E04C0009F8F9 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F1FA62BB3E04C0009F8F9 /* UserData.swift */; };
 		0F7763BF2BB7DB8C00DD6CA3 /* LinkDiviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7763BE2BB7DB8C00DD6CA3 /* LinkDiviceViewController.swift */; };
+		0F77FB842BBA14B40006F2E7 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F77FB822BBA14B40006F2E7 /* UserNotificationsUI.framework */; };
+		0F77FB852BBA14B40006F2E7 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F77FB832BBA14B40006F2E7 /* UserNotifications.framework */; };
+		0F77FB872BBA14BC0006F2E7 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F77FB862BBA14BC0006F2E7 /* WebKit.framework */; };
+		0F77FB8B2BBA14C70006F2E7 /* AVFAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F77FB882BBA14C70006F2E7 /* AVFAudio.framework */; };
+		0F77FB8C2BBA14C70006F2E7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F77FB892BBA14C70006F2E7 /* AVFoundation.framework */; };
+		0F77FB8D2BBA14C70006F2E7 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F77FB8A2BBA14C70006F2E7 /* AVKit.framework */; };
 		0F97CE602BAFC0100081D4CE /* nstruccionesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CE5F2BAFC0100081D4CE /* nstruccionesViewController.swift */; };
 		0FDAD83A2BB2427E00EE8A0F /* carrito-removebg-preview.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FDAD8342BB2427D00EE8A0F /* carrito-removebg-preview.png */; };
 		0FDAD83B2BB2427E00EE8A0F /* fondoazul.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0FDAD8352BB2427D00EE8A0F /* fondoazul.jpeg */; };
@@ -90,6 +96,12 @@
 		0F5F1FA42BB3DF930009F8F9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0F5F1FA62BB3E04C0009F8F9 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		0F7763BE2BB7DB8C00DD6CA3 /* LinkDiviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkDiviceViewController.swift; sourceTree = "<group>"; };
+		0F77FB822BBA14B40006F2E7 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		0F77FB832BBA14B40006F2E7 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		0F77FB862BBA14BC0006F2E7 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		0F77FB882BBA14C70006F2E7 /* AVFAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFAudio.framework; path = System/Library/Frameworks/AVFAudio.framework; sourceTree = SDKROOT; };
+		0F77FB892BBA14C70006F2E7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0F77FB8A2BBA14C70006F2E7 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		0F97CE5F2BAFC0100081D4CE /* nstruccionesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nstruccionesViewController.swift; sourceTree = "<group>"; };
 		0FDAD8342BB2427D00EE8A0F /* carrito-removebg-preview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "carrito-removebg-preview.png"; sourceTree = "<group>"; };
 		0FDAD8352BB2427D00EE8A0F /* fondoazul.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fondoazul.jpeg; sourceTree = "<group>"; };
@@ -111,6 +123,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F77FB8B2BBA14C70006F2E7 /* AVFAudio.framework in Frameworks */,
+				0F77FB8C2BBA14C70006F2E7 /* AVFoundation.framework in Frameworks */,
+				0F77FB8D2BBA14C70006F2E7 /* AVKit.framework in Frameworks */,
+				0F77FB872BBA14BC0006F2E7 /* WebKit.framework in Frameworks */,
+				0F77FB842BBA14B40006F2E7 /* UserNotificationsUI.framework in Frameworks */,
+				0F77FB852BBA14B40006F2E7 /* UserNotifications.framework in Frameworks */,
 				C78F27094FA1941AEC3DCD36 /* Pods_MyLittleAssistant.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,6 +220,12 @@
 		548A09250825D61972E64190 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0F77FB882BBA14C70006F2E7 /* AVFAudio.framework */,
+				0F77FB892BBA14C70006F2E7 /* AVFoundation.framework */,
+				0F77FB8A2BBA14C70006F2E7 /* AVKit.framework */,
+				0F77FB862BBA14BC0006F2E7 /* WebKit.framework */,
+				0F77FB832BBA14B40006F2E7 /* UserNotifications.framework */,
+				0F77FB822BBA14B40006F2E7 /* UserNotificationsUI.framework */,
 				B0447BA9C616E118BB769583 /* Pods_MyLittleAssistant.framework */,
 			);
 			name = Frameworks;
