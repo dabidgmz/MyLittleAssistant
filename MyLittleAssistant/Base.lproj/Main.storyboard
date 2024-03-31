@@ -129,7 +129,7 @@
                         <outlet property="Email_TxT" destination="UBk-9M-WdD" id="8aK-hx-0f9"/>
                         <outlet property="Errores_lbl" destination="DdV-I0-UZE" id="gv8-6q-8CL"/>
                         <outlet property="Password_txt" destination="UO0-cp-mH6" id="Hba-3P-Agk"/>
-                        <segue destination="qza-r6-qc1" kind="presentation" identifier="sgLogin" modalPresentationStyle="fullScreen" id="pXz-u6-IEA"/>
+                        <segue destination="qza-r6-qc1" kind="presentation" identifier="sgLogin" modalPresentationStyle="fullScreen" id="pmM-Nk-VkZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1279,7 +1279,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9Y2-ZX-7oJ"/>
+        <segue reference="zZT-Mm-CNt"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="car.side.fill" catalog="system" width="128" height="58"/>

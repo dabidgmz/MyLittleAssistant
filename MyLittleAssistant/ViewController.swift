@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
 
     @IBOutlet weak var Errores_lbl: UILabel!
     
@@ -52,6 +52,7 @@ class ViewController: UIViewController {
                view.layer.insertSublayer(gradientLayer, at: 0)
         
         maxLenghts[Password_txt] = 20
+        
         
     }
             
@@ -133,12 +134,16 @@ class ViewController: UIViewController {
                     print("Respuesta JSON: \(responseJSON)")
                     
                     if httpResponse.statusCode == 200 {
+                        DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "sgLogin", sender: self)
                         if let jsonDict = responseJSON as? [String: Any],
-                           let token = jsonDict["jwt"] as? String {
-                            DispatchQueue.main.async {
-                                self.hasErrors = false
-                                self.userData.jwt = token
-                                self.performSegue(withIdentifier: "sgLogin", sender: self)
+                           let token = jsonDict["jwt"] as? String,
+                           let id = jsonDict["id"] as? Int,
+                           let role = jsonDict["role"] as? String{
+                            self.hasErrors = false
+                            self.userData.jwt = token
+                            self.userData.id = id
+                            self.userData.role = role
                             }
                         }
                     } else {
