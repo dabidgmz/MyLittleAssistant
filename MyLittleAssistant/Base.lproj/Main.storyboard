@@ -1064,7 +1064,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Button"/>
                                 <connections>
-                                    <segue destination="4dQ-og-exT" kind="presentation" modalPresentationStyle="fullScreen" id="UMb-o2-eQT"/>
+                                    <segue destination="wVL-2u-87C" kind="presentation" modalPresentationStyle="fullScreen" id="cJS-Ii-TBg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1249,7 +1249,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Divice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIA-xE-4UY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My divice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIA-xE-4UY">
                                 <rect key="frame" x="119" y="69" width="155" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="lId-zr-wzT"/>
@@ -1260,22 +1260,42 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QdO-jj-RzG">
-                                <rect key="frame" x="0.0" y="116" width="393" height="702"/>
+                                <rect key="frame" x="0.0" y="215" width="393" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="MFY-8e-G3v"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="39i-5K-JUb"/>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEc-pT-iRH">
+                                <rect key="frame" x="37.666666666666657" y="118" width="318" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="3Uz-WG-qQo"/>
+                                    <constraint firstAttribute="width" constant="318" id="55j-Jk-deP"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" image="plus" catalog="system" title="Add new device">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="4dQ-og-exT" kind="presentation" modalPresentationStyle="fullScreen" id="ArX-bd-Q8l"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9jJ-yv-6WL"/>
                         <constraints>
+                            <constraint firstItem="mEc-pT-iRH" firstAttribute="centerX" secondItem="Fl3-4h-ef0" secondAttribute="centerX" id="27y-s3-p5n"/>
+                            <constraint firstItem="mEc-pT-iRH" firstAttribute="top" secondItem="TIA-xE-4UY" secondAttribute="bottom" constant="20" id="MWm-pH-XCV"/>
                             <constraint firstItem="TIA-xE-4UY" firstAttribute="centerX" secondItem="Fl3-4h-ef0" secondAttribute="centerX" id="nAY-wK-6aO"/>
                             <constraint firstItem="TIA-xE-4UY" firstAttribute="top" secondItem="9jJ-yv-6WL" secondAttribute="top" constant="10" id="tYN-lj-FZx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scrDivice" destination="QdO-jj-RzG" id="Oxn-8h-Aue"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rKc-WZ-ciq" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2373" y="129"/>
+            <point key="canvasLocation" x="47" y="954"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

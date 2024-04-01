@@ -134,16 +134,12 @@ class ViewController: UIViewController{
                     print("Respuesta JSON: \(responseJSON)")
                     
                     if httpResponse.statusCode == 200 {
-                        DispatchQueue.main.async {
-                        self.performSegue(withIdentifier: "sgLogin", sender: self)
                         if let jsonDict = responseJSON as? [String: Any],
-                           let token = jsonDict["jwt"] as? String,
-                           let id = jsonDict["id"] as? Int,
-                           let role = jsonDict["role"] as? String{
-                            self.hasErrors = false
-                            self.userData.jwt = token
-                            self.userData.id = id
-                            self.userData.role = role
+                           let token = jsonDict["jwt"] as? String {
+                            DispatchQueue.main.async {
+                                self.hasErrors = false
+                                self.userData.jwt = token
+                                self.performSegue(withIdentifier: "sgLogin", sender: self)
                             }
                         }
                     } else {
@@ -165,7 +161,7 @@ class ViewController: UIViewController{
         
         task.resume()
     }
-    
+
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "sgLogin" {
             if !hasErrors {

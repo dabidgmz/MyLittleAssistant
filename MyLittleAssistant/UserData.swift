@@ -13,7 +13,6 @@ class UserData: NSObject {
     var email: String
     var password: String
     var jwt: String
-    var role: String
     var signedRoute: String
     var rememberMe: Bool
     static var userData: UserData!
@@ -24,7 +23,6 @@ class UserData: NSObject {
         email = ""
         password = ""
         jwt = ""
-        role = ""
         signedRoute = ""
         rememberMe = false
     }
