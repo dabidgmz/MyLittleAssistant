@@ -6,8 +6,8 @@
 //
 
 import UIKit
-
-class RegisterViewController: UIViewController {
+import UserNotifications
+class RegisterViewController: UIViewController, UNUserNotificationCenterDelegate {
 
     @IBOutlet weak var Email_Txt: UITextField!
    
@@ -27,7 +27,7 @@ class RegisterViewController: UIViewController {
     
     
     @IBAction func Register(_ sender: Any) {
-        register()
+        validateAndRegister()
     }
     
     
@@ -98,7 +98,14 @@ class RegisterViewController: UIViewController {
                gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
            
                view.layer.insertSublayer(gradientLayer, at: 0)
-    
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            if granted {
+                print("Permiso concedido para mostrar notificaciones")
+            } else {
+                print("Permiso denegado para mostrar notificaciones")
+            }
+        }
         
     }
     
@@ -146,30 +153,38 @@ class RegisterViewController: UIViewController {
             let statusCode = httpResponse.statusCode
             print("Código de estado HTTP recibido: \(statusCode)")
             
-            if let data = data {
-                do {
-                    let responseJSON = try JSONSerialization.jsonObject(with: data, options: [])
-                    print("Respuesta JSON: \(responseJSON)")
-                } catch {
-                    print("Error al convertir la respuesta a JSON: \(error)")
-                }
-            } else {
-                print("No se recibió data en la respuesta")
-            }
-            
             if statusCode == 201 {
                 self.showSuccess(message: "Registrado correctamente")
                 DispatchQueue.main.async {
-                        self.performSegue(withIdentifier: "sgRegister", sender: self)
-                        if let data = data,
-                           let jsonDict = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-                           let signedRoute = jsonDict["url"] as? String {
-                            self.hasErrors = false
-                            self.userData.name = name
-                            self.userData.email = email
-                            self.userData.signedRoute = signedRoute
-                        }
+                    self.showWelcomeNotification()
+                    self.performSegue(withIdentifier: "sgRegister", sender: self)
+                    if let data = data,
+                       let jsonDict = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                       let signedRoute = jsonDict["url"] as? String {
+                        self.hasErrors = false
+                        self.userData.name = name
+                        self.userData.email = email
+                        self.userData.signedRoute = signedRoute
                     }
+                }
+            } else if statusCode == 400 {
+                if let data = data {
+                    do {
+                        let errorJSON = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                        if let errors = errorJSON?["errors"] as? [String: Any],
+                           let emailErrors = errors["email"] as? [String],
+                           let errorMessage = emailErrors.first {
+                            if errorMessage.contains("taken") {
+                                self.showError(message: "El correo electrónico ya ha sido tomado.")
+                                return
+                            }
+                        }
+                    } catch {
+                        print("Error al procesar el JSON de error: \(error)")
+                    }
+                }
+                self.showError(message: "Error en el registro: \(statusCode)")
+                self.hasErrors = true
             } else {
                 print("Error en la solicitud: Código de estado HTTP \(statusCode)")
                 self.hasErrors = true
@@ -178,6 +193,7 @@ class RegisterViewController: UIViewController {
         
         task.resume()
     }
+
 
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -192,9 +208,12 @@ class RegisterViewController: UIViewController {
         return false
     }
 
-    
+
     func validateAndRegister() {
-        guard let name = Name_Txt.text, let email = Email_Txt.text, let password = Password_Txt.text, let confirmPassword = Confirm_Password_Txt.text else {
+        guard let name = Name_Txt.text, !name.isEmpty,
+              let email = Email_Txt.text, !email.isEmpty,
+              let password = Password_Txt.text, !password.isEmpty,
+              let confirmPassword = Confirm_Password_Txt.text, !confirmPassword.isEmpty else {
             showError(message: "Por favor, completa todos los campos.")
             return
         }
@@ -222,21 +241,15 @@ class RegisterViewController: UIViewController {
     }
 
     func validateEmail(_ email: String) -> String? {
-            if email.isEmpty {
-                return "El correo electrónico es obligatorio."
-            }
-            let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-            let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
-            if !emailPredicate.evaluate(with: email) {
-                return "Formato de correo electrónico inválido."
-            }
-            return nil
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
+        if !emailPredicate.evaluate(with: email) {
+            return "Formato de correo electrónico inválido."
         }
+        return nil
+    }
 
     func validatePassword(_ password: String) -> String? {
-        if password.isEmpty {
-            return "La contraseña es obligatoria."
-        }
         if password.count < 5 {
             return "La contraseña debe tener al menos 5 caracteres."
         }
@@ -248,27 +261,25 @@ class RegisterViewController: UIViewController {
         return nil
     }
 
-        func validateConfirmPassword(_ password: String, _ confirmPassword: String) -> String? {
-            if password != confirmPassword {
-                return "Las contraseñas no coinciden."
-            }
-            return nil
+    func validateConfirmPassword(_ password: String, _ confirmPassword: String) -> String? {
+        if password != confirmPassword {
+            return "Las contraseñas no coinciden."
         }
+        return nil
+    }
 
-        func validateName(_ name: String) -> String? {
-            if name.isEmpty {
-                return "El nombre es obligatorio."
-            }
-            if name.count < 3 {
-                return "El nombre debe tener al menos 3 caracteres."
-            }
-            if name.count > 40 {
-                return "El nombre debe tener como máximo 40 caracteres."
-            }
-            return nil
+    func validateName(_ name: String) -> String? {
+        if name.count < 3 {
+            return "El nombre debe tener al menos 3 caracteres."
         }
+        if name.count > 40 {
+            return "El nombre debe tener como máximo 40 caracteres."
+        }
+        return nil
+    }
 
-    func showError(message: String) {
+    
+func showError(message: String) {
         DispatchQueue.main.async {
             self.Errores_lbl.isHidden = false
             self.Errores_lbl.textColor = .red
@@ -277,8 +288,8 @@ class RegisterViewController: UIViewController {
                 self.Errores_lbl.isHidden = true
             }
         }
-    }
-    func showSuccess(message: String) {
+}
+func showSuccess(message: String) {
         DispatchQueue.main.async {
             self.Errores_lbl.isHidden = false
             self.Errores_lbl.textColor = .green
@@ -287,7 +298,27 @@ class RegisterViewController: UIViewController {
                 self.Errores_lbl.isHidden = true
             }
         }
+}
+    func showWelcomeNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "¡Bienvenido a My Little Assistant!"
+        content.body = "¡Te has registrado con éxito! Favor de verificar tu bandeja de correo."
+        content.sound = UNNotificationSound.default
+        content.badge = 1
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let request = UNNotificationRequest(identifier: "welcomeNotification", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if let error = error {
+                print("Error al agregar la solicitud de notificación de bienvenida: \(error.localizedDescription)")
+            }
+        }
     }
 
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .badge, .sound])
+    }
     
 }

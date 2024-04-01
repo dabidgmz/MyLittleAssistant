@@ -6,8 +6,8 @@
 //
 
 import UIKit
-
-class ViewController: UIViewController{
+import UserNotifications
+class ViewController: UIViewController, UNUserNotificationCenterDelegate{
 
     @IBOutlet weak var Errores_lbl: UILabel!
     
@@ -52,7 +52,14 @@ class ViewController: UIViewController{
                view.layer.insertSublayer(gradientLayer, at: 0)
         
         maxLenghts[Password_txt] = 20
-        
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            if granted {
+                print("Permiso concedido para mostrar notificaciones")
+            } else {
+                print("Permiso denegado para mostrar notificaciones")
+            }
+        }
         
     }
             
@@ -140,7 +147,16 @@ class ViewController: UIViewController{
                                 self.hasErrors = false
                                 self.userData.jwt = token
                                 self.performSegue(withIdentifier: "sgLogin", sender: self)
+                                self.showWelcomeNotification()
                             }
+                        }
+                    } else if httpResponse.statusCode == 404 {
+                        DispatchQueue.main.async {
+                            self.showError(message: "Usuario no encontrado")
+                        }
+                    } else if httpResponse.statusCode == 401 {
+                        DispatchQueue.main.async {
+                            self.showError(message: "Contraseña incorrecta")
                         }
                     } else {
                         if let jsonDict = responseJSON as? [String: Any],
@@ -194,6 +210,27 @@ class ViewController: UIViewController{
         let newString: NSString = currentString.replacingCharacters(in: range, with: string) as NSString
     
         return newString.length <= maxLenght
+    }
+    
+    func showWelcomeNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "¡Bienvenido a My Little Assistant!"
+        content.body = "¡Gracias por iniciar sesión!"
+        content.sound = UNNotificationSound.default
+        content.badge = 1
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let request = UNNotificationRequest(identifier: "welcomeNotification", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if let error = error {
+                print("Error al agregar la solicitud de notificación de bienvenida: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .badge, .sound])
     }
 }
 
