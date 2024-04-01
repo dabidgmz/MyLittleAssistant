@@ -49,16 +49,16 @@ class LinkDiviceViewController: UIViewController {
     }
     
     func VincularDivice() {
+        guard let device_code = Code_txt.text, !device_code.isEmpty else {
+                showError(message: "Favor de proporcionar un código")
+                return
+        }
         let url = URL(string: "http://backend.mylittleasistant.online:8000/api/user/link/device")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 50)
         request.httpMethod = "POST"
-        
         let token = userData.jwt
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        
-        let device_code = Code_txt.text!
-        
         let requestBody: [String: Any] = [
             "device_code": device_code,
         ]
@@ -74,13 +74,13 @@ class LinkDiviceViewController: UIViewController {
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 print("Error en el request: \(error)")
-                self.hasErrors = true
+                self.showError(message: "Error en la solicitud: \(error.localizedDescription)")
                 return
             }
             
             guard let httpResponse = response as? HTTPURLResponse else {
                 print("No se recibió una respuesta HTTP válida")
-                self.hasErrors = true
+                self.showError(message: "No se recibió una respuesta HTTP válida")
                 return
             }
             
@@ -91,6 +91,10 @@ class LinkDiviceViewController: UIViewController {
                 do {
                     let responseJSON = try JSONSerialization.jsonObject(with: data, options: [])
                     print("Respuesta JSON: \(responseJSON)")
+                    if statusCode == 400 {
+                        self.showError(message: "Dispositivo ya vinculado")
+                        return
+                    }
                 } catch {
                     print("Error al convertir la respuesta a JSON: \(error)")
                 }
@@ -106,7 +110,6 @@ class LinkDiviceViewController: UIViewController {
                     if let data = data,
                        let jsonDict = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
                        let signedRoute = jsonDict["url"] as? String {
-
                         self.userData.signedRoute = signedRoute
                         self.hasErrors = false
                     }
@@ -121,12 +124,14 @@ class LinkDiviceViewController: UIViewController {
         task.resume()
     }
 
+
     
     func showError(message: String) {
         DispatchQueue.main.async {
             self.Errors_txt.isHidden = false
             self.Errors_txt.textColor = .red
             self.Errors_txt.text = message
+            self.Errors_txt.textAlignment = .center
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 self.Errors_txt.isHidden = true
             }
@@ -137,6 +142,7 @@ class LinkDiviceViewController: UIViewController {
             self.Errors_txt.isHidden = false
             self.Errors_txt.textColor = .green
             self.Errors_txt.text = message
+            self.Errors_txt.textAlignment = .center
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 self.Errors_txt.isHidden = true
             }

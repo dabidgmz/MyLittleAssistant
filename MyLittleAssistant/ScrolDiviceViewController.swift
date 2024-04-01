@@ -63,23 +63,32 @@ class ScrolDiviceViewController: UIViewController {
                 print("No se recibió respuesta del servidor")
                 return
             }
-            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
-                print("Request successful. Status code: 200")
-                do {
-                    guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
-                        print("No se pudo convertir el JSON en un diccionario")
-                        return
-                    }
-                    
-                    if let devicesData = json["data"] as? [[String: Any]] {
-                        DispatchQueue.main.async {
-                            self.renderDevices(devicesData)
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode == 200 {
+                    print("Request successful. Status code: 200")
+                    do {
+                        guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
+                            print("No se pudo convertir el JSON en un diccionario")
+                            return
                         }
-                    } else {
-                        print("No se encontró el arreglo 'data' en el JSON")
+                        
+                        if let devicesData = json["data"] as? [[String: Any]] {
+                            DispatchQueue.main.async {
+                                self.renderDevices(devicesData)
+                            }
+                        } else {
+                            print("No se encontró el arreglo 'data' en el JSON")
+                        }
+                    } catch {
+                        print("Error al convertir los datos JSON:", error)
                     }
-                } catch {
-                    print("Error al convertir los datos JSON:", error)
+                } else if httpResponse.statusCode == 404 {
+                    print("No se encontraron dispositivos. Status code: 404")
+                    DispatchQueue.main.async {
+                        self.showAddDeviceAlert()
+                    }
+                } else {
+                    print("Error en la solicitud. Código de estado HTTP \(httpResponse.statusCode)")
                 }
             }
         }
@@ -133,5 +142,16 @@ class ScrolDiviceViewController: UIViewController {
     @objc func unlinkDevice(sender: UIButton) {
         // Lógica para desvincular el dispositivo
     }
+    
+    func showAddDeviceAlert() {
+        let alert = UIAlertController(title: "No se encontraron dispositivos", message: "Al parecer no cuentas con un dispositivo.", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
+        alert.addAction(cancelAction)
+        DispatchQueue.main.async {
+            self.present(alert, animated: true)
+        }
+    }
+
+
 
 }
