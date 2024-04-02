@@ -26,4 +26,11 @@ class Device: NSObject {
         self.createdAt = createdAt
         self.updatedAt = updatedAt
     }
+    static func saveDeviceCode(code: String) {
+                UserDefaults.standard.set(code, forKey: "device_code_\(code)")
+    }
+                
+    static func getDeviceCode(code: String) -> String? {
+                return UserDefaults.standard.string(forKey: "device_code_\(code)")
+    }
 }

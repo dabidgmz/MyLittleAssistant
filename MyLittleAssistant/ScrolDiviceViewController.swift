@@ -97,6 +97,7 @@ class ScrolDiviceViewController: UIViewController {
         for deviceInfo in devicesData {
             if let deviceCode = deviceInfo["code"] as? String {
                 devices.append(deviceCode)
+                Device.saveDeviceCode(code: deviceCode)
             } else {
                 print("No se encontró 'code' en los datos del dispositivo")
             }
