@@ -12,36 +12,67 @@ class MenuViewController: UIViewController, ChartViewDelegate {
     
 
   var lineChart = LineChartView()
+ var barChart = BarChartView()
     override func viewDidLoad() {
         super.viewDidLoad()
         lineChart.delegate = self
+        barChart.delegate = self
+        
 
-        // Do any additional setup after loading the view.
     }
     override func viewDidLayoutSubviews() {
-            let h = view.frame.width * 1.0 / 3.0
-            let chartWidth = view.frame.width * 2.0 / 3.0 // Ancho del gráfico
-            let chartHeight = h // Alto del gráfico
-            let chartX = view.frame.width - chartWidth - 50 
-        let chartY = (view.frame.height - h) / 1.5 // Posición Y del gráfico
+        super.viewDidLayoutSubviews()
             
-            lineChart.frame = CGRect(x: chartX, y: chartY, width: chartWidth, height: chartHeight)
+            // Configurar la gráfica de líneas
+            lineChart.translatesAutoresizingMaskIntoConstraints = false
+            if !view.subviews.contains(lineChart) {
+                view.addSubview(lineChart)
+            }
             
-        
-       
-        lineChart.center = view.center
-        view.addSubview(lineChart)
-        
-        var entries = [ChartDataEntry]()
-        
-        for x in 0..<10{
-            entries.append(ChartDataEntry(x: Double(x),y: Double(x))
-            )
-        }
-        let set = LineChartDataSet(entries:entries)
-        set.colors = ChartColorTemplates.material()
-            let data = LineChartData(dataSet: set)
-        lineChart.data = data
+            NSLayoutConstraint.activate([
+                lineChart.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 2.0/3.0),
+                lineChart.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1.0/3.0),
+                lineChart.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+                lineChart.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -40)
+            ])
+            
+            var entries = [ChartDataEntry]()
+            for x in 0..<10 {
+                entries.append(ChartDataEntry(x: Double(x), y: Double(x)))
+            }
+            let temp = LineChartDataSet(entries: entries, label: "Temperatura")
+            temp.colors = ChartColorTemplates.material()
+            temp.valueColors = [UIColor.white]
+            let data = LineChartData(dataSet: temp)
+            lineChart.data = data
+            lineChart.xAxis.labelTextColor = .white
+            lineChart.leftAxis.labelTextColor = .white
+            lineChart.leftAxis.labelTextColor = .white
+            
+            // Configurar la gráfica de barras
+            barChart.translatesAutoresizingMaskIntoConstraints = false
+            if !view.subviews.contains(barChart) {
+                view.addSubview(barChart)
+            }
+            
+            NSLayoutConstraint.activate([
+                barChart.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 2.0/3.0),
+                barChart.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1.0/3.0),
+                barChart.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+                barChart.topAnchor.constraint(equalTo: lineChart.bottomAnchor, constant: 20) // Colocar la gráfica de barras debajo de la gráfica de líneas
+            ])
+            
+            var barEntries = [BarChartDataEntry]()
+            for x in 0..<10 {
+                barEntries.append(BarChartDataEntry(x: Double(x), y: Double(x)))
+            }
+            let barDataSet = BarChartDataSet(entries: barEntries, label: "Barras")
+            barDataSet.colors = ChartColorTemplates.material()
+            let barData = BarChartData(dataSet: barDataSet)
+            barChart.data = barData
+            barChart.xAxis.labelTextColor = .white
+            barChart.leftAxis.labelTextColor = .white
+            barChart.leftAxis.labelTextColor = .white
     }
 
    
