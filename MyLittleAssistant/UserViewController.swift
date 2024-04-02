@@ -6,8 +6,8 @@
 //
 
 import UIKit
-
-class UserViewController: UIViewController {
+import UserNotifications
+class UserViewController: UIViewController, UNUserNotificationCenterDelegate {
 
    
     
@@ -58,6 +58,14 @@ class UserViewController: UIViewController {
         
                 configureLabelDesign(Nombre_LBL)
                 configureLabelDesign(Email_LBL)
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            if granted {
+                print("Permiso concedido para mostrar notificaciones")
+            } else {
+                print("Permiso denegado para mostrar notificaciones")
+            }
+        }
     }
     
     func configureLabelDesign(_ label: UILabel) {
@@ -140,6 +148,7 @@ class UserViewController: UIViewController {
                         print("Respuesta del servidor: \(responseJSON)")
                         
                         DispatchQueue.main.async {
+                            self.showWelcomeNotification()
                             self.userData.jwt = ""
                             self.userData.rememberMe = false
                             self.performSegue(withIdentifier: "sgLogout", sender: self)
@@ -160,6 +169,26 @@ class UserViewController: UIViewController {
         task.resume()
     }
 
+    func showWelcomeNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "¡Hasta pronto!"
+        content.body = "¡Has cerrado sesión en My Little Assistant. ¡Esperamos verte de nuevo pronto."
+        content.sound = UNNotificationSound.default
+        content.badge = 1
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let request = UNNotificationRequest(identifier: "logoutNotification", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if let error = error {
+                print("Error al agregar la solicitud de notificación de bienvenida: \(error.localizedDescription)")
+            }
+        }
+    }
+
     
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .badge, .sound])
+    }
     
 }
