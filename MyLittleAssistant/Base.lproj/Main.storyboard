@@ -627,7 +627,7 @@
         <scene sceneID="0up-0b-o7d">
             <objects>
                 <viewController id="EdD-Zs-aaR" customClass="EditUserViewController" customModule="MyLittleAssistant" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="glo-n1-Rwp">
+                    <view key="view" tag="4" contentMode="scaleToFill" id="glo-n1-Rwp">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -731,7 +731,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UWl-Mc-QQi" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1248" y="1125"/>
+            <point key="canvasLocation" x="1092" y="1215"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="qEg-1H-4oM">
@@ -939,7 +939,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oiG-37-3NC" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-219" y="1192"/>
+            <point key="canvasLocation" x="-408" y="1215"/>
         </scene>
         <!--Tokens-->
         <scene sceneID="BKV-eH-U68">
@@ -1189,7 +1189,7 @@
                                     <action selector="edit:" destination="OEd-ky-xIW" eventType="touchUpInside" id="AR9-x3-DS2"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1r-Uu-tiv">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1r-Uu-tiv">
                                 <rect key="frame" x="34" y="407" width="325" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="Yrj-S9-csL"/>
@@ -1227,7 +1227,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7l5-8x-zV6" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1167" y="1486"/>
+            <point key="canvasLocation" x="-1445" y="1956"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="z3F-Cl-Cst">

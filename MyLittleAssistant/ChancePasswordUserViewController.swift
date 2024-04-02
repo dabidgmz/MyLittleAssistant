@@ -72,6 +72,26 @@ class ChancePasswordUserViewController: UIViewController{
     
     
     func editPassword() {
+            guard let oldPasswordText = old_password.text,
+                  let newPasswordText = password.text,
+                  let confirmPasswordText = password_confirmation.text else {
+                print("Campos de contraseña vacíos")
+                return
+            }
+            guard oldPasswordText != newPasswordText else {
+                showError(message: "La contraseña nueva no puede ser igual a la contraseña antigua")
+                return
+            }
+            guard newPasswordText.count >= 5 else {
+                showError(message: "La contraseña nueva debe tener al menos 5 caracteres")
+                return
+            }
+            guard newPasswordText == confirmPasswordText else {
+                showError(message: "Las contraseñas nueva y de confirmación no coinciden")
+                return
+            }
+        
+        
         let url = URL(string: "http://backend.mylittleasistant.online:8000/api/user/update/password")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 50)
         request.httpMethod = "PUT"
@@ -130,7 +150,7 @@ class ChancePasswordUserViewController: UIViewController{
             if statusCode == 200 {
                 self.showSuccess(message: "Actualizado correctamente")
                 DispatchQueue.main.async {
-                    self.logout()
+                    self.showPasswordChangeAlert()
                 }
             } else {
                 print("Error en la solicitud: Código de estado HTTP \(statusCode)")
@@ -197,6 +217,7 @@ class ChancePasswordUserViewController: UIViewController{
                             self.userData.jwt = ""
                             self.userData.rememberMe = false
                             self.performSegue(withIdentifier: "sgLogout01", sender: self)
+                           
                         }
                     } catch {
                         print("Error al convertir la respuesta a JSON: \(error)")
@@ -213,5 +234,15 @@ class ChancePasswordUserViewController: UIViewController{
         
         task.resume()
     }
+    
+    func showPasswordChangeAlert() {
+        let alert = UIAlertController(title: "¡Atención!", message: "Una vez que hayas cambiado tu contraseña, deberás iniciar sesión nuevamente con la nueva.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Entendido", style: .default) { _ in
+            self.logout()
+        }
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
+
 
 }
