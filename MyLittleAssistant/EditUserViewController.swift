@@ -127,27 +127,29 @@ class EditUserViewController: UIViewController {
             }
             
             if statusCode == 200 {
-                self.showSuccess(message: "Actualizado correctamente")
                 DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "sgEditUser", sender: self)
-                    if let data = data,
-                       let jsonDict = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-                       let signedRoute = jsonDict["url"] as? String {
-                        self.hasErrors = false
-                        self.userData.name = name
-                        self.userData.email = email
-                        self.userData.signedRoute = signedRoute
-                    }
+                    self.showEmailChangeAlert() 
                 }
+                
+                if let data = data,
+                   let jsonDict = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                   let signedRoute = jsonDict["url"] as? String {
+                    self.hasErrors = false
+                    self.userData.name = name
+                    self.userData.email = email
+                    self.userData.signedRoute = signedRoute
+                }
+                
+                self.showSuccess(message: "Actualizado correctamente")
             } else {
                 print("Error en la solicitud: Código de estado HTTP \(statusCode)")
-                           self.showError(message: "Error en la solicitud: Código de estado HTTP \(statusCode)")
-                           self.hasErrors = true
+                self.hasErrors = true
             }
         }
         
         task.resume()
     }
+
 
     
     func showError(message: String) {
@@ -170,16 +172,64 @@ class EditUserViewController: UIViewController {
             }
         }
     }
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "sgEditUser" {
-            if !hasErrors {
-                return true
+   
+
+    func logout() {
+        let url = URL(string:"http://backend.mylittleasistant.online:8000/api/user/logout")!
+        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
+        request.httpMethod = "GET"
+        
+        let token = userData.jwt
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print("Error en el request: \(error)")
+                return
             }
             
-            return false
-        }
+            guard let data = data else {
+                print("No se recibió data en la respuesta")
+                return
+            }
             
-        return false
+            if let httpResponse = response as? HTTPURLResponse {
+                print("Código de estado HTTP recibido: \(httpResponse.statusCode)")
+                
+                if httpResponse.statusCode == 200 {
+                    do {
+                        let responseJSON = try JSONSerialization.jsonObject(with: data, options: [])
+                        print("Respuesta del servidor: \(responseJSON)")
+                        
+                        DispatchQueue.main.async {
+                            self.userData.jwt = ""
+                            self.userData.rememberMe = false
+                            self.performSegue(withIdentifier: "sgLogout02", sender: self)
+                           
+                        }
+                    } catch {
+                        print("Error al convertir la respuesta a JSON: \(error)")
+                    }
+                } else {
+                    print("Error en la solicitud: Código de estado HTTP \(httpResponse.statusCode)")
+                }
+            } else {
+                print("No se recibió una respuesta HTTP válida")
+            }
+            
+            print("El usuario ha abandonado My Little Assistant")
+        }
+        
+        task.resume()
     }
-
+    
+    func showEmailChangeAlert() {
+        let alert = UIAlertController(title: "¡Atención!", message: "Hemos enviado un nuevo enlace de verificación a tu correo electrónico. Por favor, verifica tu bandeja de entrada.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Entendido", style: .default) { _ in
+            self.logout()
+        }
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
 }

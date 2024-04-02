@@ -95,8 +95,8 @@
                                     <segue destination="lQ1-de-nw6" kind="presentation" modalPresentationStyle="fullScreen" id="nvz-JW-2gK"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdV-I0-UZE">
-                                <rect key="frame" x="35.666666666666657" y="631" width="322" height="21"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdV-I0-UZE">
+                                <rect key="frame" x="35.666666666666664" y="631" width="322" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="75P-7D-w5n"/>
                                     <constraint firstAttribute="width" constant="322" id="Scb-xX-CMh"/>
@@ -255,7 +255,7 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" identifier="sgLogin" modalPresentationStyle="fullScreen" id="NYW-fY-Jhg"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWw-Xo-fff">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWw-Xo-fff">
                                 <rect key="frame" x="21" y="648" width="351" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="351" id="9EC-Tb-xJc"/>
@@ -695,7 +695,7 @@
                                     <constraint firstAttribute="width" constant="115" id="YEY-pC-iUc"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvi-pl-M3k">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvi-pl-M3k">
                                 <rect key="frame" x="34" y="506" width="325" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Bmf-sE-ZoO"/>
@@ -726,12 +726,12 @@
                         <outlet property="Email_txt" destination="BUO-a6-Qkr" id="c7P-dY-fCu"/>
                         <outlet property="Errors_lbl" destination="zvi-pl-M3k" id="NtW-HH-nhc"/>
                         <outlet property="Name_txt" destination="92O-8H-KZN" id="GvP-qW-29x"/>
-                        <segue destination="xrA-Zo-p3X" kind="presentation" identifier="sgEditUser" modalPresentationStyle="fullScreen" id="VyG-KO-bKq"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="sgLogout02" modalPresentationStyle="fullScreen" id="fNr-Lc-GWY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UWl-Mc-QQi" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1092" y="1215"/>
+            <point key="canvasLocation" x="1042" y="1215"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="qEg-1H-4oM">
@@ -1315,7 +1315,7 @@
                                     <action selector="Vincular_btn:" destination="4dQ-og-exT" eventType="touchUpInside" id="Y9G-f3-wO9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UxA-YV-GhZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UxA-YV-GhZ">
                                 <rect key="frame" x="22.666666666666657" y="479" width="348" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="7WE-xo-YtB"/>
@@ -1422,7 +1422,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ss9-Yn-Ko7"/>
+        <segue reference="pmM-Nk-VkZ"/>
+        <segue reference="fNr-Lc-GWY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="car.side.fill" catalog="system" width="128" height="58"/>

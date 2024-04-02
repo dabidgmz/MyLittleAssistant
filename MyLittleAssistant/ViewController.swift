@@ -158,6 +158,10 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate{
                         DispatchQueue.main.async {
                             self.showError(message: "Contraseña incorrecta")
                         }
+                    } else if httpResponse.statusCode == 403 {
+                        DispatchQueue.main.async {
+                         self.showError(message: "Correo no verificado")
+                        }
                     } else {
                         if let jsonDict = responseJSON as? [String: Any],
                            let message = jsonDict["message"] as? String {
