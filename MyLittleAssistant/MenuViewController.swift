@@ -12,7 +12,9 @@ class MenuViewController: UIViewController, ChartViewDelegate {
     
 
   var lineChart = LineChartView()
- var barChart = BarChartView()
+  var barChart = BarChartView()
+    var gaugeView = GaugeView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         lineChart.delegate = self
@@ -73,8 +75,17 @@ class MenuViewController: UIViewController, ChartViewDelegate {
             barChart.xAxis.labelTextColor = .white
             barChart.leftAxis.labelTextColor = .white
             barChart.leftAxis.labelTextColor = .white
+        
+            gaugeView = GaugeView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+               gaugeView.minValue = 0
+               gaugeView.maxValue = 180
+               gaugeView.currentValue = 90
+               view.addSubview(gaugeView)
+               gaugeView.center = view.center
     }
 
    
 
 }
+    
+

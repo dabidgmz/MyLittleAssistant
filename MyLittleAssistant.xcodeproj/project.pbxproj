@@ -57,6 +57,7 @@
 		0FDAD83F2BB2427E00EE8A0F /* carritouuu.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FDAD8392BB2427E00EE8A0F /* carritouuu.png */; };
 		0FEBF2322BB27AD3001BC41C /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEBF2312BB27AD3001BC41C /* UserViewController.swift */; };
 		880F7C862BBC909200E143A9 /* peso.png in Resources */ = {isa = PBXBuildFile; fileRef = 880F7C852BBC909100E143A9 /* peso.png */; };
+		880F7C8A2BBCA36E00E143A9 /* Gauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880F7C892BBCA36E00E143A9 /* Gauge.swift */; };
 		8874B24E2BB483E300265AD3 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8874B24D2BB483E300265AD3 /* CameraViewController.swift */; };
 		8874B2542BB4948000265AD3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8874B2532BB4948000265AD3 /* MenuViewController.swift */; };
 		8874B2562BB4B7F700265AD3 /* GraficaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8874B2552BB4B7F700265AD3 /* GraficaViewController.swift */; };
@@ -118,6 +119,7 @@
 		6CA299AFF6B685D3D092BB64 /* Pods-MyLittleAssistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyLittleAssistant.release.xcconfig"; path = "Target Support Files/Pods-MyLittleAssistant/Pods-MyLittleAssistant.release.xcconfig"; sourceTree = "<group>"; };
 		77907D984B70D800883B99E2 /* Pods-MyLittleAssistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyLittleAssistant.debug.xcconfig"; path = "Target Support Files/Pods-MyLittleAssistant/Pods-MyLittleAssistant.debug.xcconfig"; sourceTree = "<group>"; };
 		880F7C852BBC909100E143A9 /* peso.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = peso.png; path = ../../../Downloads/peso.png; sourceTree = "<group>"; };
+		880F7C892BBCA36E00E143A9 /* Gauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gauge.swift; sourceTree = "<group>"; };
 		8874B24D2BB483E300265AD3 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		8874B2532BB4948000265AD3 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		8874B2552BB4B7F700265AD3 /* GraficaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficaViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				0F44F2D12B923D7E00AB80E6 /* AppDelegate.swift */,
+				880F7C892BBCA36E00E143A9 /* Gauge.swift */,
 				0F0F6B222BB7747F00B841FD /* EditUserViewController.swift */,
 				0F150DC42BB5F37C000B569E /* tokens.swift */,
 				0F44F2D32B923D7E00AB80E6 /* SceneDelegate.swift */,
@@ -418,6 +421,7 @@
 				8874B2542BB4948000265AD3 /* MenuViewController.swift in Sources */,
 				0F97CE602BAFC0100081D4CE /* nstruccionesViewController.swift in Sources */,
 				0F44F2D42B923D7E00AB80E6 /* SceneDelegate.swift in Sources */,
+				880F7C8A2BBCA36E00E143A9 /* Gauge.swift in Sources */,
 				0F5F1FA52BB3DF930009F8F9 /* User.swift in Sources */,
 				0F7763BF2BB7DB8C00DD6CA3 /* LinkDiviceViewController.swift in Sources */,
 				0F44F2E62B923DC600AB80E6 /* RegisterViewController.swift in Sources */,
