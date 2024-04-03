@@ -178,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2193" y="-651"/>
+            <point key="canvasLocation" x="-2195" y="-677"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="PGu-7p-BX3">
@@ -344,7 +344,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOB-yY-Oxv" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3520" y="94"/>
+            <point key="canvasLocation" x="-3521" y="74"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="0hS-Hr-Wg1">
@@ -549,7 +549,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qpT-J2-EiK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1914" y="-2023"/>
+            <point key="canvasLocation" x="2013" y="-2051"/>
         </scene>
         <!--Ssp View Controller-->
         <scene sceneID="hJN-Ef-eX7">
@@ -571,11 +571,12 @@
                         <outlet property="Logo" destination="n4o-Cz-ekZ" id="zUT-dH-whr"/>
                         <outlet property="logo" destination="n4o-Cz-ekZ" id="72o-PI-VOk"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="sgSplash" modalPresentationStyle="fullScreen" id="9Y2-ZX-7oJ"/>
+                        <segue destination="xrA-Zo-p3X" kind="presentation" identifier="sgRememberMe" modalPresentationStyle="fullScreen" id="ovr-1L-Tvc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqO-Cj-KYH" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3393" y="-651"/>
+            <point key="canvasLocation" x="-2163" y="-2051"/>
         </scene>
         <!--Nstrucciones View Controller-->
         <scene sceneID="64s-jU-0Yy">
@@ -840,7 +841,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UWl-Mc-QQi" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-347" y="1505"/>
+            <point key="canvasLocation" x="-378" y="1395"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="qEg-1H-4oM">
@@ -1189,7 +1190,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ds-we-XPb" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2127" y="-1435"/>
+            <point key="canvasLocation" x="-1266" y="-1406"/>
         </scene>
         <!--Chance Password User View Controller-->
         <scene sceneID="Q5F-1h-a3U">
@@ -1311,7 +1312,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7l5-8x-zV6" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2772" y="1324"/>
+            <point key="canvasLocation" x="-2743" y="1394"/>
         </scene>
         <!--Link Divice View Controller-->
         <scene sceneID="qtC-Ei-SFI">
@@ -1402,7 +1403,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7tX-sG-fNQ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-550" y="-368"/>
+            <point key="canvasLocation" x="2013" y="-368"/>
         </scene>
         <!--Item-->
         <scene sceneID="8K3-CR-RSj">
@@ -1510,7 +1511,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="HGT-Oz-hXq"/>
         <segue reference="JoH-bR-H0u"/>
-        <segue reference="9Y2-ZX-7oJ"/>
+        <segue reference="UyB-Na-suT"/>
+        <segue reference="ss9-Yn-Ko7"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="border.png" width="471" height="500"/>
