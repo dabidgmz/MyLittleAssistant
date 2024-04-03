@@ -236,5 +236,20 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate{
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.alert, .badge, .sound])
     }
+    
+    
+    @IBAction func checked(_ sender: Any) {
+        if let button = sender as? UIButton {
+             if button.isSelected {
+                 button.isSelected = false
+                 userData.rememberMe = false
+                 button.setImage(UIImage(named: "uncheck.png"), for: .normal)
+             } else {
+                 button.isSelected = true
+                 userData.rememberMe = true
+                 button.setImage(UIImage(named: "checkcheck.png"), for: .normal)
+             }
+         }
+    }
 }
 

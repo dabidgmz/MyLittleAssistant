@@ -6,53 +6,32 @@
 //
 
 import UIKit
-import UserNotifications
 class SspViewController: UIViewController {
-
+    
     @IBOutlet weak var Logo: UIImageView!
     
+    let userData = UserData.sharedData()
+    
+     override func viewDidLoad() {
+         super.viewDidLoad()
+         Logo.frame.origin.y = view.frame.height
+         Logo.frame.origin.x = (view.frame.width - Logo.frame.width)/2.0
+     }
+     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        UIView.animate(withDuration: 1.5, delay: 0.2, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.8, options: [.curveEaseInOut], animations: {
-            self.Logo.center = self.view.center
-            self.Logo.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-            self.Logo.alpha = 1.0
-        }) { (finished) in
-            if finished {
-                self.startRotationAnimation()
-                self.performSegue(withIdentifier: "sgSplash", sender: nil)
+        UIView.animate(withDuration: 1, delay: 0.5, options: .curveLinear) {
+            self.Logo.frame.origin.y = (self.view.frame.height - self.Logo.frame.height)/2.0
+        } completion: { res in
+            Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { timer in
+                if self.userData.rememberMe == false {
+                    self.performSegue(withIdentifier: "sgSplash", sender: nil)
+                } else if self.userData.rememberMe == true && self.userData.jwt.count > 1 {
+                    self.performSegue(withIdentifier: "sgRememberMe", sender: self)
+                } else {
+                    self.performSegue(withIdentifier: "sgSplash", sender: nil)
+                }
             }
         }
-        
-        requestNotificationAuthorization()
     }
+ }
     
-    func startRotationAnimation() {
-        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
-        rotationAnimation.fromValue = 0
-        rotationAnimation.toValue = CGFloat.pi * 2
-        rotationAnimation.duration = 10
-        rotationAnimation.repeatCount = .infinity
-        
-        let colorAnimation = CABasicAnimation(keyPath: "backgroundColor")
-        colorAnimation.fromValue = UIColor.clear.cgColor
-        colorAnimation.toValue = UIColor.systemBlue.cgColor
-        colorAnimation.duration = 10
-        colorAnimation.autoreverses = true
-        let groupAnimation = CAAnimationGroup()
-        groupAnimation.animations = [rotationAnimation, colorAnimation]
-        groupAnimation.duration = 10
-        groupAnimation.repeatCount = .infinity
-        Logo.layer.add(groupAnimation, forKey: "rotationAndColorAnimation")
-    }
-    func requestNotificationAuthorization() {
-           let center = UNUserNotificationCenter.current()
-           center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
-               if granted {
-                   print("Permiso concedido para mostrar notificaciones")
-               } else {
-                   print("Permiso denegado para mostrar notificaciones")
-               }
-           }
-       }
-}
