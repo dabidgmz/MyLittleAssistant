@@ -33,7 +33,29 @@ class UserData: NSObject {
         
         return userData
     }
-
+    
+    func save() {
+           let userDefaults = UserDefaults.standard
+           userDefaults.set(id, forKey: "userId")
+           userDefaults.set(name, forKey: "name")
+           userDefaults.set(email, forKey: "email")
+           userDefaults.set(password, forKey: "password")
+           userDefaults.set(jwt, forKey: "jwt")
+           userDefaults.set(signedRoute, forKey: "signedRoute")
+           userDefaults.set(rememberMe, forKey: "rememberMe")
+           userDefaults.synchronize() 
+       }
+       
+       func load() {
+           let userDefaults = UserDefaults.standard
+           id = userDefaults.integer(forKey: "userId")
+           name = userDefaults.string(forKey: "name") ?? ""
+           email = userDefaults.string(forKey: "email") ?? ""
+           password = userDefaults.string(forKey: "password") ?? ""
+           jwt = userDefaults.string(forKey: "jwt") ?? ""
+           signedRoute = userDefaults.string(forKey: "signedRoute") ?? ""
+           rememberMe = userDefaults.bool(forKey: "rememberMe")
+       }
 }
 
 

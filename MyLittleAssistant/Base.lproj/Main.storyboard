@@ -119,30 +119,6 @@
                                     <segue destination="xXe-On-8ae" kind="presentation" modalPresentationStyle="fullScreen" id="P19-cT-G5g"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember me?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l66-xd-G7t">
-                                <rect key="frame" x="93.666666666666686" y="395" width="206" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="206" id="20N-Xb-f8x"/>
-                                    <constraint firstAttribute="height" constant="31" id="x4Y-Xd-ta6"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4L9-bg-RXH">
-                                <rect key="frame" x="120" y="400" width="22" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="kFq-uj-d99"/>
-                                    <constraint firstAttribute="width" constant="22" id="zde-FD-gTK"/>
-                                </constraints>
-                                <color key="tintColor" red="0.98186905690000004" green="0.98640179269999995" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Button" image="border.png" backgroundImage="border.png"/>
-                                <state key="selected" image="checkcheck.png" backgroundImage="checkcheck.png"/>
-                                <connections>
-                                    <action selector="checked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3ox-iC-ogc"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -152,7 +128,6 @@
                             <constraint firstItem="6wN-hu-4Io" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DLI-yP-a1j"/>
                             <constraint firstItem="cay-Gt-gTF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EAR-K9-iLt"/>
                             <constraint firstItem="UO0-cp-mH6" firstAttribute="top" secondItem="UBk-9M-WdD" secondAttribute="bottom" constant="10" id="ElV-Mg-xTn"/>
-                            <constraint firstItem="4L9-bg-RXH" firstAttribute="top" secondItem="UO0-cp-mH6" secondAttribute="bottom" constant="15" id="ExO-Vx-C5a"/>
                             <constraint firstItem="UDO-Fn-5WI" firstAttribute="top" secondItem="OTP-vz-OPH" secondAttribute="bottom" constant="5" id="H8F-Lm-Fgv"/>
                             <constraint firstItem="OTP-vz-OPH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IQy-dB-Uak"/>
                             <constraint firstItem="OTP-vz-OPH" firstAttribute="top" secondItem="cay-Gt-gTF" secondAttribute="bottom" constant="5" id="OJr-Pj-Mtr"/>
@@ -160,10 +135,7 @@
                             <constraint firstItem="fBF-Z6-jCO" firstAttribute="top" secondItem="UO0-cp-mH6" secondAttribute="bottom" constant="60" id="SFX-Pi-kqA"/>
                             <constraint firstItem="UBk-9M-WdD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ScQ-EI-U6D"/>
                             <constraint firstItem="cay-Gt-gTF" firstAttribute="top" secondItem="fBF-Z6-jCO" secondAttribute="bottom" constant="40" id="UR9-KD-EI5"/>
-                            <constraint firstItem="l66-xd-G7t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XOa-Gz-Y0A"/>
-                            <constraint firstItem="l66-xd-G7t" firstAttribute="top" secondItem="UO0-cp-mH6" secondAttribute="bottom" constant="10" id="XSu-W7-I1Z"/>
                             <constraint firstItem="DdV-I0-UZE" firstAttribute="top" secondItem="OTP-vz-OPH" secondAttribute="bottom" constant="80" id="ZhA-qr-zUb"/>
-                            <constraint firstItem="4L9-bg-RXH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="ee9-cv-jKg"/>
                             <constraint firstItem="UO0-cp-mH6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fVh-Oq-Ncl"/>
                             <constraint firstItem="DdV-I0-UZE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fdd-lQ-Zl0"/>
                             <constraint firstItem="fBF-Z6-jCO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xd3-48-6zl"/>
@@ -549,7 +521,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qpT-J2-EiK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2013" y="-2051"/>
+            <point key="canvasLocation" x="124" y="-2103"/>
         </scene>
         <!--Ssp View Controller-->
         <scene sceneID="hJN-Ef-eX7">
@@ -571,12 +543,12 @@
                         <outlet property="Logo" destination="n4o-Cz-ekZ" id="zUT-dH-whr"/>
                         <outlet property="logo" destination="n4o-Cz-ekZ" id="72o-PI-VOk"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="sgSplash" modalPresentationStyle="fullScreen" id="9Y2-ZX-7oJ"/>
-                        <segue destination="xrA-Zo-p3X" kind="presentation" identifier="sgRememberMe" modalPresentationStyle="fullScreen" id="ovr-1L-Tvc"/>
+                        <segue destination="xrA-Zo-p3X" kind="presentation" identifier="sgRememberMe" modalPresentationStyle="fullScreen" id="FVd-5R-Vad"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqO-Cj-KYH" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2163" y="-2051"/>
+            <point key="canvasLocation" x="-1004" y="-2080"/>
         </scene>
         <!--Nstrucciones View Controller-->
         <scene sceneID="64s-jU-0Yy">
@@ -1509,16 +1481,14 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="HGT-Oz-hXq"/>
+        <segue reference="ppA-DY-Xh7"/>
         <segue reference="JoH-bR-H0u"/>
         <segue reference="UyB-Na-suT"/>
-        <segue reference="ss9-Yn-Ko7"/>
+        <segue reference="9Y2-ZX-7oJ"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="border.png" width="471" height="500"/>
         <image name="car.side.fill" catalog="system" width="128" height="58"/>
         <image name="carritouuu.png" width="1280" height="720"/>
-        <image name="checkcheck.png" width="225" height="225"/>
         <image name="fondoazul.jpeg" width="828" height="1600"/>
         <image name="location.fill" catalog="system" width="128" height="119"/>
         <image name="logooooouu.png" width="500" height="500"/>

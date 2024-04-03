@@ -206,7 +206,7 @@ class EditUserViewController: UIViewController {
                             self.userData.jwt = ""
                             self.userData.rememberMe = false
                             self.performSegue(withIdentifier: "sgLogout02", sender: self)
-                           
+                            self.userData.save() 
                         }
                     } catch {
                         print("Error al convertir la respuesta a JSON: \(error)")

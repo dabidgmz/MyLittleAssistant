@@ -125,6 +125,9 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate{
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 print("Error en el request: \(error)")
+                if (error as NSError).code == NSURLErrorTimedOut {
+                    self.showAlert()
+                }
                 return
             }
             
@@ -142,13 +145,21 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate{
                     
                     if httpResponse.statusCode == 200 {
                         if let jsonDict = responseJSON as? [String: Any],
-                           let token = jsonDict["jwt"] as? String {
+                           let token = jsonDict["jwt"] as? String,
+                           let userDataDict = jsonDict["data"] as? [String: Any],
+                           let userID = userDataDict["id"] as? Int {
                             DispatchQueue.main.async {
                                 self.hasErrors = false
                                 self.userData.jwt = token
+                                self.userData.id = userID
+                                self.userData.rememberMe = true
                                 self.performSegue(withIdentifier: "sgLogin", sender: self)
                                 self.showWelcomeNotification()
-                            }
+                                print("hasErrors: \(self.hasErrors)")
+                                print("JWT token: \(token)")
+                                print("UserID: \(userID)")
+                                print("RememberMe: \(self.userData.rememberMe)")
+                                self.userData.save()                            }
                         }
                     } else if httpResponse.statusCode == 404 {
                         DispatchQueue.main.async {
@@ -237,19 +248,18 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate{
         completionHandler([.alert, .badge, .sound])
     }
     
-    
-    @IBAction func checked(_ sender: Any) {
-        if let button = sender as? UIButton {
-             if button.isSelected {
-                 button.isSelected = false
-                 userData.rememberMe = false
-                 button.setImage(UIImage(named: "uncheck.png"), for: .normal)
-             } else {
-                 button.isSelected = true
-                 userData.rememberMe = true
-                 button.setImage(UIImage(named: "checkcheck.png"), for: .normal)
-             }
-         }
+    @objc func showAlert() {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "Error", message: "La solicitud ha tardado demasiado. ¿Quieres intentarlo de nuevo?", preferredStyle: .alert)
+            let retryAction = UIAlertAction(title: "Reintentar", style: .default) { _ in
+            }
+            let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel) { _ in
+            }
+            alert.addAction(retryAction)
+            alert.addAction(cancelAction)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
+    
 }
 
