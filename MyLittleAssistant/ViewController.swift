@@ -143,27 +143,28 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate{
                     let responseJSON = try JSONSerialization.jsonObject(with: data, options: [])
                     print("Respuesta JSON: \(responseJSON)")
                     
-                    if httpResponse.statusCode == 200 {
+                    if httpResponse.statusCode == 201 {
                         if let jsonDict = responseJSON as? [String: Any],
-                           let token = jsonDict["jwt"] as? String,
                            let userDataDict = jsonDict["data"] as? [String: Any],
-                           let userID = userDataDict["id"] as? Int {
+                           let userID = userDataDict["id"] as? Int{
                             DispatchQueue.main.async {
                                 self.hasErrors = false
-                                self.userData.jwt = token
+                                self.userData.email = email
+                                self.userData.password = password
                                 self.userData.id = userID
                                 self.userData.rememberMe = true
+                                print("Correo electrónico guardado: \(self.userData.email)")
+                                print("Contraseña guardada: \(self.userData.password)")
                                 self.performSegue(withIdentifier: "sgLogin", sender: self)
                                 self.showWelcomeNotification()
                                 print("hasErrors: \(self.hasErrors)")
-                                print("JWT token: \(token)")
                                 print("UserID: \(userID)")
                                 print("RememberMe: \(self.userData.rememberMe)")
                                 self.userData.save()
                                 self.EmailVerifyCode()
                             }
                         }
-                    } else if httpResponse.statusCode == 404 {
+                    }else if httpResponse.statusCode == 404 {
                         DispatchQueue.main.async {
                             self.showError(message: "Usuario no encontrado")
                         }
@@ -194,7 +195,7 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate{
         
         task.resume()
     }
-
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "sgLogin" {
             if !hasErrors {
