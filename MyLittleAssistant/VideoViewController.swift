@@ -15,24 +15,23 @@ class VideoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        reproducirVideo(videoURL: "https://www.twitch.tv/les_simpso")
+        reproducirVideo(videoURL: "https://cdn.pixabay.com/video/2020/08/27/48420-453832153_large.mp4")
         webView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             webView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             webView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            webView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8), // Ancho al 80% de la vista
-            webView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5) // 
+            webView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 2.0/3.0),
+            webView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1.0/3.0)
         ])
     }
 
     func reproducirVideo(videoURL: String) {
-        guard let url = URL(string: videoURL) else {
-            print("URL del video no válida")
+        guard let url = URL(string: videoURL + "?autoplay=0") else {
             return
         }
-
         let request = URLRequest(url: url)
         webView.load(request)
     }
+
 
 }

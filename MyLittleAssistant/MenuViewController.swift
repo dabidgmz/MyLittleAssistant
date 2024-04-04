@@ -61,7 +61,7 @@ class MenuViewController: UIViewController, ChartViewDelegate {
                 barChart.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 2.0/3.0),
                 barChart.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1.0/3.0),
                 barChart.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-                barChart.topAnchor.constraint(equalTo: lineChart.bottomAnchor, constant: 20) // Colocar la gráfica de barras debajo de la gráfica de líneas
+                barChart.topAnchor.constraint(equalTo: lineChart.bottomAnchor, constant: 20)
             ])
             
             var barEntries = [BarChartDataEntry]()
@@ -76,12 +76,7 @@ class MenuViewController: UIViewController, ChartViewDelegate {
             barChart.leftAxis.labelTextColor = .white
             barChart.leftAxis.labelTextColor = .white
         
-            gaugeView = GaugeView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
-               gaugeView.minValue = 0
-               gaugeView.maxValue = 180
-               gaugeView.currentValue = 90
-               view.addSubview(gaugeView)
-               gaugeView.center = view.center
+           
     }
 
    

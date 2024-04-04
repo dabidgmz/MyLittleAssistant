@@ -7,14 +7,16 @@
 
 import UIKit
 import MapKit
-class CameraViewController: UIViewController {
-  
+import AVKit
+import WebKit
 
+
+class CameraViewController: UIViewController {
+
+    @IBOutlet weak var video: WKWebView!
     @IBOutlet weak var mapCiudad: MKMapView!
-    
-    
     @IBOutlet weak var webcam: UIView!
-    
+   
     let pin = Marcador()
     let coordenadasLugar = (latitud: 25.5315, longitud: -103.3219)
     override func viewDidLoad() {
@@ -24,10 +26,26 @@ class CameraViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidLoad()
+        
+        reproducirVideo(videoURL: "https://cdn.pixabay.com/video/2020/08/27/48420-453832153_large.mp4")
+        video.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            video.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            video.topAnchor.constraint(equalTo: view.topAnchor, constant: 90),
+            video.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9),
+            video.heightAnchor.constraint(equalTo: video.widthAnchor, multiplier: 9.0/16.0)
+        ])
         setearMapa()
     }
     
-  
+    func reproducirVideo(videoURL: String) {
+        guard let url = URL(string: videoURL + "?autoplay=0") else {
+            return
+        }
+        let request = URLRequest(url: url)
+        video.load(request)
+    }
     
     func setearMapa() {
         var region = MKCoordinateRegion()
