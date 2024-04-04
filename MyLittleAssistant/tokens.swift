@@ -8,19 +8,9 @@
 import UIKit
 
 class tokens: UIViewController {
-    @IBOutlet weak var num1TF: UITextField!
+ 
     
 
-    @IBOutlet weak var num2TF: UITextField!
-    
-    
-    @IBOutlet weak var num3TF: UITextField!
-    
-    @IBOutlet weak var num4TF: UITextField!
-    
-    
-    
-    @IBOutlet weak var btnverificar: UIButton!
     
     
     var maxLenghts = [UITextField: Int]()
@@ -39,12 +29,7 @@ class tokens: UIViewController {
                gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
                
                view.layer.insertSublayer(gradientLayer, at: 0)
-        
-        maxLenghts[num1TF] = 1
-        maxLenghts[num2TF] = 1
-        maxLenghts[num3TF] = 1
-        maxLenghts[num4TF] = 1
-        btnverificar.isEnabled = false
+   
     }
     
 
@@ -56,7 +41,7 @@ class tokens: UIViewController {
         let url = URL(string:"https://verificar")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
-        let codigo = num1TF.text! + num2TF.text! + num3TF.text! + num4TF.text!
+        let codigo = ""
         let requestBody: [String: Any] = [
             "codigo": codigo,
         ]
@@ -128,70 +113,6 @@ class tokens: UIViewController {
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == num1TF {
-            num2TF.becomeFirstResponder()
-        } else if textField == num2TF {
-            num2TF.resignFirstResponder()
-        }
-        
-        if textField == num2TF {
-            num3TF.becomeFirstResponder()
-        } else if textField == num3TF {
-            num3TF.resignFirstResponder()
-        }
-        
-        if textField == num3TF {
-            num4TF.becomeFirstResponder()
-        } else if textField == num4TF {
-            num4TF.resignFirstResponder()
-        }
-        return true
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let maxLenght = maxLenghts[textField] ?? Int.max
-        let currentString: NSString = textField.text! as NSString
-        let newString: NSString = currentString.replacingCharacters(in: range, with: string) as NSString
-    
-        return newString.length <= maxLenght
-    }
-    @IBAction func numerounoChange(_ sender: Any) {
-        if let numeroUno = num1TF.text {
-            print(numeroUno)
-           checkForm()
-        }
-    }
-    
-    @IBAction func numerodosChange(_ sender: Any) {
-        if let numeroDos = num2TF.text {
-            print(numeroDos)
-           checkForm()
-        }
-    }
-    
-    @IBAction func numerotresChange(_ sender: Any) {
-        if let numeroTres = num3TF.text {
-            print(numeroTres)
-           checkForm()
-        }
-    }
-    
-    @IBAction func numerocuatroChange(_ sender: Any) {
-        if let numeroCuatro = num4TF.text {
-            print(numeroCuatro)
-           checkForm()
-        }
-    }
-    
-    func checkForm() {
-        if num1TF.text?.count == 1 && num2TF.text?.count == 1 && num3TF.text?.count == 1 && num4TF.text?.count == 1 {
-            btnverificar.isEnabled = true
-        } else {
-            btnverificar.isEnabled = false
-        }
     }
 }
     

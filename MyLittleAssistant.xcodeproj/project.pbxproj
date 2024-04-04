@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F003CD42BBE6964008B4C93 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F003CD32BBE6963008B4C93 /* MapKit.framework */; };
+		0F003CD62BBE6998008B4C93 /* Marcador.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F003CD52BBE6998008B4C93 /* Marcador.swift */; };
 		0F0DE79F2BBD2098006AA1C2 /* border.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F0DE79D2BBD2097006AA1C2 /* border.png */; };
 		0F0DE7A02BBD2098006AA1C2 /* checkcheck.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F0DE79E2BBD2098006AA1C2 /* checkcheck.png */; };
 		0F0F6B232BB7747F00B841FD /* EditUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0F6B222BB7747F00B841FD /* EditUserViewController.swift */; };
@@ -59,6 +61,7 @@
 		0FDAD83E2BB2427E00EE8A0F /* WhatsApp Image 2024-02-29 at 16.57.31 (1).jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0FDAD8382BB2427D00EE8A0F /* WhatsApp Image 2024-02-29 at 16.57.31 (1).jpeg */; };
 		0FDAD83F2BB2427E00EE8A0F /* carritouuu.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FDAD8392BB2427E00EE8A0F /* carritouuu.png */; };
 		0FEBF2322BB27AD3001BC41C /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEBF2312BB27AD3001BC41C /* UserViewController.swift */; };
+		0FF74EBC2BBE7BA9005A2D89 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF74EBB2BBE7BA9005A2D89 /* VideoViewController.swift */; };
 		880F7C8A2BBCA36E00E143A9 /* Gauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880F7C892BBCA36E00E143A9 /* Gauge.swift */; };
 		8874B24E2BB483E300265AD3 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8874B24D2BB483E300265AD3 /* CameraViewController.swift */; };
 		8874B2542BB4948000265AD3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8874B2532BB4948000265AD3 /* MenuViewController.swift */; };
@@ -67,6 +70,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F003CD32BBE6963008B4C93 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0F003CD52BBE6998008B4C93 /* Marcador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marcador.swift; sourceTree = "<group>"; };
 		0F0DE79D2BBD2097006AA1C2 /* border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = border.png; sourceTree = "<group>"; };
 		0F0DE79E2BBD2098006AA1C2 /* checkcheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkcheck.png; sourceTree = "<group>"; };
 		0F0F6B222BB7747F00B841FD /* EditUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +126,7 @@
 		0FDAD8382BB2427D00EE8A0F /* WhatsApp Image 2024-02-29 at 16.57.31 (1).jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "WhatsApp Image 2024-02-29 at 16.57.31 (1).jpeg"; sourceTree = "<group>"; };
 		0FDAD8392BB2427E00EE8A0F /* carritouuu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carritouuu.png; sourceTree = "<group>"; };
 		0FEBF2312BB27AD3001BC41C /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		0FF74EBB2BBE7BA9005A2D89 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		6CA299AFF6B685D3D092BB64 /* Pods-MyLittleAssistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyLittleAssistant.release.xcconfig"; path = "Target Support Files/Pods-MyLittleAssistant/Pods-MyLittleAssistant.release.xcconfig"; sourceTree = "<group>"; };
 		77907D984B70D800883B99E2 /* Pods-MyLittleAssistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyLittleAssistant.debug.xcconfig"; path = "Target Support Files/Pods-MyLittleAssistant/Pods-MyLittleAssistant.debug.xcconfig"; sourceTree = "<group>"; };
 		880F7C892BBCA36E00E143A9 /* Gauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gauge.swift; sourceTree = "<group>"; };
@@ -135,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F003CD42BBE6964008B4C93 /* MapKit.framework in Frameworks */,
 				0F77FB8B2BBA14C70006F2E7 /* AVFAudio.framework in Frameworks */,
 				0F77FB8C2BBA14C70006F2E7 /* AVFoundation.framework in Frameworks */,
 				0F77FB8D2BBA14C70006F2E7 /* AVKit.framework in Frameworks */,
@@ -180,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				0F44F2D12B923D7E00AB80E6 /* AppDelegate.swift */,
+				0F003CD52BBE6998008B4C93 /* Marcador.swift */,
 				880F7C892BBCA36E00E143A9 /* Gauge.swift */,
 				0F0F6B222BB7747F00B841FD /* EditUserViewController.swift */,
 				0F150DC42BB5F37C000B569E /* tokens.swift */,
@@ -191,6 +199,7 @@
 				0F5F1FA62BB3E04C0009F8F9 /* UserData.swift */,
 				0F97CE5F2BAFC0100081D4CE /* nstruccionesViewController.swift */,
 				0F3CF56D2BBCAB8100A2136E /* ForgotPasswordViewController.swift */,
+				0FF74EBB2BBE7BA9005A2D89 /* VideoViewController.swift */,
 				0F28255A2BAE9C26006273C2 /* SspViewController.swift */,
 				0F44F2D72B923D7E00AB80E6 /* Main.storyboard */,
 				0FA025182BBA2E17002C3B58 /* Divice.swift */,
@@ -236,6 +245,7 @@
 		548A09250825D61972E64190 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0F003CD32BBE6963008B4C93 /* MapKit.framework */,
 				0F77FB882BBA14C70006F2E7 /* AVFAudio.framework */,
 				0F77FB892BBA14C70006F2E7 /* AVFoundation.framework */,
 				0F77FB8A2BBA14C70006F2E7 /* AVKit.framework */,
@@ -419,12 +429,14 @@
 				8874B2562BB4B7F700265AD3 /* GraficaViewController.swift in Sources */,
 				0F44F2D62B923D7E00AB80E6 /* ViewController.swift in Sources */,
 				0F28255B2BAE9C26006273C2 /* SspViewController.swift in Sources */,
+				0FF74EBC2BBE7BA9005A2D89 /* VideoViewController.swift in Sources */,
 				0FA025192BBA2E17002C3B58 /* Divice.swift in Sources */,
 				8874B24E2BB483E300265AD3 /* CameraViewController.swift in Sources */,
 				0F0F6B232BB7747F00B841FD /* EditUserViewController.swift in Sources */,
 				0F5F1FA72BB3E04C0009F8F9 /* UserData.swift in Sources */,
 				0F150DC52BB5F37C000B569E /* tokens.swift in Sources */,
 				0F44F2D22B923D7E00AB80E6 /* AppDelegate.swift in Sources */,
+				0F003CD62BBE6998008B4C93 /* Marcador.swift in Sources */,
 				8874B2542BB4948000265AD3 /* MenuViewController.swift in Sources */,
 				0F97CE602BAFC0100081D4CE /* nstruccionesViewController.swift in Sources */,
 				0F44F2D42B923D7E00AB80E6 /* SceneDelegate.swift in Sources */,

@@ -159,7 +159,9 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate{
                                 print("JWT token: \(token)")
                                 print("UserID: \(userID)")
                                 print("RememberMe: \(self.userData.rememberMe)")
-                                self.userData.save()                            }
+                                self.userData.save()
+                                self.EmailVerifyCode()
+                            }
                         }
                     } else if httpResponse.statusCode == 404 {
                         DispatchQueue.main.async {
@@ -261,5 +263,35 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate{
         }
     }
     
+    func EmailVerifyCode() {
+        let id = userData.id
+        let url = URL(string: "http://backend.mylittleasistant.online:8000/api/emailsend/\(id)")!
+        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 50)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print("Error en el request: \(error)")
+                self.hasErrors = true
+                return
+            }
+            guard let httpResponse = response as? HTTPURLResponse else {
+                print("No se recibió una respuesta HTTP válida")
+                self.hasErrors = true
+                return
+            }
+            let statusCode = httpResponse.statusCode
+            print("Código de estado HTTP recibido: \(statusCode)")
+            
+            if statusCode == 200 {
+                print("Código enviado con éxito")
+            } else {
+                print("Error en la solicitud: Código de estado HTTP \(statusCode)")
+                self.hasErrors = true
+            }
+        }
+        task.resume()
+    }
+
 }
 
