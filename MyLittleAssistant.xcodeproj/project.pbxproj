@@ -63,6 +63,8 @@
 		0FEBF2322BB27AD3001BC41C /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEBF2312BB27AD3001BC41C /* UserViewController.swift */; };
 		0FF74EBC2BBE7BA9005A2D89 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF74EBB2BBE7BA9005A2D89 /* VideoViewController.swift */; };
 		880F7C8A2BBCA36E00E143A9 /* Gauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880F7C892BBCA36E00E143A9 /* Gauge.swift */; };
+		885A5ADD2BBF3ADA00103940 /* flecha.png in Resources */ = {isa = PBXBuildFile; fileRef = 885A5ADC2BBF3ADA00103940 /* flecha.png */; };
+		885A5ADF2BBF3DB800103940 /* lineablanca.png in Resources */ = {isa = PBXBuildFile; fileRef = 885A5ADE2BBF3DB800103940 /* lineablanca.png */; };
 		8874B24E2BB483E300265AD3 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8874B24D2BB483E300265AD3 /* CameraViewController.swift */; };
 		8874B2542BB4948000265AD3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8874B2532BB4948000265AD3 /* MenuViewController.swift */; };
 		8874B2562BB4B7F700265AD3 /* GraficaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8874B2552BB4B7F700265AD3 /* GraficaViewController.swift */; };
@@ -130,6 +132,8 @@
 		6CA299AFF6B685D3D092BB64 /* Pods-MyLittleAssistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyLittleAssistant.release.xcconfig"; path = "Target Support Files/Pods-MyLittleAssistant/Pods-MyLittleAssistant.release.xcconfig"; sourceTree = "<group>"; };
 		77907D984B70D800883B99E2 /* Pods-MyLittleAssistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyLittleAssistant.debug.xcconfig"; path = "Target Support Files/Pods-MyLittleAssistant/Pods-MyLittleAssistant.debug.xcconfig"; sourceTree = "<group>"; };
 		880F7C892BBCA36E00E143A9 /* Gauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gauge.swift; sourceTree = "<group>"; };
+		885A5ADC2BBF3ADA00103940 /* flecha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flecha.png; path = ../../../Downloads/flecha.png; sourceTree = "<group>"; };
+		885A5ADE2BBF3DB800103940 /* lineablanca.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lineablanca.png; path = ../../../Downloads/lineablanca.png; sourceTree = "<group>"; };
 		8874B24D2BB483E300265AD3 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		8874B2532BB4948000265AD3 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		8874B2552BB4B7F700265AD3 /* GraficaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficaViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +264,8 @@
 		8846D0472BB1FF1F0061E209 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				885A5ADE2BBF3DB800103940 /* lineablanca.png */,
+				885A5ADC2BBF3ADA00103940 /* flecha.png */,
 				0F0DE79D2BBD2097006AA1C2 /* border.png */,
 				0F0DE79E2BBD2098006AA1C2 /* checkcheck.png */,
 				0FDAD8342BB2427D00EE8A0F /* carrito-removebg-preview.png */,
@@ -353,6 +359,7 @@
 				0F44F3082B923EBA00AB80E6 /* icons8-básculas-de-cocina-24.png in Resources */,
 				0F44F2DB2B923D8000AB80E6 /* Assets.xcassets in Resources */,
 				0F44F2D92B923D7E00AB80E6 /* Main.storyboard in Resources */,
+				885A5ADF2BBF3DB800103940 /* lineablanca.png in Resources */,
 				0F44F30A2B923EBA00AB80E6 /* icons8-velocímetro-50.png in Resources */,
 				0F44F3022B923EBA00AB80E6 /* icons8-contraseña-50.png in Resources */,
 				0F44F3002B923EBA00AB80E6 /* icons8-luz-50.png in Resources */,
@@ -365,6 +372,7 @@
 				0F44F2FE2B923EBA00AB80E6 /* icons8-ojo-50.png in Resources */,
 				0FDAD83F2BB2427E00EE8A0F /* carritouuu.png in Resources */,
 				0FDAD83A2BB2427E00EE8A0F /* carrito-removebg-preview.png in Resources */,
+				885A5ADD2BBF3ADA00103940 /* flecha.png in Resources */,
 				0F44F3012B923EBA00AB80E6 /* icons8-híbrido-50.png in Resources */,
 				0F44F2FD2B923EBA00AB80E6 /* icons8-carro-64.png in Resources */,
 				0FDAD83B2BB2427E00EE8A0F /* fondoazul.jpeg in Resources */,

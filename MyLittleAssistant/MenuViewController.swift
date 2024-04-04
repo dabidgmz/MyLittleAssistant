@@ -11,7 +11,8 @@ import Charts
 class MenuViewController: UIViewController, ChartViewDelegate {
     
 
-  var lineChart = LineChartView()
+    @IBOutlet weak var flecha: UIImageView!
+    var lineChart = LineChartView()
   var barChart = BarChartView()
     var gaugeView = GaugeView()
 
@@ -24,7 +25,7 @@ class MenuViewController: UIViewController, ChartViewDelegate {
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-            
+        
             // Configurar la gráfica de líneas
             lineChart.translatesAutoresizingMaskIntoConstraints = false
             if !view.subviews.contains(lineChart) {
@@ -34,8 +35,8 @@ class MenuViewController: UIViewController, ChartViewDelegate {
             NSLayoutConstraint.activate([
                 lineChart.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 2.0/3.0),
                 lineChart.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1.0/3.0),
-                lineChart.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-                lineChart.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -40)
+                lineChart.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+                lineChart.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -(view.bounds.height * 0.07))
             ])
             
             var entries = [ChartDataEntry]()
@@ -60,8 +61,8 @@ class MenuViewController: UIViewController, ChartViewDelegate {
             NSLayoutConstraint.activate([
                 barChart.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 2.0/3.0),
                 barChart.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1.0/3.0),
-                barChart.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-                barChart.topAnchor.constraint(equalTo: lineChart.bottomAnchor, constant: 20)
+                barChart.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+                barChart.topAnchor.constraint(equalTo: lineChart.bottomAnchor, constant: 15)
             ])
             
             var barEntries = [BarChartDataEntry]()
@@ -70,11 +71,15 @@ class MenuViewController: UIViewController, ChartViewDelegate {
             }
             let barDataSet = BarChartDataSet(entries: barEntries, label: "Barras")
             barDataSet.colors = ChartColorTemplates.material()
+            barDataSet.valueColors = [.white]
+
             let barData = BarChartData(dataSet: barDataSet)
             barChart.data = barData
             barChart.xAxis.labelTextColor = .white
             barChart.leftAxis.labelTextColor = .white
             barChart.leftAxis.labelTextColor = .white
+            
+        
         
            
     }
