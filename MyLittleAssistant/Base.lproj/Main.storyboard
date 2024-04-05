@@ -951,11 +951,11 @@
             <objects>
                 <viewController id="Ayf-6I-jjk" customClass="UserViewController" customModule="MyLittleAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XZU-rb-nWe">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondoazul.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="40f-Uk-Ajh">
-                                <rect key="frame" x="0.0" y="-5" width="393" height="823"/>
+                                <rect key="frame" x="0.0" y="-5" width="393" height="788"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aza-AF-lSx">
                                 <rect key="frame" x="130.66666666666666" y="120" width="131.99999999999997" height="115.66666666666667"/>
@@ -1210,7 +1210,7 @@
                                             <action selector="verificar:" destination="SIO-uA-bSw" eventType="touchUpInside" id="W9g-61-KtP"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cjc-oF-V2y">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cjc-oF-V2y">
                                         <rect key="frame" x="14.666666666666657" y="298.33333333333331" width="324" height="53"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="324" id="kPm-IJ-XC7"/>
@@ -1249,12 +1249,12 @@
                     <connections>
                         <outlet property="Errors_lbl" destination="Cjc-oF-V2y" id="oBr-lA-kOF"/>
                         <outlet property="code_txt" destination="OvU-AV-aez" id="Ggi-MW-oUH"/>
-                        <segue destination="xrA-Zo-p3X" kind="presentation" identifier="sgVerificar" modalPresentationStyle="fullScreen" id="Gkw-PX-u3m"/>
+                        <segue destination="4dQ-og-exT" kind="presentation" identifier="sgVerificar" modalPresentationStyle="fullScreen" id="HZI-AB-YBD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ds-we-XPb" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-593.12977099236639" y="-677.46478873239437"/>
+            <point key="canvasLocation" x="-1144" y="-677"/>
         </scene>
         <!--Chance Password User View Controller-->
         <scene sceneID="Q5F-1h-a3U">
@@ -1424,11 +1424,11 @@
             <objects>
                 <viewController id="4dQ-og-exT" customClass="LinkDiviceViewController" customModule="MyLittleAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hb0-L9-xeh">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondoazul.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="8l1-zH-uvT">
-                                <rect key="frame" x="0.0" y="59" width="393" height="734"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="803"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link Divice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ar-gx-JQf">
                                 <rect key="frame" x="135.66666666666666" y="99" width="121.99999999999997" height="32"/>
@@ -1511,11 +1511,12 @@
                         <outlet property="Code_txt" destination="ZLj-li-Xaz" id="Xhz-sq-l9i"/>
                         <outlet property="Errors_txt" destination="UxA-YV-GhZ" id="MCv-PV-aSy"/>
                         <segue destination="wVL-2u-87C" kind="presentation" identifier="sgVincular" modalPresentationStyle="fullScreen" id="HGT-Oz-hXq"/>
+                        <segue destination="xrA-Zo-p3X" kind="presentation" identifier="sgLinkDevice" modalPresentationStyle="fullScreen" id="n25-N8-D98"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7tX-sG-fNQ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4366" y="-504"/>
+            <point key="canvasLocation" x="-326" y="-1532"/>
         </scene>
         <!--Scrol Divice View Controller-->
         <scene sceneID="8K3-CR-RSj">
@@ -1628,9 +1629,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="AXb-oU-xYg"/>
-        <segue reference="gcs-Vq-DXa"/>
-        <segue reference="Gkw-PX-u3m"/>
+        <segue reference="HGT-Oz-hXq"/>
+        <segue reference="HZI-AB-YBD"/>
+        <segue reference="JoH-bR-H0u"/>
+        <segue reference="n25-N8-D98"/>
         <segue reference="EL0-wJ-ejt"/>
     </inferredMetricsTieBreakers>
     <resources>

@@ -55,6 +55,10 @@ class tokens: UIViewController {
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 50)
         request.httpMethod = "POST"
         let codigo = code_txt.text!
+        guard !codigo.isEmpty && codigo.count <= 6 else {
+        showError(message: "El código debe tener entre 1 y 6 caracteres.")
+        return
+        }
         let email = userData.email
         let password = userData.password
         let requestBody: [String: Any] = [
@@ -119,6 +123,10 @@ class tokens: UIViewController {
                     } else if httpResponse.statusCode == 403 {
                         DispatchQueue.main.async {
                          self.showError(message: "Correo no verificado")
+                        }
+                    }else if httpResponse.statusCode == 405{
+                        DispatchQueue.main.async {
+                         self.showError(message: "Codigo incorrecto.")
                         }
                     } else {
                         if let jsonDict = responseJSON as? [String: Any],
