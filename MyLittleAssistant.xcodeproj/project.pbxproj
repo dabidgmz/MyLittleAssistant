@@ -45,7 +45,6 @@
 		0F5F1FA52BB3DF930009F8F9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F1FA42BB3DF930009F8F9 /* User.swift */; };
 		0F5F1FA72BB3E04C0009F8F9 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F1FA62BB3E04C0009F8F9 /* UserData.swift */; };
 		0F6095442BC0ED760091C1AE /* MQTTClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F6095432BC0ED760091C1AE /* MQTTClient.framework */; };
-		0F61129F2BC0F8C300EA04F9 /* Moscapsule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F61129E2BC0F8C300EA04F9 /* Moscapsule.framework */; };
 		0F6CA8062BC09BBC002BC542 /* CocoaMQTT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F6CA8052BC09BBC002BC542 /* CocoaMQTT.framework */; };
 		0F7391E92BBB4A44006D0FA5 /* ChancePasswordUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7391E82BBB4A44006D0FA5 /* ChancePasswordUserViewController.swift */; };
 		0F7763BF2BB7DB8C00DD6CA3 /* LinkDiviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7763BE2BB7DB8C00DD6CA3 /* LinkDiviceViewController.swift */; };
@@ -124,7 +123,6 @@
 		0F5F1FA42BB3DF930009F8F9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0F5F1FA62BB3E04C0009F8F9 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		0F6095432BC0ED760091C1AE /* MQTTClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MQTTClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0F61129E2BC0F8C300EA04F9 /* Moscapsule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Moscapsule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F6CA8052BC09BBC002BC542 /* CocoaMQTT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CocoaMQTT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F7391E82BBB4A44006D0FA5 /* ChancePasswordUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChancePasswordUserViewController.swift; sourceTree = "<group>"; };
 		0F7763BE2BB7DB8C00DD6CA3 /* LinkDiviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkDiviceViewController.swift; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F61129F2BC0F8C300EA04F9 /* Moscapsule.framework in Frameworks */,
 				0F6095442BC0ED760091C1AE /* MQTTClient.framework in Frameworks */,
 				0FFEF96D2BC0ECB00057624E /* MqttCocoaAsyncSocket.framework in Frameworks */,
 				0F6CA8062BC09BBC002BC542 /* CocoaMQTT.framework in Frameworks */,
@@ -285,7 +282,6 @@
 		548A09250825D61972E64190 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0F61129E2BC0F8C300EA04F9 /* Moscapsule.framework */,
 				0F6095432BC0ED760091C1AE /* MQTTClient.framework */,
 				0FFEF96C2BC0ECB00057624E /* MqttCocoaAsyncSocket.framework */,
 				0F6CA8052BC09BBC002BC542 /* CocoaMQTT.framework */,

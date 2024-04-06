@@ -8,5 +8,4 @@ target 'MyLittleAssistant' do
 pod 'Charts'
 pod 'CocoaMQTT'
 pod 'MQTTClient'
-pod 'Moscapsule', :git => 'https://github.com/flightonary/Moscapsule.git'
 end

@@ -1,31 +1,32 @@
 import UIKit
-import MQTTClient
+import CocoaMQTT
 
-class VideoViewController: UIViewController, MQTTSessionManagerDelegate {
+class VideoViewController: UIViewController {
+/*
+    var mqtt = CocoaMQTT(clientID: "motors/itpcamp", host: "a169mg5ru5h2z1-ats.iot.us-east-2.amazonaws.com", port: 8883)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /*// Configurar el cliente MQTT
-        let mqttClient = MQTTSessionManager()
+        guard let clientCertPath = Bundle.main.path(forResource: "cec69141d6f3a0869a78f2331a3b6acebf6bc9ddb27a738dc3945c2ea4a99618-certificate", ofType: "pem.crt"),
+              let clientKeyPath = Bundle.main.path(forResource: "cec69141d6f3a0869a78f2331a3b6acebf6bc9ddb27a738dc3945c2ea4a99618-private", ofType: "pem.key"),
+              let caCertPath = Bundle.main.path(forResource: "AmazonRootCA1", ofType: "pem") else {
+            print("No se encontraron los archivos de certificado y llave.")
+            return
+        }
         
-        // Conectar al servidor MQTT
-        let transport = MQTTCFSocketTransport()
-        transport.host = "a169mg5ru5h2z1-ats.iot.us-east-2.amazonaws.com"
-        transport.port = 8883
+        mqtt.allowUntrustCACertificate = true
+        mqtt.enableSSL = true
+        mqtt.connect()
         
-        mqttClient.delegate = self
-        mqttClient.connect(toLast: false, using: transport, clean: true, will: nil, withConnectHandler: { error in
-            if error == nil {
-                print("Conectado correctamente al servidor MQTT")
-                
-                // Envío del mensaje "w"
-                let message = "w"
-                mqttClient.send(message.data(using: .utf8), topic: "motors/control", qos: .atLeastOnce, retain: false)
-            } else {
-                print("Error al conectar al servidor MQTT: \(error!.localizedDescription)")
-            }
-        })*/
     }
+    
+    @IBAction func arriba(_ sender: Any) {
+        mqtt.publish("tu_tema", withString: "w")
+        print("Mensaje enviado")
+    }
+    
+    
+    */
+   
 }
-
