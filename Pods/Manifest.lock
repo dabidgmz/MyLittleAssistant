@@ -3,20 +3,53 @@ PODS:
     - Charts/Core (= 4.1.0)
   - Charts/Core (4.1.0):
     - SwiftAlgorithms (~> 1.0)
+  - CocoaMQTT (2.1.6):
+    - CocoaMQTT/Core (= 2.1.6)
+  - CocoaMQTT/Core (2.1.6):
+    - MqttCocoaAsyncSocket (~> 1.0.8)
+  - Moscapsule (0.6.4)
+  - MQTTClient (0.15.3):
+    - MQTTClient/Core (= 0.15.3)
+  - MQTTClient/Core (0.15.3):
+    - MQTTClient/Manager
+    - MQTTClient/Min
+  - MQTTClient/Manager (0.15.3):
+    - MQTTClient/Min
+  - MQTTClient/Min (0.15.3)
+  - MqttCocoaAsyncSocket (1.0.8)
   - SwiftAlgorithms (1.0.0)
 
 DEPENDENCIES:
   - Charts
+  - CocoaMQTT
+  - Moscapsule (from `https://github.com/flightonary/Moscapsule.git`)
+  - MQTTClient
 
 SPEC REPOS:
   trunk:
     - Charts
+    - CocoaMQTT
+    - MQTTClient
+    - MqttCocoaAsyncSocket
     - SwiftAlgorithms
+
+EXTERNAL SOURCES:
+  Moscapsule:
+    :git: https://github.com/flightonary/Moscapsule.git
+
+CHECKOUT OPTIONS:
+  Moscapsule:
+    :commit: 76f5d85f81c2841f8a110a7a3e7e5089beb47aed
+    :git: https://github.com/flightonary/Moscapsule.git
 
 SPEC CHECKSUMS:
   Charts: ce0768268078eee0336f122c3c4ca248e4e204c5
+  CocoaMQTT: 1f206228b29318eabdacad0c2e4e88575922c27a
+  Moscapsule: 6bb834c60e24251897dc1cb2c4552fd674f887f3
+  MQTTClient: 0dfa04e789479c2e461786464969895c1fcb0875
+  MqttCocoaAsyncSocket: 77d3b74f76228dd5a05d1f9526eab101d415b30c
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
 
-PODFILE CHECKSUM: 77cf1b55c1412ad8d82255422f3dc1cb37ca8978
+PODFILE CHECKSUM: 6b9eebad3682f4b98a1ae49b24a607beb3502065
 
 COCOAPODS: 1.15.2

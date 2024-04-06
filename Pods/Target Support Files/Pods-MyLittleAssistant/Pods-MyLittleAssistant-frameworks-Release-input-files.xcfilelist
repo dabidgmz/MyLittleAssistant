@@ -1,3 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-MyLittleAssistant/Pods-MyLittleAssistant-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Charts/Charts.framework
+${BUILT_PRODUCTS_DIR}/CocoaMQTT/CocoaMQTT.framework
+${BUILT_PRODUCTS_DIR}/MQTTClient/MQTTClient.framework
+${BUILT_PRODUCTS_DIR}/Moscapsule/Moscapsule.framework
+${BUILT_PRODUCTS_DIR}/MqttCocoaAsyncSocket/MqttCocoaAsyncSocket.framework
 ${BUILT_PRODUCTS_DIR}/SwiftAlgorithms/Algorithms.framework

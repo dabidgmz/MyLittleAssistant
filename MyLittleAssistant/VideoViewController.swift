@@ -1,37 +1,31 @@
-//
-//  VideoViewController.swift
-//  MyLittleAssistant
-//
-//  Created by david gomez herrera on 04/04/24.
-//
-
 import UIKit
-import WebKit
+import MQTTClient
 
-class VideoViewController: UIViewController {
-
-    @IBOutlet weak var webView: WKWebView!
-
+class VideoViewController: UIViewController, MQTTSessionManagerDelegate {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        reproducirVideo(videoURL: "https://cdn.pixabay.com/video/2020/08/27/48420-453832153_large.mp4")
-        webView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            webView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            webView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            webView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 2.0/3.0),
-            webView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 1.0/3.0)
-        ])
+        
+        /*// Configurar el cliente MQTT
+        let mqttClient = MQTTSessionManager()
+        
+        // Conectar al servidor MQTT
+        let transport = MQTTCFSocketTransport()
+        transport.host = "a169mg5ru5h2z1-ats.iot.us-east-2.amazonaws.com"
+        transport.port = 8883
+        
+        mqttClient.delegate = self
+        mqttClient.connect(toLast: false, using: transport, clean: true, will: nil, withConnectHandler: { error in
+            if error == nil {
+                print("Conectado correctamente al servidor MQTT")
+                
+                // Envío del mensaje "w"
+                let message = "w"
+                mqttClient.send(message.data(using: .utf8), topic: "motors/control", qos: .atLeastOnce, retain: false)
+            } else {
+                print("Error al conectar al servidor MQTT: \(error!.localizedDescription)")
+            }
+        })*/
     }
-
-    func reproducirVideo(videoURL: String) {
-        guard let url = URL(string: videoURL + "?autoplay=0") else {
-            return
-        }
-        let request = URLRequest(url: url)
-        webView.load(request)
-    }
-
-
 }
+
