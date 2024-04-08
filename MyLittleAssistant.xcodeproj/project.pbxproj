@@ -54,6 +54,7 @@
 		0F77FB8B2BBA14C70006F2E7 /* AVFAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F77FB882BBA14C70006F2E7 /* AVFAudio.framework */; };
 		0F77FB8C2BBA14C70006F2E7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F77FB892BBA14C70006F2E7 /* AVFoundation.framework */; };
 		0F77FB8D2BBA14C70006F2E7 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F77FB8A2BBA14C70006F2E7 /* AVKit.framework */; };
+		0F8FFD242BC3A79000669D7A /* ControlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8FFD232BC3A79000669D7A /* ControlesViewController.swift */; };
 		0F97CE602BAFC0100081D4CE /* nstruccionesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F97CE5F2BAFC0100081D4CE /* nstruccionesViewController.swift */; };
 		0FA025192BBA2E17002C3B58 /* Divice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA025182BBA2E17002C3B58 /* Divice.swift */; };
 		0FC0ED6D2BBF4B4100CAABD5 /* lineablanca.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FC0ED6B2BBF4B4100CAABD5 /* lineablanca.png */; };
@@ -132,6 +133,7 @@
 		0F77FB882BBA14C70006F2E7 /* AVFAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFAudio.framework; path = System/Library/Frameworks/AVFAudio.framework; sourceTree = SDKROOT; };
 		0F77FB892BBA14C70006F2E7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		0F77FB8A2BBA14C70006F2E7 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		0F8FFD232BC3A79000669D7A /* ControlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlesViewController.swift; sourceTree = "<group>"; };
 		0F97CE5F2BAFC0100081D4CE /* nstruccionesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nstruccionesViewController.swift; sourceTree = "<group>"; };
 		0FA025182BBA2E17002C3B58 /* Divice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Divice.swift; sourceTree = "<group>"; };
 		0FC0ED6B2BBF4B4100CAABD5 /* lineablanca.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineablanca.png; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				0FF74EBB2BBE7BA9005A2D89 /* VideoViewController.swift */,
 				0F28255A2BAE9C26006273C2 /* SspViewController.swift */,
 				0F44F2D72B923D7E00AB80E6 /* Main.storyboard */,
+				0F8FFD232BC3A79000669D7A /* ControlesViewController.swift */,
 				0FA025182BBA2E17002C3B58 /* Divice.swift */,
 				0F3C9E5E2BB8C3E70004BB6A /* ScrolDiviceViewController.swift */,
 				0F7763BE2BB7DB8C00DD6CA3 /* LinkDiviceViewController.swift */,
@@ -488,6 +491,7 @@
 				0F5F1FA72BB3E04C0009F8F9 /* UserData.swift in Sources */,
 				0F150DC52BB5F37C000B569E /* tokens.swift in Sources */,
 				0F44F2D22B923D7E00AB80E6 /* AppDelegate.swift in Sources */,
+				0F8FFD242BC3A79000669D7A /* ControlesViewController.swift in Sources */,
 				0F003CD62BBE6998008B4C93 /* Marcador.swift in Sources */,
 				8874B2542BB4948000265AD3 /* MenuViewController.swift in Sources */,
 				0F97CE602BAFC0100081D4CE /* nstruccionesViewController.swift in Sources */,
