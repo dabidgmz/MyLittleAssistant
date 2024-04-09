@@ -6,6 +6,4 @@ target 'MyLittleAssistant' do
   use_frameworks!
 
 pod 'Charts'
-pod 'CocoaMQTT'
-pod 'MQTTClient'
 end
