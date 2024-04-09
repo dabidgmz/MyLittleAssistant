@@ -75,6 +75,7 @@
 		0FEBF2322BB27AD3001BC41C /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEBF2312BB27AD3001BC41C /* UserViewController.swift */; };
 		0FF74EBC2BBE7BA9005A2D89 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF74EBB2BBE7BA9005A2D89 /* VideoViewController.swift */; };
 		880F7C8A2BBCA36E00E143A9 /* Gauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880F7C892BBCA36E00E143A9 /* Gauge.swift */; };
+		8843E7BF2BC5C5DC001E19AF /* VideooViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8843E7BE2BC5C5DC001E19AF /* VideooViewController.swift */; };
 		8874B24E2BB483E300265AD3 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8874B24D2BB483E300265AD3 /* CameraViewController.swift */; };
 		8874B2542BB4948000265AD3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8874B2532BB4948000265AD3 /* MenuViewController.swift */; };
 		8874B2562BB4B7F700265AD3 /* GraficaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8874B2552BB4B7F700265AD3 /* GraficaViewController.swift */; };
@@ -154,6 +155,7 @@
 		6CA299AFF6B685D3D092BB64 /* Pods-MyLittleAssistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyLittleAssistant.release.xcconfig"; path = "Target Support Files/Pods-MyLittleAssistant/Pods-MyLittleAssistant.release.xcconfig"; sourceTree = "<group>"; };
 		77907D984B70D800883B99E2 /* Pods-MyLittleAssistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyLittleAssistant.debug.xcconfig"; path = "Target Support Files/Pods-MyLittleAssistant/Pods-MyLittleAssistant.debug.xcconfig"; sourceTree = "<group>"; };
 		880F7C892BBCA36E00E143A9 /* Gauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gauge.swift; sourceTree = "<group>"; };
+		8843E7BE2BC5C5DC001E19AF /* VideooViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideooViewController.swift; sourceTree = "<group>"; };
 		8874B24D2BB483E300265AD3 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		8874B2532BB4948000265AD3 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		8874B2552BB4B7F700265AD3 /* GraficaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficaViewController.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				0F44F2D12B923D7E00AB80E6 /* AppDelegate.swift */,
 				0F7391E82BBB4A44006D0FA5 /* ChancePasswordUserViewController.swift */,
 				8874B24D2BB483E300265AD3 /* CameraViewController.swift */,
+				8843E7BE2BC5C5DC001E19AF /* VideooViewController.swift */,
 				0F8FFD232BC3A79000669D7A /* ControlesViewController.swift */,
 				0FA025182BBA2E17002C3B58 /* Divice.swift */,
 				0F0F6B222BB7747F00B841FD /* EditUserViewController.swift */,
@@ -470,6 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F3C9E5F2BB8C3E70004BB6A /* ScrolDiviceViewController.swift in Sources */,
+				8843E7BF2BC5C5DC001E19AF /* VideooViewController.swift in Sources */,
 				0F1239312BC4D765002BF1C9 /* MapaViewController.swift in Sources */,
 				0FEBF2322BB27AD3001BC41C /* UserViewController.swift in Sources */,
 				0F7391E92BBB4A44006D0FA5 /* ChancePasswordUserViewController.swift in Sources */,

@@ -13,10 +13,7 @@ import WebKit
 
 class CameraViewController: UIViewController {
 
-    @IBOutlet weak var video: WKWebView!
-
     @IBOutlet weak var webcam: UIView!
-   
     
     func highlightButton(_ button: UIButton) {
         let originalBackgroundColor = button.backgroundColor
@@ -27,83 +24,55 @@ class CameraViewController: UIViewController {
     }
 
     
-    //controles para mover Device
-    
-    @IBAction func Adelante(_ sender: Any) {
-    PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/w")
-    }
-    
-    
-    @IBAction func Atras(_ sender: Any) {
-    PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/s")
-    }
-    
-    
-    @IBAction func Derecha(_ sender: Any) {
-    PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/d")
-    }
-    
-    @IBAction func Izquierda(_ sender: Any) {
-    PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/a")
-    }
-    
-    
-    //Controles de Brazo Mecanico
-    
-    @IBAction func Subir(_ sender: Any) {
-        
-        highlightButton(sender as! UIButton)
-    }
-    
-    
-    @IBAction func Bajar(_ sender: Any) {
-        
-        highlightButton(sender as! UIButton)
-    }
-    
-    //Accionadores
-    
-    @IBAction func Bocina(_ sender: Any) {
-    PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/e")
-    }
-    
-    
-  //por el momento son todos queda pendiente move la camara
-    
     let pin = Marcador()
     let userData = UserData.sharedData()
     let coordenadasLugar = (latitud: 25.5315, longitud: -103.3219)
     override func viewDidLoad() {
         super.viewDidLoad()
-        reproducirVideo()
-        fetchDevices()
+        guard let videoURL = Bundle.main.url(forResource: "https://cdn.pixabay.com/video/2020/08/27/48420-453832153_large", withExtension: "mp4") else {
+                    return
+                }
+       // reproducirVideo()
+       fetchDevices()
+        // Crear un AVPlayer con la URL del video
+        let player = AVPlayer(url: videoURL)
+
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = webcam.bounds
+        playerLayer.videoGravity = .resizeAspectFill
+
+        // Agregar la capa al sublayer de la vista
+        webcam.layer.addSublayer(playerLayer)
+
+        // Reproducir el video
+        player.play()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidLoad()
         
-        reproducirVideo(videoURL: "https://cdn.pixabay.com/video/2020/08/27/48420-453832153_large.mp4")
-        video.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            video.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            video.topAnchor.constraint(equalTo: view.topAnchor, constant: 90),
-            video.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9),
-            video.heightAnchor.constraint(equalTo: video.widthAnchor, multiplier: 9.0/16.0)
-        ])
+        //reproducirVideo(videoURL: //"https://cdn.pixabay.com/video/2020/08/27/48420-453832153_large.mp4")
+       // webcam.translatesAutoresizingMaskIntoConstraints = false
+       // NSLayoutConstraint.activate([
+       //     webcam.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        //    webcam.topAnchor.constraint(equalTo: view.topAnchor, constant: 90),
+        //    webcam.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9),
+        //    webcam.heightAnchor.constraint(equalTo: webcam.widthAnchor, multiplier: 9.0/16.0)
+       // ])
+  //  }
+    
+   // func reproducirVideo(videoURL: String) {
+    //    guard let url = URL(string: videoURL + "?autoplay=0") else {
+     //       return
+     //   }
+    //    let request = URLRequest(url: url)
+    //    webcam.load(request)
     }
     
-    func reproducirVideo(videoURL: String) {
-        guard let url = URL(string: videoURL + "?autoplay=0") else {
-            return
-        }
-        let request = URLRequest(url: url)
-        video.load(request)
-    }
-    
+  
 
-    func reproducirVideo() {
-          
-    }
+           
+  
     
     func fetchDevices() {
         let url = URL(string: "http://backend.mylittleasistant.online:8000/api/user/devices")!
@@ -167,6 +136,45 @@ class CameraViewController: UIViewController {
             }
         }
         task.resume()
+    }
+    //controles para mover Device
+    
+    @IBAction func Adelante(_ sender: Any) {
+    PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/w")
+    }
+    
+    
+    @IBAction func Atras(_ sender: Any) {
+    PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/s")
+    }
+    
+    
+    @IBAction func Derecha(_ sender: Any) {
+    PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/d")
+    }
+    
+    @IBAction func Izquierda(_ sender: Any) {
+    PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/a")
+    }
+    
+    
+    //Controles de Brazo Mecanico
+    
+    @IBAction func Subir(_ sender: Any) {
+        
+        highlightButton(sender as! UIButton)
+    }
+    
+    
+    @IBAction func Bajar(_ sender: Any) {
+        
+        highlightButton(sender as! UIButton)
+    }
+    
+    //Accionadores
+    
+    @IBAction func Bocina(_ sender: Any) {
+    PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/e")
     }
     
     
