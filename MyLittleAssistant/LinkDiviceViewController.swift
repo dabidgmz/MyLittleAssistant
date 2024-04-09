@@ -93,7 +93,7 @@ class LinkDiviceViewController: UIViewController {
                     let responseJSON = try JSONSerialization.jsonObject(with: data, options: [])
                     print("Respuesta JSON: \(responseJSON)")
                     if statusCode == 400 {
-                        self.showError(message: "Error del server")
+                        self.showError(message: "Código de dispositivo incorrecto")
                         return
                     }
                 } catch {

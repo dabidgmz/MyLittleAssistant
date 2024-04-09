@@ -12,6 +12,7 @@
 		0F0DE79F2BBD2098006AA1C2 /* border.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F0DE79D2BBD2097006AA1C2 /* border.png */; };
 		0F0DE7A02BBD2098006AA1C2 /* checkcheck.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F0DE79E2BBD2098006AA1C2 /* checkcheck.png */; };
 		0F0F6B232BB7747F00B841FD /* EditUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0F6B222BB7747F00B841FD /* EditUserViewController.swift */; };
+		0F1239312BC4D765002BF1C9 /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1239302BC4D765002BF1C9 /* MapaViewController.swift */; };
 		0F150DC52BB5F37C000B569E /* tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F150DC42BB5F37C000B569E /* tokens.swift */; };
 		0F28255B2BAE9C26006273C2 /* SspViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F28255A2BAE9C26006273C2 /* SspViewController.swift */; };
 		0F3C9E5F2BB8C3E70004BB6A /* ScrolDiviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C9E5E2BB8C3E70004BB6A /* ScrolDiviceViewController.swift */; };
@@ -89,6 +90,7 @@
 		0F0DE79D2BBD2097006AA1C2 /* border.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = border.png; sourceTree = "<group>"; };
 		0F0DE79E2BBD2098006AA1C2 /* checkcheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkcheck.png; sourceTree = "<group>"; };
 		0F0F6B222BB7747F00B841FD /* EditUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserViewController.swift; sourceTree = "<group>"; };
+		0F1239302BC4D765002BF1C9 /* MapaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
 		0F150DC42BB5F37C000B569E /* tokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tokens.swift; sourceTree = "<group>"; };
 		0F28255A2BAE9C26006273C2 /* SspViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SspViewController.swift; sourceTree = "<group>"; };
 		0F3C9E5E2BB8C3E70004BB6A /* ScrolDiviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrolDiviceViewController.swift; sourceTree = "<group>"; };
@@ -217,33 +219,34 @@
 		0F44F2D02B923D7E00AB80E6 /* MyLittleAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				0F44F2DA2B923D8000AB80E6 /* Assets.xcassets */,
 				0F44F2D12B923D7E00AB80E6 /* AppDelegate.swift */,
-				0F003CD52BBE6998008B4C93 /* Marcador.swift */,
-				880F7C892BBCA36E00E143A9 /* Gauge.swift */,
-				0F0F6B222BB7747F00B841FD /* EditUserViewController.swift */,
-				0F150DC42BB5F37C000B569E /* tokens.swift */,
-				0F44F2D32B923D7E00AB80E6 /* SceneDelegate.swift */,
-				0F44F2D52B923D7E00AB80E6 /* ViewController.swift */,
-				0F44F2E52B923DC600AB80E6 /* RegisterViewController.swift */,
 				0F7391E82BBB4A44006D0FA5 /* ChancePasswordUserViewController.swift */,
-				0FEBF2312BB27AD3001BC41C /* UserViewController.swift */,
-				0F5F1FA62BB3E04C0009F8F9 /* UserData.swift */,
-				0F97CE5F2BAFC0100081D4CE /* nstruccionesViewController.swift */,
-				0F3CF56D2BBCAB8100A2136E /* ForgotPasswordViewController.swift */,
-				0FF74EBB2BBE7BA9005A2D89 /* VideoViewController.swift */,
-				0F28255A2BAE9C26006273C2 /* SspViewController.swift */,
-				0F44F2D72B923D7E00AB80E6 /* Main.storyboard */,
+				8874B24D2BB483E300265AD3 /* CameraViewController.swift */,
 				0F8FFD232BC3A79000669D7A /* ControlesViewController.swift */,
 				0FA025182BBA2E17002C3B58 /* Divice.swift */,
-				0F3C9E5E2BB8C3E70004BB6A /* ScrolDiviceViewController.swift */,
-				0F7763BE2BB7DB8C00DD6CA3 /* LinkDiviceViewController.swift */,
-				0F44F2DA2B923D8000AB80E6 /* Assets.xcassets */,
-				0F44F2DC2B923D8000AB80E6 /* LaunchScreen.storyboard */,
-				0F44F2DF2B923D8000AB80E6 /* Info.plist */,
-				0F33D85F2BB3C5E0009BE586 /* Models */,
-				8874B24D2BB483E300265AD3 /* CameraViewController.swift */,
-				8874B2532BB4948000265AD3 /* MenuViewController.swift */,
+				0F0F6B222BB7747F00B841FD /* EditUserViewController.swift */,
+				0F3CF56D2BBCAB8100A2136E /* ForgotPasswordViewController.swift */,
+				880F7C892BBCA36E00E143A9 /* Gauge.swift */,
 				8874B2552BB4B7F700265AD3 /* GraficaViewController.swift */,
+				0F44F2DF2B923D8000AB80E6 /* Info.plist */,
+				0F44F2DC2B923D8000AB80E6 /* LaunchScreen.storyboard */,
+				0F7763BE2BB7DB8C00DD6CA3 /* LinkDiviceViewController.swift */,
+				0F003CD52BBE6998008B4C93 /* Marcador.swift */,
+				0F44F2D72B923D7E00AB80E6 /* Main.storyboard */,
+				0F1239302BC4D765002BF1C9 /* MapaViewController.swift */,
+				8874B2532BB4948000265AD3 /* MenuViewController.swift */,
+				0F33D85F2BB3C5E0009BE586 /* Models */,
+				0F97CE5F2BAFC0100081D4CE /* nstruccionesViewController.swift */,
+				0F44F2E52B923DC600AB80E6 /* RegisterViewController.swift */,
+				0F150DC42BB5F37C000B569E /* tokens.swift */,
+				0F44F2D32B923D7E00AB80E6 /* SceneDelegate.swift */,
+				0F28255A2BAE9C26006273C2 /* SspViewController.swift */,
+				0F3C9E5E2BB8C3E70004BB6A /* ScrolDiviceViewController.swift */,
+				0F44F2D52B923D7E00AB80E6 /* ViewController.swift */,
+				0FEBF2312BB27AD3001BC41C /* UserViewController.swift */,
+				0F5F1FA62BB3E04C0009F8F9 /* UserData.swift */,
+				0FF74EBB2BBE7BA9005A2D89 /* VideoViewController.swift */,
 			);
 			path = MyLittleAssistant;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F3C9E5F2BB8C3E70004BB6A /* ScrolDiviceViewController.swift in Sources */,
+				0F1239312BC4D765002BF1C9 /* MapaViewController.swift in Sources */,
 				0FEBF2322BB27AD3001BC41C /* UserViewController.swift in Sources */,
 				0F7391E92BBB4A44006D0FA5 /* ChancePasswordUserViewController.swift in Sources */,
 				8874B2562BB4B7F700265AD3 /* GraficaViewController.swift in Sources */,

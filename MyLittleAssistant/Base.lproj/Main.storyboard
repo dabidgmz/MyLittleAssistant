@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a1G-Bc-oAc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rky-ZJ-Gk2">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -893,10 +893,6 @@
                                     <backgroundConfiguration key="background" image="logooooouu.png"/>
                                 </buttonConfiguration>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="923-5h-FA1">
-                                <rect key="frame" x="20" y="423.33333333333326" width="353" height="331"/>
-                                <standardMapConfiguration key="preferredConfiguration"/>
-                            </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SI2-oH-u8c">
                                 <rect key="frame" x="20" y="88" width="353" height="332.33333333333331"/>
                                 <subviews>
@@ -916,31 +912,218 @@
                                     <constraint firstItem="ybr-tN-479" firstAttribute="top" secondItem="SI2-oH-u8c" secondAttribute="top" id="hoJ-aT-kft"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfh-yb-Gdr">
+                                <rect key="frame" x="311" y="450.33333333333331" width="42" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="2mC-fa-pRm"/>
+                                    <constraint firstAttribute="width" constant="42" id="coq-5X-YCt"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background">
+                                        <imageReference key="image" image="BajarGarra.png" renderingMode="hierarchical">
+                                            <hierarchicalColors>
+                                                <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color systemColor="secondaryLabelColor"/>
+                                                <color systemColor="tertiaryLabelColor"/>
+                                            </hierarchicalColors>
+                                        </imageReference>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="Subir:" destination="XAD-Lu-D7b" eventType="touchUpInside" id="w9V-Se-HEP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bL-gV-25Q">
+                                <rect key="frame" x="311" y="516.33333333333337" width="42" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="i3i-zz-zUg"/>
+                                    <constraint firstAttribute="height" constant="36" id="rh7-oP-73A"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background">
+                                        <imageReference key="image" image="SubirGarra.png" renderingMode="hierarchical">
+                                            <hierarchicalColors>
+                                                <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color systemColor="secondaryLabelColor"/>
+                                                <color systemColor="tertiaryLabelColor"/>
+                                            </hierarchicalColors>
+                                        </imageReference>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="Bajar:" destination="XAD-Lu-D7b" eventType="touchUpInside" id="t3Q-qq-Fy8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCw-Z9-q3K">
+                                <rect key="frame" x="159" y="450.33333333333331" width="42" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="7fv-kw-CWX"/>
+                                    <constraint firstAttribute="width" constant="42" id="9u7-Mf-g6R"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background">
+                                        <imageReference key="image" image="mapa.png" renderingMode="hierarchical">
+                                            <hierarchicalColors>
+                                                <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color systemColor="secondaryLabelColor"/>
+                                                <color systemColor="tertiaryLabelColor"/>
+                                            </hierarchicalColors>
+                                        </imageReference>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="HCw-hU-BEk" kind="presentation" id="zmv-RC-c0T"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Slo-8h-yE2">
+                                <rect key="frame" x="221" y="450.33333333333331" width="42" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="c7D-1I-kmX"/>
+                                    <constraint firstAttribute="height" constant="36" id="hAZ-3W-T4v"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background">
+                                        <imageReference key="image" image="clackzon.png" renderingMode="hierarchical">
+                                            <hierarchicalColors>
+                                                <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color systemColor="secondaryLabelColor"/>
+                                                <color systemColor="tertiaryLabelColor"/>
+                                            </hierarchicalColors>
+                                        </imageReference>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="Bocina:" destination="XAD-Lu-D7b" eventType="touchUpInside" id="eZl-fH-Cir"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bf9-CP-7tA">
+                                <rect key="frame" x="55" y="450.33333333333331" width="42" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="dsY-HV-7Bw"/>
+                                    <constraint firstAttribute="width" constant="42" id="rEf-Tc-fLA"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background">
+                                        <imageReference key="image" image="arribaDevice.png" renderingMode="hierarchical">
+                                            <hierarchicalColors>
+                                                <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color systemColor="secondaryLabelColor"/>
+                                                <color systemColor="tertiaryLabelColor"/>
+                                            </hierarchicalColors>
+                                        </imageReference>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="Adelante:" destination="XAD-Lu-D7b" eventType="touchUpInside" id="iZo-NR-ve6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpz-1q-BwF">
+                                <rect key="frame" x="30" y="496.33333333333326" width="42" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="Yf4-dW-9cV"/>
+                                    <constraint firstAttribute="width" constant="42" id="shS-83-y3m"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background">
+                                        <imageReference key="image" image="izquierdaDevice.png" renderingMode="hierarchical">
+                                            <hierarchicalColors>
+                                                <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color systemColor="secondaryLabelColor"/>
+                                                <color systemColor="tertiaryLabelColor"/>
+                                            </hierarchicalColors>
+                                        </imageReference>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="Izquierda:" destination="XAD-Lu-D7b" eventType="touchUpInside" id="iEh-9H-anN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFY-Oa-xom">
+                                <rect key="frame" x="82" y="496.33333333333326" width="42" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="RGI-pr-fmf"/>
+                                    <constraint firstAttribute="width" constant="42" id="SfM-bp-yu8"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background">
+                                        <imageReference key="image" image="derechaDevice.png" renderingMode="hierarchical">
+                                            <hierarchicalColors>
+                                                <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color systemColor="secondaryLabelColor"/>
+                                                <color systemColor="tertiaryLabelColor"/>
+                                            </hierarchicalColors>
+                                        </imageReference>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="Derecha:" destination="XAD-Lu-D7b" eventType="touchUpInside" id="5Sj-Xy-E37"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VH1-xA-0p9">
+                                <rect key="frame" x="55" y="542.33333333333337" width="42" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="2SS-7H-KE9"/>
+                                    <constraint firstAttribute="height" constant="36" id="hIg-1P-mTy"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background">
+                                        <imageReference key="image" image="abajoDevice.png" renderingMode="hierarchical">
+                                            <hierarchicalColors>
+                                                <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color systemColor="secondaryLabelColor"/>
+                                                <color systemColor="tertiaryLabelColor"/>
+                                            </hierarchicalColors>
+                                        </imageReference>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="Atras:" destination="XAD-Lu-D7b" eventType="touchUpInside" id="laS-TL-LG8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MsR-NH-J0c"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="MsR-NH-J0c" firstAttribute="trailing" secondItem="2bL-gV-25Q" secondAttribute="trailing" constant="40" id="05D-eb-klO"/>
+                            <constraint firstItem="VH1-xA-0p9" firstAttribute="top" secondItem="dpz-1q-BwF" secondAttribute="bottom" constant="10" id="2sO-qf-RZx"/>
+                            <constraint firstItem="VH1-xA-0p9" firstAttribute="leading" secondItem="MsR-NH-J0c" secondAttribute="leading" constant="55" id="2tW-Yi-a2S"/>
                             <constraint firstItem="SI2-oH-u8c" firstAttribute="leading" secondItem="MsR-NH-J0c" secondAttribute="leading" constant="20" id="44E-J3-kKo"/>
                             <constraint firstItem="HK9-bc-avT" firstAttribute="leading" secondItem="PMo-3Z-3uo" secondAttribute="leading" id="4J8-hw-d7S"/>
-                            <constraint firstItem="923-5h-FA1" firstAttribute="leading" secondItem="MsR-NH-J0c" secondAttribute="leading" constant="20" id="5at-r3-IiE"/>
+                            <constraint firstItem="HCw-Z9-q3K" firstAttribute="leading" secondItem="MsR-NH-J0c" secondAttribute="leading" constant="159" id="4iz-Cz-Rg3"/>
+                            <constraint firstItem="dpz-1q-BwF" firstAttribute="top" secondItem="bf9-CP-7tA" secondAttribute="bottom" constant="10" id="DYz-kN-gCb"/>
+                            <constraint firstItem="dpz-1q-BwF" firstAttribute="leading" secondItem="MsR-NH-J0c" secondAttribute="leading" constant="30" id="E2P-ly-Pkz"/>
+                            <constraint firstItem="Slo-8h-yE2" firstAttribute="top" secondItem="SI2-oH-u8c" secondAttribute="bottom" constant="30" id="EDZ-3p-BVH"/>
+                            <constraint firstItem="QFY-Oa-xom" firstAttribute="leading" secondItem="dpz-1q-BwF" secondAttribute="trailing" constant="10" id="Fti-tD-ljU"/>
+                            <constraint firstItem="HCw-Z9-q3K" firstAttribute="top" secondItem="SI2-oH-u8c" secondAttribute="bottom" constant="30" id="OWN-mo-6nu"/>
                             <constraint firstItem="MsR-NH-J0c" firstAttribute="trailing" secondItem="TWV-gD-gr8" secondAttribute="trailing" constant="20" id="Q30-p3-JFs"/>
                             <constraint firstItem="11d-eA-U3m" firstAttribute="leading" secondItem="MsR-NH-J0c" secondAttribute="leading" constant="20" id="Sdi-k7-5ZJ"/>
+                            <constraint firstItem="Slo-8h-yE2" firstAttribute="leading" secondItem="HCw-Z9-q3K" secondAttribute="trailing" constant="20" id="YTJ-Zg-d83"/>
                             <constraint firstItem="TWV-gD-gr8" firstAttribute="centerY" secondItem="PMo-3Z-3uo" secondAttribute="centerY" multiplier="0.15" id="Yp9-jZ-O56"/>
-                            <constraint firstItem="923-5h-FA1" firstAttribute="height" secondItem="SI2-oH-u8c" secondAttribute="height" multiplier="0.996689" id="b0Z-xj-8U7"/>
+                            <constraint firstItem="MsR-NH-J0c" firstAttribute="trailing" secondItem="kfh-yb-Gdr" secondAttribute="trailing" constant="40" id="Zh6-Wd-H4K"/>
+                            <constraint firstItem="2bL-gV-25Q" firstAttribute="top" secondItem="kfh-yb-Gdr" secondAttribute="bottom" constant="30" id="ddC-jk-UVn"/>
+                            <constraint firstItem="kfh-yb-Gdr" firstAttribute="top" secondItem="SI2-oH-u8c" secondAttribute="bottom" constant="30" id="ed5-An-lrh"/>
                             <constraint firstItem="HK9-bc-avT" firstAttribute="top" secondItem="PMo-3Z-3uo" secondAttribute="top" id="fAf-yV-WAf"/>
                             <constraint firstItem="SI2-oH-u8c" firstAttribute="top" secondItem="TWV-gD-gr8" secondAttribute="bottom" constant="6" id="fnu-EY-Jxq"/>
                             <constraint firstItem="SI2-oH-u8c" firstAttribute="height" secondItem="HK9-bc-avT" secondAttribute="height" multiplier="0.39" id="gsG-Ds-Puy"/>
-                            <constraint firstItem="MsR-NH-J0c" firstAttribute="trailing" secondItem="923-5h-FA1" secondAttribute="trailing" constant="20" id="hO1-JS-dfu"/>
                             <constraint firstItem="MsR-NH-J0c" firstAttribute="trailing" secondItem="HK9-bc-avT" secondAttribute="trailing" id="icx-Xd-XzU"/>
                             <constraint firstItem="MsR-NH-J0c" firstAttribute="trailing" secondItem="SI2-oH-u8c" secondAttribute="trailing" constant="20" id="kwY-wH-hLo"/>
+                            <constraint firstItem="QFY-Oa-xom" firstAttribute="top" secondItem="bf9-CP-7tA" secondAttribute="bottom" constant="10" id="oOU-02-eEq"/>
                             <constraint firstItem="11d-eA-U3m" firstAttribute="centerY" secondItem="PMo-3Z-3uo" secondAttribute="centerY" multiplier="0.15" id="oRk-MA-haD"/>
-                            <constraint firstItem="923-5h-FA1" firstAttribute="top" secondItem="SI2-oH-u8c" secondAttribute="bottom" constant="3" id="rEj-U0-xs4"/>
+                            <constraint firstItem="bf9-CP-7tA" firstAttribute="leading" secondItem="MsR-NH-J0c" secondAttribute="leading" constant="55" id="uiN-IY-e29"/>
+                            <constraint firstItem="bf9-CP-7tA" firstAttribute="top" secondItem="SI2-oH-u8c" secondAttribute="bottom" constant="30" id="yql-Ky-SUR"/>
                             <constraint firstAttribute="bottom" secondItem="HK9-bc-avT" secondAttribute="bottom" id="zct-fm-QD9"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="location.fill" catalog="system" id="Ux9-WJ-qgm"/>
                     <connections>
-                        <outlet property="mapCiudad" destination="923-5h-FA1" id="cgD-Ex-tCD"/>
                         <outlet property="video" destination="ybr-tN-479" id="qep-c3-S2J"/>
                         <outlet property="webcam" destination="SI2-oH-u8c" id="M1j-dL-yo9"/>
                         <segue destination="4dQ-og-exT" kind="presentation" identifier="sgNoDevices" modalPresentationStyle="fullScreen" id="22Z-mW-McM"/>
@@ -1187,215 +1370,43 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eMg-2X-rJx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1425" y="161"/>
+            <point key="canvasLocation" x="-862" y="77"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Y7Z-cn-gq1">
+        <!--Mapa View Controller-->
+        <scene sceneID="tg2-7A-5Hl">
             <objects>
-                <viewController id="a1G-Bc-oAc" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nI1-AE-pZi">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                <viewController id="HCw-hU-BEk" customClass="MapaViewController" customModule="MyLittleAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pBy-uN-n2u">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondoazul.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="iK0-Tu-pBc">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondoazul.jpeg" id="NmB-Ir-VTY">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eXf-KA-JVt">
-                                <rect key="frame" x="20" y="59" width="353" height="332.33333333333331"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7NC-0J-O4R">
+                                <rect key="frame" x="16" y="93" width="361" height="536"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="353" id="IBL-Ju-F6g"/>
-                                    <constraint firstAttribute="height" constant="332.32999999999998" id="efC-fT-4tS"/>
+                                    <constraint firstAttribute="height" constant="536" id="7x1-uC-ZrG"/>
+                                    <constraint firstAttribute="width" constant="361" id="Q2J-ol-cbi"/>
                                 </constraints>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpz-1q-BwF">
-                                <rect key="frame" x="16" y="531.33333333333337" width="42" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="Yf4-dW-9cV"/>
-                                    <constraint firstAttribute="width" constant="42" id="shS-83-y3m"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background">
-                                        <imageReference key="image" image="izquierdaDevice.png" renderingMode="hierarchical">
-                                            <hierarchicalColors>
-                                                <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color systemColor="secondaryLabelColor"/>
-                                                <color systemColor="tertiaryLabelColor"/>
-                                            </hierarchicalColors>
-                                        </imageReference>
-                                    </backgroundConfiguration>
-                                </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sjh-IA-8nz">
-                                <rect key="frame" x="99" y="531.33333333333337" width="42" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="42" id="Ewi-4j-LIt"/>
-                                    <constraint firstAttribute="height" constant="36" id="d7W-Jx-2Qx"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background">
-                                        <imageReference key="image" image="derechaDevice.png" renderingMode="hierarchical">
-                                            <hierarchicalColors>
-                                                <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color systemColor="secondaryLabelColor"/>
-                                                <color systemColor="tertiaryLabelColor"/>
-                                            </hierarchicalColors>
-                                        </imageReference>
-                                    </backgroundConfiguration>
-                                </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXF-61-Sb1">
-                                <rect key="frame" x="56" y="567.33333333333337" width="42" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="2cS-uy-CtV"/>
-                                    <constraint firstAttribute="width" constant="42" id="X6l-G6-qai"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background">
-                                        <imageReference key="image" image="abajoDevice.png" renderingMode="hierarchical">
-                                            <hierarchicalColors>
-                                                <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color systemColor="secondaryLabelColor"/>
-                                                <color systemColor="tertiaryLabelColor"/>
-                                            </hierarchicalColors>
-                                        </imageReference>
-                                    </backgroundConfiguration>
-                                </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2be-a5-f0b">
-                                <rect key="frame" x="56" y="481.33333333333331" width="42" height="35.999999999999943"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="42" id="muR-Ec-5KC"/>
-                                    <constraint firstAttribute="height" constant="36" id="pyL-4G-bKC"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background">
-                                        <imageReference key="image" image="arribaDevice.png" renderingMode="hierarchical">
-                                            <hierarchicalColors>
-                                                <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color systemColor="secondaryLabelColor"/>
-                                                <color systemColor="tertiaryLabelColor"/>
-                                            </hierarchicalColors>
-                                        </imageReference>
-                                    </backgroundConfiguration>
-                                </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dI-mW-sZG">
-                                <rect key="frame" x="321" y="481.33333333333331" width="42" height="35.999999999999943"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="42" id="09Q-E7-vuM"/>
-                                    <constraint firstAttribute="height" constant="36" id="1fc-Cc-uqQ"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background">
-                                        <imageReference key="image" image="BajarGarra.png" renderingMode="hierarchical">
-                                            <hierarchicalColors>
-                                                <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color systemColor="secondaryLabelColor"/>
-                                                <color systemColor="tertiaryLabelColor"/>
-                                            </hierarchicalColors>
-                                        </imageReference>
-                                    </backgroundConfiguration>
-                                </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qz-nj-5oA">
-                                <rect key="frame" x="321" y="557.33333333333337" width="42" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="5gm-dd-GaE"/>
-                                    <constraint firstAttribute="width" constant="42" id="Z3G-hJ-AIE"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background">
-                                        <imageReference key="image" image="SubirGarra.png" renderingMode="hierarchical">
-                                            <hierarchicalColors>
-                                                <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color systemColor="secondaryLabelColor"/>
-                                                <color systemColor="tertiaryLabelColor"/>
-                                            </hierarchicalColors>
-                                        </imageReference>
-                                    </backgroundConfiguration>
-                                </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uB9-0a-d4S">
-                                <rect key="frame" x="150" y="441.33333333333331" width="42" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="dtT-wb-4Ln"/>
-                                    <constraint firstAttribute="width" constant="42" id="rqQ-c1-XE9"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background">
-                                        <imageReference key="image" image="mapa.png" renderingMode="hierarchical">
-                                            <hierarchicalColors>
-                                                <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color systemColor="secondaryLabelColor"/>
-                                                <color systemColor="tertiaryLabelColor"/>
-                                            </hierarchicalColors>
-                                        </imageReference>
-                                    </backgroundConfiguration>
-                                </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1J-Ur-sdC">
-                                <rect key="frame" x="207" y="441.33333333333331" width="42" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="qOg-VK-wme"/>
-                                    <constraint firstAttribute="width" constant="42" id="vIR-U2-1BP"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background">
-                                        <imageReference key="image" image="clackzon.png" renderingMode="hierarchical">
-                                            <hierarchicalColors>
-                                                <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color systemColor="secondaryLabelColor"/>
-                                                <color systemColor="tertiaryLabelColor"/>
-                                            </hierarchicalColors>
-                                        </imageReference>
-                                    </backgroundConfiguration>
-                                </buttonConfiguration>
-                            </button>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="z6c-TD-Mhu"/>
+                        <viewLayoutGuide key="safeArea" id="EZp-ll-f3X"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="5qz-nj-5oA" firstAttribute="top" secondItem="3dI-mW-sZG" secondAttribute="bottom" constant="40" id="2Wd-Xo-hU2"/>
-                            <constraint firstItem="z6c-TD-Mhu" firstAttribute="trailing" secondItem="3dI-mW-sZG" secondAttribute="trailing" constant="30" id="5Yr-g5-Lzm"/>
-                            <constraint firstItem="cXF-61-Sb1" firstAttribute="leading" secondItem="z6c-TD-Mhu" secondAttribute="leading" constant="56" id="72P-xH-pkF"/>
-                            <constraint firstItem="2be-a5-f0b" firstAttribute="top" secondItem="eXf-KA-JVt" secondAttribute="bottom" constant="90" id="7Bo-ut-kxj"/>
-                            <constraint firstItem="Sjh-IA-8nz" firstAttribute="leading" secondItem="dpz-1q-BwF" secondAttribute="trailing" constant="41" id="7kI-Gk-LVH"/>
-                            <constraint firstItem="iK0-Tu-pBc" firstAttribute="top" secondItem="nI1-AE-pZi" secondAttribute="top" id="Db5-cB-xGV"/>
-                            <constraint firstAttribute="bottom" secondItem="iK0-Tu-pBc" secondAttribute="bottom" id="GWw-e1-LmB"/>
-                            <constraint firstItem="uB9-0a-d4S" firstAttribute="leading" secondItem="z6c-TD-Mhu" secondAttribute="leading" constant="150" id="IaU-Ct-rVM"/>
-                            <constraint firstItem="iK0-Tu-pBc" firstAttribute="leading" secondItem="z6c-TD-Mhu" secondAttribute="leading" id="IlG-n6-1lq"/>
-                            <constraint firstItem="3dI-mW-sZG" firstAttribute="top" secondItem="eXf-KA-JVt" secondAttribute="bottom" constant="90" id="ImE-zv-Muo"/>
-                            <constraint firstItem="iK0-Tu-pBc" firstAttribute="trailing" secondItem="z6c-TD-Mhu" secondAttribute="trailing" id="MYy-Na-gWP"/>
-                            <constraint firstItem="eXf-KA-JVt" firstAttribute="top" secondItem="z6c-TD-Mhu" secondAttribute="top" id="OvX-2a-Bhq"/>
-                            <constraint firstItem="eXf-KA-JVt" firstAttribute="centerX" secondItem="nI1-AE-pZi" secondAttribute="centerX" id="RS5-is-0es"/>
-                            <constraint firstItem="m1J-Ur-sdC" firstAttribute="top" secondItem="eXf-KA-JVt" secondAttribute="bottom" constant="50" id="Wxk-ss-L4W"/>
-                            <constraint firstItem="uB9-0a-d4S" firstAttribute="top" secondItem="eXf-KA-JVt" secondAttribute="bottom" constant="50" id="cOb-iT-Ap5"/>
-                            <constraint firstItem="z6c-TD-Mhu" firstAttribute="trailing" secondItem="5qz-nj-5oA" secondAttribute="trailing" constant="30" id="d25-OY-6pj"/>
-                            <constraint firstItem="dpz-1q-BwF" firstAttribute="leading" secondItem="z6c-TD-Mhu" secondAttribute="leading" constant="16" id="drY-8h-vTK"/>
-                            <constraint firstItem="cXF-61-Sb1" firstAttribute="top" secondItem="2be-a5-f0b" secondAttribute="bottom" constant="50" id="lBl-s0-S8G"/>
-                            <constraint firstItem="dpz-1q-BwF" firstAttribute="top" secondItem="eXf-KA-JVt" secondAttribute="bottom" constant="140" id="uo2-Er-M7g"/>
-                            <constraint firstItem="2be-a5-f0b" firstAttribute="leading" secondItem="z6c-TD-Mhu" secondAttribute="leading" constant="56" id="yOA-EO-I5z"/>
-                            <constraint firstItem="Sjh-IA-8nz" firstAttribute="top" secondItem="eXf-KA-JVt" secondAttribute="bottom" constant="140" id="ymX-VD-Oia"/>
-                            <constraint firstItem="m1J-Ur-sdC" firstAttribute="leading" secondItem="uB9-0a-d4S" secondAttribute="trailing" constant="15" id="zMM-zn-8h1"/>
+                            <constraint firstItem="7NC-0J-O4R" firstAttribute="centerX" secondItem="pBy-uN-n2u" secondAttribute="centerX" id="3wb-Cf-gXe"/>
+                            <constraint firstItem="7NC-0J-O4R" firstAttribute="top" secondItem="EZp-ll-f3X" secondAttribute="top" constant="34" id="Bwt-8Q-eT5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapCiudad" destination="7NC-0J-O4R" id="fhS-Ak-M4y"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AJY-hh-iFV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rbf-ls-oow" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-509.16030534351142" y="160.56338028169014"/>
+            <point key="canvasLocation" x="1956" y="-539"/>
         </scene>
         <!--Tokens-->
         <scene sceneID="BKV-eH-U68">
@@ -1881,7 +1892,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="AXb-oU-xYg"/>
-        <segue reference="jTy-yq-lLc"/>
+        <segue reference="22Z-mW-McM"/>
         <segue reference="blX-5H-trq"/>
         <segue reference="nBJ-3f-eXS"/>
         <segue reference="EL0-wJ-ejt"/>

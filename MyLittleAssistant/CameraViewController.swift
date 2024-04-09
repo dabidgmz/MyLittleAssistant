@@ -14,15 +14,67 @@ import WebKit
 class CameraViewController: UIViewController {
 
     @IBOutlet weak var video: WKWebView!
-    @IBOutlet weak var mapCiudad: MKMapView!
+
     @IBOutlet weak var webcam: UIView!
    
+    
+    func highlightButton(_ button: UIButton) {
+        let originalBackgroundColor = button.backgroundColor
+        button.backgroundColor = .white
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            button.backgroundColor = originalBackgroundColor
+        }
+    }
+
+    
+    //controles para mover Device
+    
+    @IBAction func Adelante(_ sender: Any) {
+    PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/w")
+    }
+    
+    
+    @IBAction func Atras(_ sender: Any) {
+    PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/s")
+    }
+    
+    
+    @IBAction func Derecha(_ sender: Any) {
+    PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/d")
+    }
+    
+    @IBAction func Izquierda(_ sender: Any) {
+    PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/a")
+    }
+    
+    
+    //Controles de Brazo Mecanico
+    
+    @IBAction func Subir(_ sender: Any) {
+        
+        highlightButton(sender as! UIButton)
+    }
+    
+    
+    @IBAction func Bajar(_ sender: Any) {
+        
+        highlightButton(sender as! UIButton)
+    }
+    
+    //Accionadores
+    
+    @IBAction func Bocina(_ sender: Any) {
+    PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/e")
+    }
+    
+    
+  //por el momento son todos queda pendiente move la camara
+    
     let pin = Marcador()
     let userData = UserData.sharedData()
     let coordenadasLugar = (latitud: 25.5315, longitud: -103.3219)
     override func viewDidLoad() {
         super.viewDidLoad()
-        setearMapa()
         reproducirVideo()
         fetchDevices()
     }
@@ -38,7 +90,6 @@ class CameraViewController: UIViewController {
             video.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9),
             video.heightAnchor.constraint(equalTo: video.widthAnchor, multiplier: 9.0/16.0)
         ])
-        setearMapa()
     }
     
     func reproducirVideo(videoURL: String) {
@@ -49,26 +100,10 @@ class CameraViewController: UIViewController {
         video.load(request)
     }
     
-    func setearMapa() {
-        var region = MKCoordinateRegion()
-        mapCiudad.removeAnnotations(mapCiudad.annotations)
-        region.center.latitude = coordenadasLugar.latitud
-        region.center.longitude = coordenadasLugar.longitud
-        region.span.latitudeDelta = 0.05
-        region.span.longitudeDelta = 0.05
-        mapCiudad.isZoomEnabled = true
-        mapCiudad.isScrollEnabled = true
-        mapCiudad.mapType = .satellite // si no lo quieres satelital lo quitas
-        let pin = MKPointAnnotation()
-        pin.coordinate = region.center
-        pin.title = "Ubicación"
-        pin.subtitle = "Carr. Torreón - Matamoros S/N-Km 10, Ejido el Águila, 27400 Torreón, Coah."
-        mapCiudad.setRegion(region, animated: true)
-        mapCiudad.addAnnotation(pin)
-    }
+
     func reproducirVideo() {
           
-        }
+    }
     
     func fetchDevices() {
         let url = URL(string: "http://backend.mylittleasistant.online:8000/api/user/devices")!
@@ -79,7 +114,8 @@ class CameraViewController: UIViewController {
         request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         print("Making request to URL:", url.absoluteString)
         
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: request) { [weak self] (data, response, error) in
+            guard let self = self else { return }
             if let error = error {
                 print("Error en el request:", error)
                 return
@@ -132,5 +168,43 @@ class CameraViewController: UIViewController {
         }
         task.resume()
     }
-
+    
+    
+    func PostControllersDevice(to url: String) {
+        guard let url = URL(string: url) else {
+            print("URL inválida")
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Error en la solicitud:", error)
+                return
+            }
+            guard let httpResponse = response as? HTTPURLResponse else {
+                print("Respuesta inválida")
+                return
+            }
+            
+            if httpResponse.statusCode == 200 {
+                if let responseData = data {
+                    if let responseString = String(data: responseData, encoding: .utf8) {
+                        print("Respuesta recibida:", responseString)
+                    } else {
+                        print("No se pudo convertir la respuesta a String")
+                    }
+                } else {
+                    print("No se recibieron datos en la respuesta")
+                }
+                print("Solicitud exitosa. Status code: 200")
+            } else {
+                print("Error en la solicitud. Status code:", httpResponse.statusCode)
+            }
+        }
+        task.resume()
+    }
+    
+    
+   
 }
