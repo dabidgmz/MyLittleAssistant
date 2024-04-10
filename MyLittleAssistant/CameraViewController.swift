@@ -29,51 +29,27 @@ class CameraViewController: UIViewController {
     let coordenadasLugar = (latitud: 25.5315, longitud: -103.3219)
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let videoURL = Bundle.main.url(forResource: "https://cdn.pixabay.com/video/2020/08/27/48420-453832153_large", withExtension: "mp4") else {
-                    return
-                }
-       // reproducirVideo()
+        
+        guard let videoURL = URL(string: "https://cdn.pixabay.com/video/2020/08/27/48420-453832153_large.mp4") else {
+            print("La URL del video no es válida")
+            return
+        }
+
+
        fetchDevices()
-        // Crear un AVPlayer con la URL del video
         let player = AVPlayer(url: videoURL)
 
         let playerLayer = AVPlayerLayer(player: player)
         playerLayer.frame = webcam.bounds
         playerLayer.videoGravity = .resizeAspectFill
-
-        // Agregar la capa al sublayer de la vista
         webcam.layer.addSublayer(playerLayer)
-
-        // Reproducir el video
         player.play()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidLoad()
-        
-        //reproducirVideo(videoURL: //"https://cdn.pixabay.com/video/2020/08/27/48420-453832153_large.mp4")
-       // webcam.translatesAutoresizingMaskIntoConstraints = false
-       // NSLayoutConstraint.activate([
-       //     webcam.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        //    webcam.topAnchor.constraint(equalTo: view.topAnchor, constant: 90),
-        //    webcam.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9),
-        //    webcam.heightAnchor.constraint(equalTo: webcam.widthAnchor, multiplier: 9.0/16.0)
-       // ])
-  //  }
-    
-   // func reproducirVideo(videoURL: String) {
-    //    guard let url = URL(string: videoURL + "?autoplay=0") else {
-     //       return
-     //   }
-    //    let request = URLRequest(url: url)
-    //    webcam.load(request)
+       
     }
-    
-  
-
-           
-  
-    
     func fetchDevices() {
         let url = URL(string: "http://backend.mylittleasistant.online:8000/api/user/devices")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 50)
