@@ -11,11 +11,13 @@ import Charts
 class MenuViewController: UIViewController, ChartViewDelegate {
     
 
+ 
     @IBOutlet weak var flecha: UIImageView!
     var lineChart = LineChartView()
   var barChart = BarChartView()
     var gaugeView = GaugeView()
     let userData = UserData.sharedData()
+    var angle: CGFloat = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
         lineChart.delegate = self
@@ -23,7 +25,8 @@ class MenuViewController: UIViewController, ChartViewDelegate {
         
         fetchDevices()
     }
-    override func viewDidLayoutSubviews() {
+    override func viewDidLayoutSubviews()
+    {
         super.viewDidLayoutSubviews()
         
             // Configurar la gráfica de líneas
@@ -78,12 +81,20 @@ class MenuViewController: UIViewController, ChartViewDelegate {
             barChart.xAxis.labelTextColor = .white
             barChart.leftAxis.labelTextColor = .white
             barChart.leftAxis.labelTextColor = .white
-            
-        
+      
+        let angleInDegrees: CGFloat = 90
+        let angleInRadians = angleInDegrees * CGFloat.pi / 180
+        rotateArrow(angle: angleInRadians)
+
+
         
            
     }
-
+    func rotateArrow(angle: CGFloat) {
+            UIView.animate(withDuration: 0.3) {
+                self.flecha.transform = CGAffineTransform(rotationAngle: angle)
+            }
+        }
     func fetchDevices() {
         let url = URL(string: "http://backend.mylittleasistant.online:8000/api/user/devices")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 50)

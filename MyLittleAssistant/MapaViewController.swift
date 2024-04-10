@@ -24,14 +24,14 @@ class MapaViewController: UIViewController {
         mapCiudad.removeAnnotations(mapCiudad.annotations)
         region.center.latitude = coordenadasLugar.latitud
         region.center.longitude = coordenadasLugar.longitud
-        region.span.latitudeDelta = 0.05
-        region.span.longitudeDelta = 0.05
+        region.span.latitudeDelta = 0.03
+        region.span.longitudeDelta = 0.03
         mapCiudad.isZoomEnabled = true
         mapCiudad.isScrollEnabled = true
-        mapCiudad.mapType = .satellite
+        mapCiudad.mapType = .satelliteFlyover
         let pin = MKPointAnnotation()
         pin.coordinate = region.center
-        pin.title = "Ubicación"
+        pin.title = "Carrito"
         pin.subtitle = "Carr. Torreón - Matamoros S/N-Km 10, Ejido el Águila, 27400 Torreón, Coah."
         mapCiudad.setRegion(region, animated: true)
         mapCiudad.addAnnotation(pin)
