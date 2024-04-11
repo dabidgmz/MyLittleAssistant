@@ -117,33 +117,37 @@ class CameraViewController: UIViewController {
     
     @IBAction func Adelante(_ sender: Any) {
     PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/w")
+        highlightButton(sender as! UIButton)
     }
     
     
     @IBAction func Atras(_ sender: Any) {
     PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/s")
+        highlightButton(sender as! UIButton)
     }
     
     
     @IBAction func Derecha(_ sender: Any) {
     PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/d")
+        highlightButton(sender as! UIButton)
     }
     
     @IBAction func Izquierda(_ sender: Any) {
     PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/a")
+        highlightButton(sender as! UIButton)
     }
     
     
     //Controles de Brazo Mecanico
     
     @IBAction func Subir(_ sender: Any) {
-        
+        PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/i")
         highlightButton(sender as! UIButton)
     }
     
     
     @IBAction func Bajar(_ sender: Any) {
-        
+        PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/k")
         highlightButton(sender as! UIButton)
     }
     
@@ -151,6 +155,7 @@ class CameraViewController: UIViewController {
     
     @IBAction func Bocina(_ sender: Any) {
     PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/e")
+        highlightButton(sender as! UIButton)
     }
     
     
