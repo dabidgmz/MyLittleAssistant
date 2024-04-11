@@ -71,8 +71,15 @@ class EditUserViewController: UIViewController {
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
         
         view.layer.insertSublayer(gradientLayer, at: 0)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ocultarTeclado))
+        view.addGestureRecognizer(tapGesture)
     }
         
+    
+    @IBAction func ocultarTeclado(){
+        view.endEditing(true)
+    }
     
     func UpdateUser() {
         let url = URL(string: "http://backend.mylittleasistant.online:8000/api/user/update")!

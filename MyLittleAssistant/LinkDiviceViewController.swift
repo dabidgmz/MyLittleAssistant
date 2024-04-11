@@ -47,7 +47,15 @@ class LinkDiviceViewController: UIViewController {
                gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
                
                view.layer.insertSublayer(gradientLayer, at: 0)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ocultarTeclado))
+        view.addGestureRecognizer(tapGesture)
     }
+    
+    @IBAction func ocultarTeclado(){
+        view.endEditing(true)
+    }
+    
     
     func VincularDivice() {
         guard let device_code = Code_txt.text, !device_code.isEmpty else {

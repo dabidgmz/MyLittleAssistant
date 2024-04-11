@@ -46,6 +46,13 @@ class ForgotPasswordViewController: UIViewController {
         Email_txt.layer.shadowOffset = CGSize(width: 0, height: 2)
         Email_txt.layer.shadowOpacity = 0.5
         Email_txt.layer.shadowRadius = 2
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ocultarTeclado))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @IBAction func ocultarTeclado(){
+        view.endEditing(true)
     }
     
     func showError(message: String) {
