@@ -60,7 +60,12 @@ class ViewController: UIViewController, UNUserNotificationCenterDelegate{
                 print("Permiso denegado para mostrar notificaciones")
             }
         }
-        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ocultarTeclado))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @IBAction func ocultarTeclado(){
+        view.endEditing(true)
     }
             
     @IBAction func loginButton(_ sender: UIButton) {
