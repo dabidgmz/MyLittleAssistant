@@ -68,8 +68,13 @@ class ChancePasswordUserViewController: UIViewController{
         old_password.layer.shadowOpacity = 0.5
         old_password.layer.shadowRadius = 2
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ocultarTeclado))
+        view.addGestureRecognizer(tapGesture)
     }
     
+    @IBAction func ocultarTeclado(){
+        view.endEditing(true)
+    }
     
     func editPassword() {
             guard let oldPasswordText = old_password.text,
