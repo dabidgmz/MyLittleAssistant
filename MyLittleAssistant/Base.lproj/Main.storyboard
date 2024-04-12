@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XAD-Lu-D7b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rky-ZJ-Gk2">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -351,7 +351,7 @@
                                     </backgroundConfiguration>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="Ayf-6I-jjk" kind="presentation" modalPresentationStyle="fullScreen" id="gcs-Vq-DXa"/>
+                                    <segue destination="Ayf-6I-jjk" kind="presentation" id="dCu-ai-P1p"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBw-sN-Lk6">
@@ -364,9 +364,6 @@
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="logooooouu.png"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <segue destination="wVL-2u-87C" kind="presentation" modalPresentationStyle="fullScreen" id="AXb-oU-xYg"/>
-                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VPf-e4-gu6">
                                 <rect key="frame" x="13.999999999999993" y="240.66666666666666" width="100.33333333333331" height="45.666666666666686"/>
@@ -879,6 +876,9 @@
                                         </imageReference>
                                     </backgroundConfiguration>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="Ayf-6I-jjk" kind="presentation" id="dbV-SV-L5d"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11d-eA-U3m">
                                 <rect key="frame" x="20" y="42" width="55" height="55"/>
@@ -1236,7 +1236,7 @@
                                     </backgroundConfiguration>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="xrA-Zo-p3X" kind="presentation" modalPresentationStyle="fullScreen" id="nBJ-3f-eXS"/>
+                                    <segue destination="xrA-Zo-p3X" kind="presentation" modalPresentationStyle="fullScreen" id="E9j-EE-5DE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1382,7 +1382,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rbf-ls-oow" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1957" y="-392"/>
+            <point key="canvasLocation" x="1982" y="-382"/>
         </scene>
         <!--Tokens-->
         <scene sceneID="BKV-eH-U68">
@@ -1811,7 +1811,7 @@
                                     </backgroundConfiguration>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="Ayf-6I-jjk" kind="presentation" modalPresentationStyle="automatic" id="JoH-bR-H0u"/>
+                                    <segue destination="Ayf-6I-jjk" kind="presentation" id="zJ9-gq-GW1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AEC-vR-Uwk">
@@ -1867,11 +1867,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="AXb-oU-xYg"/>
-        <segue reference="22Z-mW-McM"/>
+        <segue reference="HGT-Oz-hXq"/>
+        <segue reference="jTy-yq-lLc"/>
         <segue reference="dAa-zM-U6z"/>
-        <segue reference="nBJ-3f-eXS"/>
-        <segue reference="ss9-Yn-Ko7"/>
+        <segue reference="E9j-EE-5DE"/>
+        <segue reference="fNr-Lc-GWY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BajarGarra.png" width="80" height="80"/>
