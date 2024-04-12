@@ -9,7 +9,12 @@ import UIKit
 import MapKit
 import AVKit
 import WebKit
-
+/*
+  se creo variables para asignar que era lo maximo que se podia ampliar la resolucion
+  se crearon metodos para sobrescirbir como funcionaba el reproductor de video y su ajuste de resolucion
+ se comneto el codigo principal en caso de que se quiera regresar a su funcionalidad
+ si gustas eliminar los metodos viewWillAppear y viewWillLayoutSubviews es de tu gusto fue la unica solucion que vi para que la resolucion se ajustara
+ */
 
 class CameraViewController: UIViewController {
 
@@ -23,33 +28,56 @@ class CameraViewController: UIViewController {
         }
     }
 
-    
+
+    var player: AVPlayer?
+    var playerLayer: AVPlayerLayer?
+    let maxPlayerLayerWidth: CGFloat = 500
     let pin = Marcador()
     let userData = UserData.sharedData()
     let coordenadasLugar = (latitud: 25.5315, longitud: -103.3219)
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        guard let videoURL = URL(string: "https://cdn.pixabay.com/video/2020/08/27/48420-453832153_large.mp4") else {
+       /* guard let videoURL = URL(string: "https://cdn.pixabay.com/video/2020/08/27/48420-453832153_large.mp4") else {
             print("La URL del video no es válida")
             return
         }
-
-
-       fetchDevices()
-        let player = AVPlayer(url: videoURL)
-
-        let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.frame = webcam.bounds
-        playerLayer.videoGravity = .resizeAspectFill
-        webcam.layer.addSublayer(playerLayer)
-        player.play()
+        */
+        
+        fetchDevices()
+        /*player = AVPlayer(url: videoURL)
+        playerLayer = AVPlayerLayer(player: player)
+        playerLayer?.videoGravity = .resizeAspectFill
+        webcam.layer.addSublayer(playerLayer!)*/
+        
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidLoad()
-       
+    override func viewWillAppear(_ animated: Bool) {
+          super.viewWillAppear(animated)
+          
+          guard let videoURL = URL(string: "https://cdn.pixabay.com/video/2020/08/27/48420-453832153_large.mp4") else {
+              print("La URL del video no es válida")
+              return
+          }
+          player = AVPlayer(url: videoURL)
+          playerLayer = AVPlayerLayer(player: player)
+          playerLayer?.videoGravity = .resizeAspectFill
+          webcam.layer.addSublayer(playerLayer!)
+          
+          player?.play()
+      }
+    
+    
+    override func viewWillLayoutSubviews() {
+            super.viewWillLayoutSubviews()
+            guard let playerLayer = playerLayer else { return }
+            var playerLayerWidth = webcam.bounds.width
+            if playerLayerWidth > maxPlayerLayerWidth {
+                playerLayerWidth = maxPlayerLayerWidth
+            }
+            playerLayer.frame = CGRect(x: 0, y: 0, width: playerLayerWidth, height: webcam.bounds.height)
     }
+
+    
     func fetchDevices() {
         let url = URL(string: "http://backend.mylittleasistant.online:8000/api/user/devices")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 50)
