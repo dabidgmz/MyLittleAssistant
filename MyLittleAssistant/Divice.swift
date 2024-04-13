@@ -15,22 +15,33 @@ class Device: NSObject {
     let userId: Int
     let createdAt: String
     let updatedAt: String
+    static var deviceData: Device!
     
-    init(id: Int, type: String, model: String, os: String, code: String, userId: Int, createdAt: String, updatedAt: String) {
-        self.id = id
-        self.type = type
-        self.model = model
-        self.os = os
-        self.code = code
-        self.userId = userId
-        self.createdAt = createdAt
-        self.updatedAt = updatedAt
+    override init() {
+        id = 0
+        type = ""
+        model = ""
+        os = ""
+        code = ""
+        userId = 0
+        createdAt = ""
+        updatedAt = ""
     }
-    static func saveDeviceCode(code: String) {
-                UserDefaults.standard.set(code, forKey: "device_code_\(code)")
+    static func sharedData()->Device {
+        if deviceData == nil {
+            deviceData = Device.init()
+        }
+        
+        return deviceData
+    }
+    
+    static func saveDeviceCode(_ code: String) {
+            UserDefaults.standard.set(code, forKey: "code")
+            print("Código de dispositivo guardado:", code)
     }
                 
-    static func getDeviceCode(code: String) -> String? {
-                return UserDefaults.standard.string(forKey: "device_code_\(code)")
+    static func loadDeviceCode() -> String? {
+            return UserDefaults.standard.string(forKey: "code")
     }
+    
 }

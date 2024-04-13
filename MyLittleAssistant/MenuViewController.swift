@@ -13,8 +13,11 @@ class MenuViewController: UIViewController, ChartViewDelegate {
 
  
     @IBOutlet weak var flecha: UIImageView!
+    
+    
+    @IBOutlet weak var pesolbl: UILabel!
     var lineChart = LineChartView()
-  var barChart = BarChartView()
+    var barChart = BarChartView()
     var gaugeView = GaugeView()
     let userData = UserData.sharedData()
     var angle: CGFloat = 0.0
@@ -22,8 +25,9 @@ class MenuViewController: UIViewController, ChartViewDelegate {
         super.viewDidLoad()
         lineChart.delegate = self
         barChart.delegate = self
-        
         fetchDevices()
+        PesoGet()
+        VelocidadGet()
     }
     override func viewDidLayoutSubviews()
     {
@@ -90,11 +94,14 @@ class MenuViewController: UIViewController, ChartViewDelegate {
         
            
     }
+    
     func rotateArrow(angle: CGFloat) {
             UIView.animate(withDuration: 0.3) {
                 self.flecha.transform = CGAffineTransform(rotationAngle: angle)
             }
-        }
+    }
+    
+    
     func fetchDevices() {
         let url = URL(string: "http://backend.mylittleasistant.online:8000/api/user/devices")!
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 50)
@@ -158,6 +165,146 @@ class MenuViewController: UIViewController, ChartViewDelegate {
         task.resume()
     }
    
+    
+    func PesoGet() {
+        self.userData.load()
+        let token = self.userData.jwt
+        guard let deviceCode = Device.loadDeviceCode() else {
+            print("Código de dispositivo no encontrado")
+            return
+        }
+        print("Código de dispositivo enviado en la solicitud:", deviceCode)
+        let urlString = "http://backend.mylittleasistant.online:8000/api/peso/lastone/\(deviceCode)"
+        guard let url = URL(string: urlString) else {
+            print("URL inválida")
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let httpResponse = response as? HTTPURLResponse else {
+                print("Respuesta inválida")
+                return
+            }
+            if let error = error {
+                print("Error en la solicitud:", error)
+                return
+            }
+            switch httpResponse.statusCode {
+            case 200:
+                guard let data = data else {
+                    print("No se recibió data en la respuesta")
+                    return
+                }
+                do {
+                    guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
+                        print("No se pudo convertir el JSON en un diccionario")
+                        return
+                    }
+                    if let dataArray = json["data"] as? [[String: Any]], let firstData = dataArray.first, let peso = firstData["Data"] as? [String: Any], let valor = peso["valor"] as? String {
+                        DispatchQueue.main.async {
+                            self.pesolbl.text = valor
+                        }
+                    } else {
+                        print("No se encontró el valor de peso en la respuesta")
+                    }
+                } catch {
+                    print("Error al convertir los datos en JSON:", error)
+                }
+            default:
+                print("Error en la solicitud. Código de estado:", httpResponse.statusCode)
+            }
+        }
+        task.resume()
+    }
+
+
+    
+    func VelocidadGet() {
+        self.userData.load()
+        let token = self.userData.jwt
+        guard let deviceCode = Device.loadDeviceCode() else {
+            print("Código de dispositivo no encontrado")
+            return
+        }
+        print("Código de dispositivo enviado en la solicitud:", deviceCode)
+        let urlString = "http://backend.mylittleasistant.online:8000/api/vel/lastfive/\(deviceCode)"
+        guard let url = URL(string: urlString) else {
+            print("URL inválida")
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let httpResponse = response as? HTTPURLResponse else {
+                print("Respuesta inválida")
+                return
+            }
+            if let error = error {
+                print("Error en la solicitud:", error)
+                return
+            }
+            switch httpResponse.statusCode {
+            case 200:
+                guard let data = data else {
+                    print("No se recibió data en la respuesta")
+                    return
+                }
+                do {
+                    guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
+                        print("No se pudo convertir el JSON en un diccionario")
+                        return
+                    }
+                    if let dataArray = json["data"] as? [[String: Any]] {
+                        var valores = [Double]()
+                        for dataEntry in dataArray {
+                            if let valorString = dataEntry["Data"] as? [String: Any], let valor = valorString["valor"] as? String, let valorDouble = Double(valor) {
+                                valores.append(valorDouble)
+                            }
+                        }
+                        print("Valores recibidos:", valores)
+                        DispatchQueue.main.async {
+                            self.updateBarChart(valores: valores)
+                        }
+                    } else {
+                        print("No se encontró el arreglo 'data' en el JSON")
+                    }
+                } catch {
+                    print("Error al convertir los datos en JSON:", error)
+                }
+            default:
+                print("Error en la solicitud. Código de estado:", httpResponse.statusCode)
+            }
+        }
+        task.resume()
+    }
+
+    func updateBarChart(valores: [Double]) {
+        guard let barDataSet = barChart.data?.dataSets.first as? BarChartDataSet else {
+            print("No se encontró el conjunto de datos de la gráfica de barras")
+            return
+        }
+        var barEntries = [BarChartDataEntry]()
+        for (index, valor) in valores.enumerated() {
+            let barEntry = BarChartDataEntry(x: Double(index), y: valor)
+            barEntries.append(barEntry)
+        }
+        
+        barDataSet.replaceEntries(barEntries)
+        barChart.data?.notifyDataChanged()
+        barChart.notifyDataSetChanged()
+    }
+
+
+    func TemperaturaGet(){
+        
+    }
+    
+    func InclinacionGet(){
+        
+    }
 
 }
     

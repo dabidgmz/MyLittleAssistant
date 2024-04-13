@@ -498,6 +498,7 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="flecha" destination="n3i-mJ-sW8" id="9Rl-c9-Tqq"/>
+                        <outlet property="pesolbl" destination="umJ-nt-Ef0" id="uLb-tc-FNE"/>
                         <segue destination="4dQ-og-exT" kind="presentation" identifier="sgNoDevices" modalPresentationStyle="fullScreen" id="jTy-yq-lLc"/>
                     </connections>
                 </viewController>
@@ -1119,11 +1120,11 @@
             <objects>
                 <viewController id="Ayf-6I-jjk" customClass="UserViewController" customModule="MyLittleAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XZU-rb-nWe">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="869"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondoazul.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="40f-Uk-Ajh">
-                                <rect key="frame" x="0.0" y="-5" width="428" height="897"/>
+                                <rect key="frame" x="0.0" y="-5" width="428" height="874"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aza-AF-lSx">
                                 <rect key="frame" x="148" y="108" width="132" height="115.66666666666667"/>
@@ -1869,7 +1870,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="HGT-Oz-hXq"/>
         <segue reference="jTy-yq-lLc"/>
-        <segue reference="dAa-zM-U6z"/>
+        <segue reference="dCu-ai-P1p"/>
         <segue reference="E9j-EE-5DE"/>
         <segue reference="fNr-Lc-GWY"/>
     </inferredMetricsTieBreakers>

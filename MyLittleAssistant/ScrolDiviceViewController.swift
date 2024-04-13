@@ -8,6 +8,7 @@
 import UIKit
 
 let userData = UserData.sharedData()
+let deviceData = Device.sharedData()
 var user: User = User(id: 0, name: "", email: "")
 var userName = ""
 var emailUser = ""
@@ -65,10 +66,11 @@ class ScrolDiviceViewController: UIViewController {
                             print("No se pudo convertir el JSON en un diccionario")
                             return
                         }
-                        
+                        print("JSON received:", json)
                         if let devicesData = json["data"] as? [[String: Any]] {
                             DispatchQueue.main.async {
                                 self.renderDevices(devicesData)
+                                //self.deviceData.code ""
                             }
                         } else {
                             print("No se encontró el arreglo 'data' en el JSON")
@@ -97,7 +99,8 @@ class ScrolDiviceViewController: UIViewController {
         for deviceInfo in devicesData {
             if let deviceCode = deviceInfo["code"] as? String {
                 devices.append(deviceCode)
-                Device.saveDeviceCode(code: deviceCode)
+                Device.saveDeviceCode(deviceCode)
+                print("Código de dispositivo guardado:", deviceCode)
             } else {
                 print("No se encontró 'code' en los datos del dispositivo")
             }
