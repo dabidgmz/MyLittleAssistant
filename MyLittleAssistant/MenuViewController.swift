@@ -28,6 +28,8 @@ class MenuViewController: UIViewController, ChartViewDelegate {
         fetchDevices()
         PesoGet()
         VelocidadGet()
+       TemperaturaGet()
+        //InclinacionGet()
     }
     override func viewDidLayoutSubviews()
     {
@@ -86,9 +88,9 @@ class MenuViewController: UIViewController, ChartViewDelegate {
             barChart.leftAxis.labelTextColor = .white
             barChart.leftAxis.labelTextColor = .white
       
-        let angleInDegrees: CGFloat = 90
-        let angleInRadians = angleInDegrees * CGFloat.pi / 180
-        rotateArrow(angle: angleInRadians)
+        //let angleInDegrees: CGFloat = 90
+        //let angleInRadians = angleInDegrees * CGFloat.pi / 180
+        //rotateArrow(angle: angleInRadians)
 
 
         
@@ -121,49 +123,49 @@ class MenuViewController: UIViewController, ChartViewDelegate {
                 return
             }
             print("Response received:", data)
-            if let httpResponse = response as? HTTPURLResponse {
-                if httpResponse.statusCode == 200 {
-                    print("Request successful. Status code: 200")
-                    do {
-                        guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
-                            print("No se pudo convertir el JSON en un diccionario")
-                            return
-                        }
-                        if let devicesData = json["data"] as? [[String: Any]] {
-                            if !devicesData.isEmpty {
-                                DispatchQueue.main.async {
-                                   // self.performSegue(withIdentifier: "sgLinkDevice", sender: self)
-                                }
-                            } else {
-                                DispatchQueue.main.async {
-                                    self.performSegue(withIdentifier: "sgNoDevices", sender: self)
-                                }
-                                print("No se encontraron dispositivos")
+            guard let httpResponse = response as? HTTPURLResponse else {
+                print("Respuesta inválida")
+                return
+            }
+            if httpResponse.statusCode == 200 {
+                print("Request successful. Status code: 200")
+                do {
+                    guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
+                        print("No se pudo convertir el JSON en un diccionario")
+                        return
+                    }
+                    if let devicesData = json["data"] as? [[String: Any]] {
+                        if !devicesData.isEmpty {
+                            DispatchQueue.main.async {
+                                //
                             }
                         } else {
-                            DispatchQueue.main.async {
-                                self.performSegue(withIdentifier: "sgNoDevices", sender: self)
-                            }
-                            print("No se encontró el arreglo 'data' en el JSON")
+                            print("No se encontraron dispositivos")
                         }
-                    } catch {
-                        print("Error al convertir los datos JSON:", error)
+                    } else {
+                        print("No se encontró el arreglo 'data' en el JSON")
                     }
-                } else if httpResponse.statusCode == 404 {
-                    print("No se encontraron dispositivos")
-                    DispatchQueue.main.async {
-                        let alertController = UIAlertController(title: "Error", message: "No se encontraron dispositivos.", preferredStyle: .alert)
-                        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                        alertController.addAction(okAction)
-                        self.present(alertController, animated: true, completion: nil)
-                    }
-                } else {
-                    print("Error en el request. Status code:", httpResponse.statusCode)
+                } catch {
+                    print("Error al convertir los datos JSON:", error)
                 }
+            } else if httpResponse.statusCode == 404 {
+                print("No se encontraron dispositivos")
+                DispatchQueue.main.async {
+                    let alertController = UIAlertController(title: "Error", message: "No se encontraron dispositivos.", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                        self.performSegue(withIdentifier: "sgNoDevices", sender: self)
+                    }
+                    alertController.addAction(okAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            } else {
+                print("Error en el request. Status code:", httpResponse.statusCode)
             }
         }
         task.resume()
     }
+
+
    
     
     func PesoGet() {
@@ -202,9 +204,9 @@ class MenuViewController: UIViewController, ChartViewDelegate {
                         print("No se pudo convertir el JSON en un diccionario")
                         return
                     }
-                    if let dataArray = json["data"] as? [[String: Any]], let firstData = dataArray.first, let peso = firstData["Data"] as? [String: Any], let valor = peso["valor"] as? String {
+                    if let dataArray = json["data"] as? [[String: Any]], let firstData = dataArray.first, let peso = firstData["Valor"] as? String {
                         DispatchQueue.main.async {
-                            self.pesolbl.text = valor
+                            self.pesolbl.text = peso
                         }
                     } else {
                         print("No se encontró el valor de peso en la respuesta")
@@ -257,16 +259,19 @@ class MenuViewController: UIViewController, ChartViewDelegate {
                         print("No se pudo convertir el JSON en un diccionario")
                         return
                     }
+                    //print("JSON recibido:", json)
                     if let dataArray = json["data"] as? [[String: Any]] {
-                        var valores = [Double]()
+                        var ValoresS = [Double]()
                         for dataEntry in dataArray {
-                            if let valorString = dataEntry["Data"] as? [String: Any], let valor = valorString["valor"] as? String, let valorDouble = Double(valor) {
-                                valores.append(valorDouble)
+                            if let ValorString = dataEntry["Valor"] as? String, let ValorDouble = Double(ValorString) {
+                                ValoresS.append(ValorDouble)
+                            } else {
+                                //print("No se encontró el valor en la entrada del JSON o no se pudo convertir a Double")
                             }
                         }
-                        print("Valores recibidos:", valores)
+                        //print("Valores recibidos:", valores)
                         DispatchQueue.main.async {
-                            self.updateBarChart(valores: valores)
+                            self.updateBarChart(valores: ValoresS)
                         }
                     } else {
                         print("No se encontró el arreglo 'data' en el JSON")
@@ -280,6 +285,7 @@ class MenuViewController: UIViewController, ChartViewDelegate {
         }
         task.resume()
     }
+
 
     func updateBarChart(valores: [Double]) {
         guard let barDataSet = barChart.data?.dataSets.first as? BarChartDataSet else {
@@ -296,15 +302,150 @@ class MenuViewController: UIViewController, ChartViewDelegate {
         barChart.data?.notifyDataChanged()
         barChart.notifyDataSetChanged()
     }
-
-
+    
     func TemperaturaGet(){
-        
+     self.userData.load()
+     let token = self.userData.jwt
+     guard let deviceCode = Device.loadDeviceCode() else {
+         print("Código de dispositivo no encontrado")
+         return
+     }
+     print("Código de dispositivo enviado en la solicitud:", deviceCode)
+     let urlString = "http://backend.mylittleasistant.online:8000/api/Temp/lastfive/\(deviceCode)"
+     guard let url = URL(string: urlString) else {
+         print("URL inválida")
+         return
+     }
+     var request = URLRequest(url: url)
+     request.httpMethod = "GET"
+     request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+     let task = URLSession.shared.dataTask(with: request) { data, response, error in
+         guard let httpResponse = response as? HTTPURLResponse else {
+             print("Respuesta inválida")
+             return
+         }
+         if let error = error {
+             print("Error en la solicitud:", error)
+             return
+         }
+         switch httpResponse.statusCode {
+         case 200:
+             guard let data = data else {
+                 print("No se recibió data en la respuesta")
+                 return
+             }
+             do {
+                 guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
+                     print("No se pudo convertir el JSON en un diccionario")
+                     return
+                 }
+                 //print("JSON recibido:", json)
+                 if let dataArray = json["data"] as? [[String: Any]] {
+                     var valores = [Double]()
+                     for dataEntry in dataArray {
+                         if let valorString = dataEntry["Valor"] as? String, let valorDouble = Double(valorString) {
+                             valores.append(valorDouble)
+                         } else {
+                             //print("No se encontró el valor en la entrada del JSON o no se pudo convertir a Double")
+                         }
+                     }
+                     //print("Valores recibidos:", valores)
+                     DispatchQueue.main.async {
+                         self.updateLineChart(valores: valores)
+                     }
+                 } else {
+                     print("No se encontró el arreglo 'data' en el JSON")
+                 }
+             } catch {
+                 print("Error al convertir los datos en JSON:", error)
+             }
+         default:
+             print("Error en la solicitud. Código de estado:", httpResponse.statusCode)
+         }
+     }
+     task.resume()
     }
     
-    func InclinacionGet(){
+    func updateLineChart(valores: [Double]) {
+        guard let lineDataSet = lineChart.data?.dataSets.first as? LineChartDataSet else {
+            print("No se encontró el conjunto de datos de la gráfica de líneas")
+            return
+        }
         
+        var lineEntries = [ChartDataEntry]()
+        for (index, valor) in valores.enumerated() {
+            let lineEntry = ChartDataEntry(x: Double(index), y: valor)
+            lineEntries.append(lineEntry)
+        }
+        
+        lineDataSet.replaceEntries(lineEntries)
+        lineChart.data?.notifyDataChanged()
+        lineChart.notifyDataSetChanged()
     }
+    
+    
+    func InclinacionGet() {
+        self.userData.load()
+        let token = self.userData.jwt
+        guard let deviceCode = Device.loadDeviceCode() else {
+            print("Código de dispositivo no encontrado")
+            return
+        }
+        print("Código de dispositivo enviado en la solicitud:", deviceCode)
+        let urlString = "http://backend.mylittleasistant.online:8000/api/incli/lastone/\(deviceCode)"
+        guard let url = URL(string: urlString) else {
+            print("URL inválida")
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let httpResponse = response as? HTTPURLResponse else {
+                print("Respuesta inválida")
+                return
+            }
+            if let error = error {
+                print("Error en la solicitud:", error)
+                return
+            }
+            switch httpResponse.statusCode {
+            case 200:
+                guard let data = data else {
+                    print("No se recibió data en la respuesta")
+                    return
+                }
+                do {
+                    guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
+                        print("No se pudo convertir el JSON en un diccionario")
+                        return
+                    }
+                    print("JSON recibido:", json)
+                    if let dataArray = json["data"] as? [[String: Any]] {
+                        for dataEntry in dataArray {
+                            if let valorString = dataEntry["Data"] as? [String: Any], let valor = valorString["Valor"] as? String, let valorDouble = Double(valor) {
+                                DispatchQueue.main.async {
+                                    print("Valor :\(valorDouble)")
+                                    let angleInDegrees: CGFloat = CGFloat(valorDouble)
+                                    let angleInRadians = angleInDegrees * CGFloat.pi / 180
+                                    self.rotateArrow(angle: angleInRadians)
+                                }
+                            }
+                        }
+                    } else {
+                        print("No se encontró el arreglo 'data' en el JSON")
+                    }
+                } catch {
+                    print("Error al convertir los datos en JSON:", error)
+                }
+            default:
+                print("Error en la solicitud. Código de estado:", httpResponse.statusCode)
+            }
+        }
+        task.resume()
+    }
+
+
 
 }
     

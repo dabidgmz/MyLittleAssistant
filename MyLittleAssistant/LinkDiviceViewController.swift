@@ -189,37 +189,43 @@ class LinkDiviceViewController: UIViewController {
                 return
             }
             print("Response received:", data)
-            if let httpResponse = response as? HTTPURLResponse {
-                if httpResponse.statusCode == 200 {
-                    print("Request successful. Status code: 200")
-                    do {
-                        guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
-                            print("No se pudo convertir el JSON en un diccionario")
-                            return
-                        }
-                        if let devicesData = json["data"] as? [[String: Any]] {
-                            if !devicesData.isEmpty {
-                                DispatchQueue.main.async {
-                                    self.performSegue(withIdentifier: "sgLinkDevice", sender: self)
-                                }
+            guard let httpResponse = response as? HTTPURLResponse else {
+                print("Respuesta inválida")
+                return
+            }
+            if httpResponse.statusCode == 200 {
+                print("Request successful. Status code: 200")
+                do {
+                    guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
+                        print("No se pudo convertir el JSON en un diccionario")
+                        return
+                    }
+                    if let devicesData = json["data"] as? [[String: Any]] {
+                        if !devicesData.isEmpty {
+                            DispatchQueue.main.async {
+                                //
                             }
                         } else {
-                            print("No se encontró el arreglo 'data' en el JSON")
+                            print("No se encontraron dispositivos")
                         }
-                    } catch {
-                        print("Error al convertir los datos JSON:", error)
+                    } else {
+                        print("No se encontró el arreglo 'data' en el JSON")
                     }
-                } else if httpResponse.statusCode == 404 {
-                    print("No se encontraron dispositivos")
-                    DispatchQueue.main.async {
-                        let alertController = UIAlertController(title: "Error", message: "No se encontraron dispositivos.", preferredStyle: .alert)
-                        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                        alertController.addAction(okAction)
-                        self.present(alertController, animated: true, completion: nil)
-                    }
-                } else {
-                    print("Error en el request. Status code:", httpResponse.statusCode)
+                } catch {
+                    print("Error al convertir los datos JSON:", error)
                 }
+            } else if httpResponse.statusCode == 404 {
+                print("No se encontraron dispositivos")
+                DispatchQueue.main.async {
+                    let alertController = UIAlertController(title: "Error", message: "No se encontraron dispositivos.", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                        self.performSegue(withIdentifier: "sgNoDevices", sender: self)
+                    }
+                    alertController.addAction(okAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            } else {
+                print("Error en el request. Status code:", httpResponse.statusCode)
             }
         }
         task.resume()
