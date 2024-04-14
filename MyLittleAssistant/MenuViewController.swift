@@ -21,6 +21,9 @@ class MenuViewController: UIViewController, ChartViewDelegate {
     var gaugeView = GaugeView()
     let userData = UserData.sharedData()
     var angle: CGFloat = 0.0
+    var timer: Timer?
+    var velocidadValores = [Double]()
+    var temperaturaValores = [Double]()
     override func viewDidLoad() {
         super.viewDidLoad()
         lineChart.delegate = self
@@ -28,8 +31,11 @@ class MenuViewController: UIViewController, ChartViewDelegate {
         fetchDevices()
         PesoGet()
         VelocidadGet()
-       TemperaturaGet()
-        //InclinacionGet()
+        TemperaturaGet()
+        InclinacionGet()
+        startPolling()
+        updateBarChartWithStoredValues()
+        updateLineChartWithStoredValues()
     }
     override func viewDidLayoutSubviews()
     {
@@ -60,6 +66,7 @@ class MenuViewController: UIViewController, ChartViewDelegate {
             lineChart.xAxis.labelTextColor = .white
             lineChart.leftAxis.labelTextColor = .white
             lineChart.leftAxis.labelTextColor = .white
+            temp.valueTextColor = .white
             
             // Configurar la gráfica de barras
             barChart.translatesAutoresizingMaskIntoConstraints = false
@@ -78,7 +85,7 @@ class MenuViewController: UIViewController, ChartViewDelegate {
             for x in 0..<10 {
                 barEntries.append(BarChartDataEntry(x: Double(x), y: Double(x)))
             }
-            let barDataSet = BarChartDataSet(entries: barEntries, label: "Barras")
+            let barDataSet = BarChartDataSet(entries: barEntries, label: "Velocidad")
             barDataSet.colors = ChartColorTemplates.material()
             barDataSet.valueColors = [.white]
 
@@ -87,6 +94,7 @@ class MenuViewController: UIViewController, ChartViewDelegate {
             barChart.xAxis.labelTextColor = .white
             barChart.leftAxis.labelTextColor = .white
             barChart.leftAxis.labelTextColor = .white
+            temp.valueTextColor = .white
       
         //let angleInDegrees: CGFloat = 90
         //let angleInRadians = angleInDegrees * CGFloat.pi / 180
@@ -95,6 +103,19 @@ class MenuViewController: UIViewController, ChartViewDelegate {
 
         
            
+    }
+    
+    func startPolling() {
+            timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { [weak self] _ in
+                self?.VelocidadGet()
+                self?.TemperaturaGet()
+                self?.PesoGet()
+                self?.InclinacionGet()
+            }
+            VelocidadGet()
+            TemperaturaGet()
+            PesoGet()
+            InclinacionGet()
     }
     
     func rotateArrow(angle: CGFloat) {
@@ -166,8 +187,6 @@ class MenuViewController: UIViewController, ChartViewDelegate {
     }
 
 
-   
-    
     func PesoGet() {
         self.userData.load()
         let token = self.userData.jwt
@@ -175,7 +194,7 @@ class MenuViewController: UIViewController, ChartViewDelegate {
             print("Código de dispositivo no encontrado")
             return
         }
-        print("Código de dispositivo enviado en la solicitud:", deviceCode)
+        //print("Código de dispositivo enviado en la solicitud:", deviceCode)
         let urlString = "http://backend.mylittleasistant.online:8000/api/peso/lastone/\(deviceCode)"
         guard let url = URL(string: urlString) else {
             print("URL inválida")
@@ -224,14 +243,96 @@ class MenuViewController: UIViewController, ChartViewDelegate {
 
     
     func VelocidadGet() {
+     self.userData.load()
+     let token = self.userData.jwt
+     guard let deviceCode = Device.loadDeviceCode() else {
+         print("Código de dispositivo no encontrado")
+         return
+     }
+     //print("Código de dispositivo enviado en la solicitud:", deviceCode)
+     let urlString = "http://backend.mylittleasistant.online:8000/api/vel/lastfive/\(deviceCode)"
+     guard let url = URL(string: urlString) else {
+         print("URL inválida")
+         return
+     }
+     var request = URLRequest(url: url)
+     request.httpMethod = "GET"
+     request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+     let task = URLSession.shared.dataTask(with: request) { data, response, error in
+         guard let httpResponse = response as? HTTPURLResponse else {
+             print("Respuesta inválida")
+             return
+         }
+         if let error = error {
+             print("Error en la solicitud:", error)
+             return
+         }
+         switch httpResponse.statusCode {
+         case 200:
+             guard let data = data else {
+                 print("No se recibió data en la respuesta")
+                 return
+             }
+             do {
+                 guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
+                     print("No se pudo convertir el JSON en un diccionario")
+                     return
+                 }
+                 if let dataArray = json["data"] as? [[String: Any]] {
+                     var nuevosValores = [Double]()
+                     for dataEntry in dataArray {
+                         if let valorString = dataEntry["Valor"] as? String, let valorDouble = Double(valorString) {
+                             nuevosValores.append(valorDouble)
+                         }
+                     }
+                     self.velocidadValores = nuevosValores
+                     DispatchQueue.main.async {
+                         self.updateBarChart(valores: nuevosValores)
+                     }
+                 } else {
+                     print("No se encontró el arreglo 'data' en el JSON")
+                 }
+             } catch {
+                 print("Error al convertir los datos en JSON:", error)
+             }
+         default:
+             print("Error en la solicitud. Código de estado:", httpResponse.statusCode)
+         }
+     }
+     task.resume()
+    }
+
+
+    func updateBarChartWithStoredValues() {
+            updateBarChart(valores: velocidadValores)
+    }
+    
+    func updateBarChart(valores: [Double]) {
+        guard let barDataSet = barChart.data?.dataSets.first as? BarChartDataSet else {
+            print("No se encontró el conjunto de datos de la gráfica de barras")
+            return
+        }
+        var barEntries = [BarChartDataEntry]()
+        for (index, valor) in valores.enumerated() {
+            let barEntry = BarChartDataEntry(x: Double(index), y: valor)
+            barEntries.append(barEntry)
+        }
+        
+        barDataSet.replaceEntries(barEntries)
+        barChart.data?.notifyDataChanged()
+        barChart.notifyDataSetChanged()
+    }
+    
+    
+    func TemperaturaGet(){
         self.userData.load()
         let token = self.userData.jwt
         guard let deviceCode = Device.loadDeviceCode() else {
             print("Código de dispositivo no encontrado")
             return
         }
-        print("Código de dispositivo enviado en la solicitud:", deviceCode)
-        let urlString = "http://backend.mylittleasistant.online:8000/api/vel/lastfive/\(deviceCode)"
+        //print("Código de dispositivo enviado en la solicitud:", deviceCode)
+        let urlString = "http://backend.mylittleasistant.online:8000/api/Temp/lastfive/\(deviceCode)"
         guard let url = URL(string: urlString) else {
             print("URL inválida")
             return
@@ -261,17 +362,15 @@ class MenuViewController: UIViewController, ChartViewDelegate {
                     }
                     //print("JSON recibido:", json)
                     if let dataArray = json["data"] as? [[String: Any]] {
-                        var ValoresS = [Double]()
+                        var NUEVOSValores = [Double]()
                         for dataEntry in dataArray {
-                            if let ValorString = dataEntry["Valor"] as? String, let ValorDouble = Double(ValorString) {
-                                ValoresS.append(ValorDouble)
-                            } else {
-                                //print("No se encontró el valor en la entrada del JSON o no se pudo convertir a Double")
+                            if let VALORString = dataEntry["Valor"] as? String, let VALORDouble = Double(VALORString) {
+                                NUEVOSValores.append(VALORDouble)
                             }
                         }
-                        //print("Valores recibidos:", valores)
+                        self.temperaturaValores = NUEVOSValores
                         DispatchQueue.main.async {
-                            self.updateBarChart(valores: ValoresS)
+                            self.updateLineChartWithStoredValues()
                         }
                     } else {
                         print("No se encontró el arreglo 'data' en el JSON")
@@ -285,85 +384,9 @@ class MenuViewController: UIViewController, ChartViewDelegate {
         }
         task.resume()
     }
-
-
-    func updateBarChart(valores: [Double]) {
-        guard let barDataSet = barChart.data?.dataSets.first as? BarChartDataSet else {
-            print("No se encontró el conjunto de datos de la gráfica de barras")
-            return
-        }
-        var barEntries = [BarChartDataEntry]()
-        for (index, valor) in valores.enumerated() {
-            let barEntry = BarChartDataEntry(x: Double(index), y: valor)
-            barEntries.append(barEntry)
-        }
-        
-        barDataSet.replaceEntries(barEntries)
-        barChart.data?.notifyDataChanged()
-        barChart.notifyDataSetChanged()
-    }
     
-    func TemperaturaGet(){
-     self.userData.load()
-     let token = self.userData.jwt
-     guard let deviceCode = Device.loadDeviceCode() else {
-         print("Código de dispositivo no encontrado")
-         return
-     }
-     print("Código de dispositivo enviado en la solicitud:", deviceCode)
-     let urlString = "http://backend.mylittleasistant.online:8000/api/Temp/lastfive/\(deviceCode)"
-     guard let url = URL(string: urlString) else {
-         print("URL inválida")
-         return
-     }
-     var request = URLRequest(url: url)
-     request.httpMethod = "GET"
-     request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-     let task = URLSession.shared.dataTask(with: request) { data, response, error in
-         guard let httpResponse = response as? HTTPURLResponse else {
-             print("Respuesta inválida")
-             return
-         }
-         if let error = error {
-             print("Error en la solicitud:", error)
-             return
-         }
-         switch httpResponse.statusCode {
-         case 200:
-             guard let data = data else {
-                 print("No se recibió data en la respuesta")
-                 return
-             }
-             do {
-                 guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
-                     print("No se pudo convertir el JSON en un diccionario")
-                     return
-                 }
-                 //print("JSON recibido:", json)
-                 if let dataArray = json["data"] as? [[String: Any]] {
-                     var valores = [Double]()
-                     for dataEntry in dataArray {
-                         if let valorString = dataEntry["Valor"] as? String, let valorDouble = Double(valorString) {
-                             valores.append(valorDouble)
-                         } else {
-                             //print("No se encontró el valor en la entrada del JSON o no se pudo convertir a Double")
-                         }
-                     }
-                     //print("Valores recibidos:", valores)
-                     DispatchQueue.main.async {
-                         self.updateLineChart(valores: valores)
-                     }
-                 } else {
-                     print("No se encontró el arreglo 'data' en el JSON")
-                 }
-             } catch {
-                 print("Error al convertir los datos en JSON:", error)
-             }
-         default:
-             print("Error en la solicitud. Código de estado:", httpResponse.statusCode)
-         }
-     }
-     task.resume()
+    func updateLineChartWithStoredValues() {
+        updateLineChart(valores: velocidadValores)
     }
     
     func updateLineChart(valores: [Double]) {
@@ -391,7 +414,7 @@ class MenuViewController: UIViewController, ChartViewDelegate {
             print("Código de dispositivo no encontrado")
             return
         }
-        print("Código de dispositivo enviado en la solicitud:", deviceCode)
+        //print("Código de dispositivo enviado en la solicitud:", deviceCode)
         let urlString = "http://backend.mylittleasistant.online:8000/api/incli/lastone/\(deviceCode)"
         guard let url = URL(string: urlString) else {
             print("URL inválida")
@@ -420,20 +443,16 @@ class MenuViewController: UIViewController, ChartViewDelegate {
                         print("No se pudo convertir el JSON en un diccionario")
                         return
                     }
-                    print("JSON recibido:", json)
-                    if let dataArray = json["data"] as? [[String: Any]] {
-                        for dataEntry in dataArray {
-                            if let valorString = dataEntry["Data"] as? [String: Any], let valor = valorString["Valor"] as? String, let valorDouble = Double(valor) {
-                                DispatchQueue.main.async {
-                                    print("Valor :\(valorDouble)")
-                                    let angleInDegrees: CGFloat = CGFloat(valorDouble)
-                                    let angleInRadians = angleInDegrees * CGFloat.pi / 180
-                                    self.rotateArrow(angle: angleInRadians)
-                                }
-                            }
+                    //print("JSON recibido:", json)
+                    if let dataArray = json["data"] as? [[String: Any]], let firstData = dataArray.first, let valorString = firstData["Valor"] as? String, let VALORDouble = Double(valorString) {
+                        DispatchQueue.main.async {
+                            //print("Valor :\(VALORDouble)")
+                            let angleInDegrees: CGFloat = CGFloat(VALORDouble)
+                            let angleInRadians = angleInDegrees * CGFloat.pi / 180
+                            self.rotateArrow(angle: angleInRadians)
                         }
                     } else {
-                        print("No se encontró el arreglo 'data' en el JSON")
+                        print("No se encontró el arreglo 'data' en el JSON o no se pudo obtener el valor")
                     }
                 } catch {
                     print("Error al convertir los datos en JSON:", error)
@@ -444,9 +463,6 @@ class MenuViewController: UIViewController, ChartViewDelegate {
         }
         task.resume()
     }
-
-
-
 }
     
 
