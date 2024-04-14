@@ -1071,11 +1071,80 @@
                                     <action selector="Atras:" destination="XAD-Lu-D7b" eventType="touchUpInside" id="laS-TL-LG8"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="chV-87-JtP">
+                                <rect key="frame" x="190.66666666666666" y="550.66666666666663" width="49" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="47" id="DFe-D8-xDe"/>
+                                    <constraint firstAttribute="height" constant="31" id="Heu-r2-b4g"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="Luces:" destination="XAD-Lu-D7b" eventType="valueChanged" id="5T8-or-YQo"/>
+                                </connections>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKd-1g-D05">
+                                <rect key="frame" x="191" y="641.66666666666663" width="46" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="A3H-2b-9OU"/>
+                                    <constraint firstAttribute="height" constant="36" id="uEJ-o0-rVx"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" image="circle" catalog="system">
+                                    <color key="baseForegroundColor" red="0.078431372550000003" green="0.27058823529999998" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="CenCamara:" destination="XAD-Lu-D7b" eventType="touchUpInside" id="2OA-lO-INV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PBP-7a-CHo">
+                                <rect key="frame" x="261" y="634.66666666666663" width="42" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="1Zf-LY-Nrn"/>
+                                    <constraint firstAttribute="width" constant="42" id="hnT-jt-4MY"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background">
+                                        <imageReference key="image" image="derechaDevice.png" renderingMode="hierarchical">
+                                            <hierarchicalColors>
+                                                <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color systemColor="secondaryLabelColor"/>
+                                                <color systemColor="tertiaryLabelColor"/>
+                                            </hierarchicalColors>
+                                        </imageReference>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="DerCamara:" destination="XAD-Lu-D7b" eventType="touchUpInside" id="xwU-g4-a6j"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlB-p1-cTw">
+                                <rect key="frame" x="118" y="636.66666666666663" width="42" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="J0o-wS-jUy"/>
+                                    <constraint firstAttribute="width" constant="42" id="hzV-bF-tJl"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background">
+                                        <imageReference key="image" image="izquierdaDevice.png" renderingMode="hierarchical">
+                                            <hierarchicalColors>
+                                                <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color systemColor="secondaryLabelColor"/>
+                                                <color systemColor="tertiaryLabelColor"/>
+                                            </hierarchicalColors>
+                                        </imageReference>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="IzqCamara:" destination="XAD-Lu-D7b" eventType="touchUpInside" id="sTl-tL-pHE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MsR-NH-J0c"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="MsR-NH-J0c" firstAttribute="trailing" secondItem="2bL-gV-25Q" secondAttribute="trailing" constant="40" id="05D-eb-klO"/>
+                            <constraint firstItem="wKd-1g-D05" firstAttribute="leading" secondItem="hlB-p1-cTw" secondAttribute="trailing" constant="31" id="28x-LN-3fr"/>
                             <constraint firstItem="VH1-xA-0p9" firstAttribute="top" secondItem="dpz-1q-BwF" secondAttribute="bottom" constant="10" id="2sO-qf-RZx"/>
                             <constraint firstItem="VH1-xA-0p9" firstAttribute="leading" secondItem="MsR-NH-J0c" secondAttribute="leading" constant="55" id="2tW-Yi-a2S"/>
                             <constraint firstItem="SI2-oH-u8c" firstAttribute="leading" secondItem="MsR-NH-J0c" secondAttribute="leading" constant="20" id="44E-J3-kKo"/>
@@ -1085,22 +1154,29 @@
                             <constraint firstItem="dpz-1q-BwF" firstAttribute="leading" secondItem="MsR-NH-J0c" secondAttribute="leading" constant="30" id="E2P-ly-Pkz"/>
                             <constraint firstItem="Slo-8h-yE2" firstAttribute="top" secondItem="SI2-oH-u8c" secondAttribute="bottom" constant="30" id="EDZ-3p-BVH"/>
                             <constraint firstItem="QFY-Oa-xom" firstAttribute="leading" secondItem="dpz-1q-BwF" secondAttribute="trailing" constant="10" id="Fti-tD-ljU"/>
+                            <constraint firstItem="hlB-p1-cTw" firstAttribute="top" secondItem="QFY-Oa-xom" secondAttribute="bottom" constant="70" id="Hmu-3a-8g8"/>
                             <constraint firstItem="HCw-Z9-q3K" firstAttribute="top" secondItem="SI2-oH-u8c" secondAttribute="bottom" constant="30" id="OWN-mo-6nu"/>
+                            <constraint firstItem="wKd-1g-D05" firstAttribute="top" secondItem="chV-87-JtP" secondAttribute="bottom" constant="60" id="OwF-yY-vIA"/>
                             <constraint firstItem="MsR-NH-J0c" firstAttribute="trailing" secondItem="TWV-gD-gr8" secondAttribute="trailing" constant="20" id="Q30-p3-JFs"/>
+                            <constraint firstItem="wKd-1g-D05" firstAttribute="centerX" secondItem="PMo-3Z-3uo" secondAttribute="centerX" id="Rhq-gV-k7g"/>
                             <constraint firstItem="11d-eA-U3m" firstAttribute="leading" secondItem="MsR-NH-J0c" secondAttribute="leading" constant="20" id="Sdi-k7-5ZJ"/>
+                            <constraint firstItem="PBP-7a-CHo" firstAttribute="top" secondItem="SI2-oH-u8c" secondAttribute="bottom" constant="180" id="WAh-UD-cxp"/>
                             <constraint firstItem="Slo-8h-yE2" firstAttribute="leading" secondItem="HCw-Z9-q3K" secondAttribute="trailing" constant="20" id="YTJ-Zg-d83"/>
                             <constraint firstItem="TWV-gD-gr8" firstAttribute="centerY" secondItem="PMo-3Z-3uo" secondAttribute="centerY" multiplier="0.15" id="Yp9-jZ-O56"/>
                             <constraint firstItem="MsR-NH-J0c" firstAttribute="trailing" secondItem="kfh-yb-Gdr" secondAttribute="trailing" constant="40" id="Zh6-Wd-H4K"/>
                             <constraint firstItem="2bL-gV-25Q" firstAttribute="top" secondItem="kfh-yb-Gdr" secondAttribute="bottom" constant="30" id="ddC-jk-UVn"/>
                             <constraint firstItem="kfh-yb-Gdr" firstAttribute="top" secondItem="SI2-oH-u8c" secondAttribute="bottom" constant="30" id="ed5-An-lrh"/>
+                            <constraint firstItem="chV-87-JtP" firstAttribute="centerX" secondItem="PMo-3Z-3uo" secondAttribute="centerX" id="f7I-sQ-1HW"/>
                             <constraint firstItem="HK9-bc-avT" firstAttribute="top" secondItem="PMo-3Z-3uo" secondAttribute="top" id="fAf-yV-WAf"/>
                             <constraint firstItem="SI2-oH-u8c" firstAttribute="top" secondItem="TWV-gD-gr8" secondAttribute="bottom" constant="6" id="fnu-EY-Jxq"/>
                             <constraint firstItem="SI2-oH-u8c" firstAttribute="height" secondItem="HK9-bc-avT" secondAttribute="height" multiplier="0.39" id="gsG-Ds-Puy"/>
                             <constraint firstItem="MsR-NH-J0c" firstAttribute="trailing" secondItem="HK9-bc-avT" secondAttribute="trailing" id="icx-Xd-XzU"/>
+                            <constraint firstItem="PBP-7a-CHo" firstAttribute="leading" secondItem="wKd-1g-D05" secondAttribute="trailing" constant="24" id="iym-SX-xRW"/>
                             <constraint firstItem="MsR-NH-J0c" firstAttribute="trailing" secondItem="SI2-oH-u8c" secondAttribute="trailing" constant="20" id="kwY-wH-hLo"/>
                             <constraint firstItem="QFY-Oa-xom" firstAttribute="top" secondItem="bf9-CP-7tA" secondAttribute="bottom" constant="10" id="oOU-02-eEq"/>
                             <constraint firstItem="11d-eA-U3m" firstAttribute="centerY" secondItem="PMo-3Z-3uo" secondAttribute="centerY" multiplier="0.15" id="oRk-MA-haD"/>
                             <constraint firstItem="bf9-CP-7tA" firstAttribute="leading" secondItem="MsR-NH-J0c" secondAttribute="leading" constant="55" id="uiN-IY-e29"/>
+                            <constraint firstItem="chV-87-JtP" firstAttribute="top" secondItem="Slo-8h-yE2" secondAttribute="bottom" constant="30" id="yb6-cw-LK0"/>
                             <constraint firstItem="bf9-CP-7tA" firstAttribute="top" secondItem="SI2-oH-u8c" secondAttribute="bottom" constant="30" id="yql-Ky-SUR"/>
                             <constraint firstAttribute="bottom" secondItem="HK9-bc-avT" secondAttribute="bottom" id="zct-fm-QD9"/>
                         </constraints>
@@ -1113,7 +1189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCv-x3-Zfx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1920" y="-1215"/>
+            <point key="canvasLocation" x="1919.1588785046729" y="-1215.5507559395248"/>
         </scene>
         <!--User View Controller-->
         <scene sceneID="RSA-G4-JfQ">
@@ -1869,8 +1945,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="HGT-Oz-hXq"/>
-        <segue reference="jTy-yq-lLc"/>
-        <segue reference="dCu-ai-P1p"/>
+        <segue reference="22Z-mW-McM"/>
+        <segue reference="dbV-SV-L5d"/>
         <segue reference="E9j-EE-5DE"/>
         <segue reference="fNr-Lc-GWY"/>
     </inferredMetricsTieBreakers>
@@ -1883,6 +1959,7 @@
         <image name="car" catalog="system" width="128" height="95"/>
         <image name="car.side.fill" catalog="system" width="128" height="58"/>
         <image name="carritouuu.png" width="1280" height="720"/>
+        <image name="circle" catalog="system" width="128" height="123"/>
         <image name="clackzon.png" width="50" height="50"/>
         <image name="derechaDevice.png" width="30" height="30"/>
         <image name="flecha.png" width="700" height="471"/>

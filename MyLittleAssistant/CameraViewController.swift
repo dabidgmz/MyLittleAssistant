@@ -167,13 +167,13 @@ class CameraViewController: UIViewController {
     //Controles de Brazo Mecanico
     
     @IBAction func Subir(_ sender: Any) {
-        PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/i")
+        PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/u")
         highlightButton(sender as! UIButton)
     }
     
     
     @IBAction func Bajar(_ sender: Any) {
-        PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/k")
+        PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/j")
         highlightButton(sender as! UIButton)
     }
     
@@ -182,6 +182,43 @@ class CameraViewController: UIViewController {
     @IBAction func Bocina(_ sender: Any) {
     PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/e")
         highlightButton(sender as! UIButton)
+    }
+    
+    
+    
+    @IBAction func Luces(_ sender: Any) {
+        if let switchControl = sender as? UISwitch {
+               //print("Tipo de sender:", type(of: switchControl))
+               if switchControl.isOn {
+                   PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/1")
+               } else {
+                   PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/2")
+               }
+           }
+    }
+    
+    
+    //Controles Camara
+    
+    @IBAction func IzqCamara(_ sender: Any) {
+        PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/i")
+            highlightButton(sender as! UIButton)
+
+    }
+    
+    
+
+    @IBAction func CenCamara(_ sender: Any) {
+        PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/o")
+            highlightButton(sender as! UIButton)
+
+    }
+    
+    
+    @IBAction func DerCamara(_ sender: Any) {
+        PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/i")
+            highlightButton(sender as! UIButton)
+
     }
     
     
