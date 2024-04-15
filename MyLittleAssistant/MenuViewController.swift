@@ -33,9 +33,12 @@ class MenuViewController: UIViewController, ChartViewDelegate {
         VelocidadGet()
         TemperaturaGet()
         InclinacionGet()
-        startPolling()
         updateBarChartWithStoredValues()
         updateLineChartWithStoredValues()
+        startPollingPeso()
+        startPollingVelocidad()
+        startPollingInclinacion()
+        startPollingTemperatura()
     }
     override func viewDidLayoutSubviews()
     {
@@ -105,17 +108,30 @@ class MenuViewController: UIViewController, ChartViewDelegate {
            
     }
     
-    func startPolling() {
-            timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { [weak self] _ in
-                self?.VelocidadGet()
-                self?.TemperaturaGet()
+    func startPollingPeso() {
+            timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { [weak self] _ in
                 self?.PesoGet()
-                self?.InclinacionGet()
+            }
+            PesoGet()
+    }
+    func startPollingTemperatura() {
+            timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { [weak self] _ in
+                self?.TemperaturaGet()
+            }
+            TemperaturaGet()
+    }
+    func startPollingVelocidad() {
+            timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { [weak self] _ in
+                self?.VelocidadGet()
             }
             VelocidadGet()
-            TemperaturaGet()
-            PesoGet()
-            InclinacionGet()
+    }
+    
+    func startPollingInclinacion() {
+            timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { [weak self] _ in
+                self?.InclinacionGet()
+            }
+        InclinacionGet()
     }
     
     func rotateArrow(angle: CGFloat) {
