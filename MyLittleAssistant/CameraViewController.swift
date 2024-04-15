@@ -202,7 +202,7 @@ class CameraViewController: UIViewController {
     //Controles Camara
     
     @IBAction func IzqCamara(_ sender: Any) {
-        PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/i")
+        PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/p")
             highlightButton(sender as! UIButton)
 
     }

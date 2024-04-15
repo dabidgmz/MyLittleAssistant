@@ -203,7 +203,7 @@ class LinkDiviceViewController: UIViewController {
                     if let devicesData = json["data"] as? [[String: Any]] {
                         if !devicesData.isEmpty {
                             DispatchQueue.main.async {
-                                //
+                                self.performSegue(withIdentifier: "sgLinkDevice", sender: self)
                             }
                         } else {
                             print("No se encontraron dispositivos")

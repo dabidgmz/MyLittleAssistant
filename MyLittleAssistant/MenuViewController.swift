@@ -210,7 +210,7 @@ class MenuViewController: UIViewController, ChartViewDelegate {
             print("Código de dispositivo no encontrado")
             return
         }
-        //print("Código de dispositivo enviado en la solicitud:", deviceCode)
+        //print("Peso Código de dispositivo enviado en la solicitud:", deviceCode)
         let urlString = "http://backend.mylittleasistant.online:8000/api/peso/lastone/\(deviceCode)"
         guard let url = URL(string: urlString) else {
             print("URL inválida")
@@ -265,7 +265,7 @@ class MenuViewController: UIViewController, ChartViewDelegate {
          print("Código de dispositivo no encontrado")
          return
      }
-     //print("Código de dispositivo enviado en la solicitud:", deviceCode)
+     //print("Velocidad Código de dispositivo enviado en la solicitud:", deviceCode)
      let urlString = "http://backend.mylittleasistant.online:8000/api/vel/lastfive/\(deviceCode)"
      guard let url = URL(string: urlString) else {
          print("URL inválida")
@@ -347,7 +347,7 @@ class MenuViewController: UIViewController, ChartViewDelegate {
             print("Código de dispositivo no encontrado")
             return
         }
-        //print("Código de dispositivo enviado en la solicitud:", deviceCode)
+        //print("Temperatura Código de dispositivo enviado en la solicitud:", deviceCode)
         let urlString = "http://backend.mylittleasistant.online:8000/api/Temp/lastfive/\(deviceCode)"
         guard let url = URL(string: urlString) else {
             print("URL inválida")
@@ -430,7 +430,7 @@ class MenuViewController: UIViewController, ChartViewDelegate {
             print("Código de dispositivo no encontrado")
             return
         }
-        //print("Código de dispositivo enviado en la solicitud:", deviceCode)
+        //print("Inclinacion Código de dispositivo enviado en la solicitud:", deviceCode)
         let urlString = "http://backend.mylittleasistant.online:8000/api/incli/lastone/\(deviceCode)"
         guard let url = URL(string: urlString) else {
             print("URL inválida")
