@@ -33,6 +33,7 @@ class CameraViewController: UIViewController {
     var playerLayer: AVPlayerLayer?
     let maxPlayerLayerWidth: CGFloat = 500
     let pin = Marcador()
+    let Token = AuthController.sharedData()
     let userData = UserData.sharedData()
     let coordenadasLugar = (latitud: 25.5315, longitud: -103.3219)
     override func viewDidLoad() {
@@ -227,13 +228,18 @@ class CameraViewController: UIViewController {
             print("URL inválida")
             return
         }
-        var request = URLRequest(url: url)
+        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         request.httpMethod = "POST"
+        let authToken = Token.Auth
+        print("Valor de Auth:", authToken)
+        request.addValue(authToken, forHTTPHeaderField: "Auth")
+        
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 print("Error en la solicitud:", error)
                 return
             }
+            
             guard let httpResponse = response as? HTTPURLResponse else {
                 print("Respuesta inválida")
                 return
@@ -252,11 +258,19 @@ class CameraViewController: UIViewController {
                 print("Solicitud exitosa. Status code: 200")
             } else {
                 print("Error en la solicitud. Status code:", httpResponse.statusCode)
+                if let responseData = data {
+                    if let responseString = String(data: responseData, encoding: .utf8) {
+                        print("Respuesta de error:", responseString)
+                    } else {
+                        print("No se pudo convertir la respuesta de error a String")
+                    }
+                } else {
+                    print("No se recibieron datos en la respuesta de error")
+                }
             }
         }
+        
         task.resume()
     }
-    
-    
-   
+
 }
