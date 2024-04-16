@@ -376,7 +376,7 @@
                                 </imageReference>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50 gr." textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umJ-nt-Ef0">
-                                <rect key="frame" x="138.66666666666669" y="240.33333333333334" width="150.66666666666669" height="64.666666666666657"/>
+                                <rect key="frame" x="113.66666666666667" y="240.33333333333334" width="200.66666666666663" height="64.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -478,7 +478,7 @@
                             <constraint firstItem="iCZ-YA-Kcm" firstAttribute="height" secondItem="VPf-e4-gu6" secondAttribute="height" multiplier="1.55333" id="ct0-sf-VLW"/>
                             <constraint firstItem="Hfd-st-NSI" firstAttribute="centerX" secondItem="8tH-Tl-29N" secondAttribute="centerX" multiplier="0.3" id="eNr-ul-RcU"/>
                             <constraint firstItem="umJ-nt-Ef0" firstAttribute="centerX" secondItem="8tH-Tl-29N" secondAttribute="centerX" id="eTs-r0-cp9"/>
-                            <constraint firstItem="umJ-nt-Ef0" firstAttribute="width" secondItem="VPf-e4-gu6" secondAttribute="width" multiplier="1.5" id="grx-pr-zze"/>
+                            <constraint firstItem="umJ-nt-Ef0" firstAttribute="width" secondItem="VPf-e4-gu6" secondAttribute="width" multiplier="2" id="grx-pr-zze"/>
                             <constraint firstItem="iCZ-YA-Kcm" firstAttribute="top" secondItem="VPf-e4-gu6" secondAttribute="bottom" constant="40" id="gyp-wt-x34"/>
                             <constraint firstItem="vmQ-6Z-5a0" firstAttribute="trailing" secondItem="9Bb-Lv-vCT" secondAttribute="trailing" constant="20" id="hJa-vt-ecK"/>
                             <constraint firstItem="umJ-nt-Ef0" firstAttribute="height" secondItem="VPf-e4-gu6" secondAttribute="height" multiplier="1.4" id="i3I-lL-jEK"/>
@@ -1945,8 +1945,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="HGT-Oz-hXq"/>
-        <segue reference="22Z-mW-McM"/>
-        <segue reference="dbV-SV-L5d"/>
+        <segue reference="jTy-yq-lLc"/>
+        <segue reference="dCu-ai-P1p"/>
         <segue reference="n25-N8-D98"/>
         <segue reference="fNr-Lc-GWY"/>
     </inferredMetricsTieBreakers>

@@ -239,6 +239,7 @@ class MenuViewController: UIViewController, ChartViewDelegate {
                         print("No se pudo convertir el JSON en un diccionario")
                         return
                     }
+                    //print("JSON recibido:", json)
                     if let dataArray = json["data"] as? [[String: Any]], let firstData = dataArray.first, let peso = firstData["Valor"] as? String {
                         DispatchQueue.main.async {
                             self.pesolbl.text = peso
