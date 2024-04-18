@@ -7,8 +7,8 @@
 
 import UIKit
 import Charts
-
-class MenuViewController: UIViewController, ChartViewDelegate {
+import UserNotifications
+class MenuViewController: UIViewController, ChartViewDelegate ,UNUserNotificationCenterDelegate{
     
 
  
@@ -103,7 +103,14 @@ class MenuViewController: UIViewController, ChartViewDelegate {
         //let angleInRadians = angleInDegrees * CGFloat.pi / 180
         //rotateArrow(angle: angleInRadians)
 
-
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            if granted {
+                print("Permiso concedido para mostrar notificaciones")
+            } else {
+                print("Permiso denegado para mostrar notificaciones")
+            }
+        }
         
            
     }
@@ -240,9 +247,14 @@ class MenuViewController: UIViewController, ChartViewDelegate {
                         return
                     }
                     //print("JSON recibido:", json)
-                    if let dataArray = json["data"] as? [[String: Any]], let firstData = dataArray.first, let peso = firstData["Valor"] as? String {
+                    if let dataArray = json["data"] as? [[String: Any]], let firstData = dataArray.first, let peso = firstData["Valor"] as? String,
+                        let pesoDouble = Double(peso){
                         DispatchQueue.main.async {
                             self.pesolbl.text = peso
+                            if pesoDouble > 7 {
+                                //self.pesoNotification()
+                                //descomentar el metodo de notificaciones
+                            }
                         }
                     } else {
                         print("No se encontró el valor de peso en la respuesta")
@@ -387,7 +399,9 @@ class MenuViewController: UIViewController, ChartViewDelegate {
                         }
                         self.temperaturaValores = NUEVOSValores
                         DispatchQueue.main.async {
-                            self.updateLineChartWithStoredValues()
+                            self.checkTemperature()
+                            //self.updateLineChartWithStoredValues()
+                            //descomentar el metodo de notificaciones
                         }
                     } else {
                         print("No se encontró el arreglo 'data' en el JSON")
@@ -460,13 +474,15 @@ class MenuViewController: UIViewController, ChartViewDelegate {
                         print("No se pudo convertir el JSON en un diccionario")
                         return
                     }
-                    //print("JSON recibido:", json)
+                    print("JSON recibido:", json)
                     if let dataArray = json["data"] as? [[String: Any]], let firstData = dataArray.first, let valorString = firstData["Valor"] as? String, let VALORDouble = Double(valorString) {
                         DispatchQueue.main.async {
                             //print("Valor :\(VALORDouble)")
                             let angleInDegrees: CGFloat = CGFloat(VALORDouble)
                             let angleInRadians = angleInDegrees * CGFloat.pi / 180
                             self.rotateArrow(angle: angleInRadians)
+                            //self.checkInclination(angle: angleInDegrees)
+                            //descomentar el metodo de notificaciones
                         }
                     } else {
                         print("No se encontró el arreglo 'data' en el JSON o no se pudo obtener el valor")
@@ -479,6 +495,62 @@ class MenuViewController: UIViewController, ChartViewDelegate {
             }
         }
         task.resume()
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .badge, .sound])
+    }
+    
+    func pesoNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "Alerta de peso"
+        content.body = "El peso del producto es mayor a 7 kilos."
+        content.sound = UNNotificationSound.default
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let request = UNNotificationRequest(identifier: "PesoMayor7", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if let error = error {
+                print("Error al programar la notificación:", error)
+            }
+        }
+    }
+    
+    func checkTemperature() {
+        let maxTemperature: Double = 40
+        guard let lastTemperature = temperaturaValores.last else {
+            print("No se encontraron valores de temperatura")
+            return
+        }
+        if lastTemperature > maxTemperature {
+            let content = UNMutableNotificationContent()
+            content.title = "Alerta de temperatura"
+            content.body = "La temperatura del dispositivo es demasiado alta. Por favor, revisa los motores."
+            content.sound = UNNotificationSound.default
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+            let request = UNNotificationRequest(identifier: "TemperaturaAlta", content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(request) { (error) in
+                if let error = error {
+                    print("Error al programar la notificación de temperatura alta:", error)
+                }
+            }
+        }
+    }
+    
+    func checkInclination(angle: CGFloat) {
+        let thresholdAngle: CGFloat = 90
+        if angle < thresholdAngle {
+            let content = UNMutableNotificationContent()
+            content.title = "Alerta de inclinación"
+            content.body = "El dispositivo parece haber sido volteado. Por favor, revisa su posición."
+            content.sound = UNNotificationSound.default
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+            let request = UNNotificationRequest(identifier: "InclinacionBaja", content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(request) { (error) in
+                if let error = error {
+                    print("Error al programar la notificación de inclinación baja:", error)
+                }
+            }
+        }
     }
 }
     

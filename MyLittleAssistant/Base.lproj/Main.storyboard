@@ -1739,11 +1739,11 @@
             <objects>
                 <viewController id="4dQ-og-exT" customClass="LinkDiviceViewController" customModule="MyLittleAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hb0-L9-xeh">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="869"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondoazul.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="8l1-zH-uvT">
-                                <rect key="frame" x="0.0" y="47" width="428" height="889"/>
+                                <rect key="frame" x="0.0" y="47" width="428" height="832"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link Divice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ar-gx-JQf">
                                 <rect key="frame" x="153" y="87" width="122" height="32"/>
@@ -1945,8 +1945,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="HGT-Oz-hXq"/>
-        <segue reference="jTy-yq-lLc"/>
-        <segue reference="dCu-ai-P1p"/>
+        <segue reference="ArX-bd-Q8l"/>
+        <segue reference="zJ9-gq-GW1"/>
         <segue reference="n25-N8-D98"/>
         <segue reference="fNr-Lc-GWY"/>
     </inferredMetricsTieBreakers>

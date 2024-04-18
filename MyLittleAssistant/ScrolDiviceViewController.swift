@@ -98,6 +98,8 @@ class ScrolDiviceViewController: UIViewController {
 
     func renderDevices(_ devicesData: [[String: Any]]) {
         var yOffset = 10
+        var totalDeviceWidth = 0
+        
         for deviceInfo in devicesData {
             if let deviceCode = deviceInfo["code"] as? String {
                 devices.append(deviceCode)
@@ -106,7 +108,10 @@ class ScrolDiviceViewController: UIViewController {
             } else {
                 print("No se encontró 'code' en los datos del dispositivo")
             }
-            let deviceView = UIView(frame: CGRect(x: 10, y: yOffset, width: Int(scrDivice.frame.width - 20), height: 100))
+    
+            let deviceView = UIView(frame: CGRect(x: totalDeviceWidth + 5, y: yOffset, width: Int(scrDivice.frame.width - 10), height: 100))
+            totalDeviceWidth += Int(scrDivice.frame.width)
+            // ponerlo en width - 30 para el celular de jat
             deviceView.layer.cornerRadius = 10
             deviceView.layer.borderWidth = 2
             deviceView.layer.borderColor = UIColor.gray.cgColor
@@ -137,8 +142,7 @@ class ScrolDiviceViewController: UIViewController {
             scrDivice.addSubview(deviceView)
             yOffset += 110
         }
-        
-        scrDivice.contentSize = CGSize(width: 0, height: yOffset)
+        scrDivice.contentSize = CGSize(width: totalDeviceWidth + 5, height: yOffset)
     }
     
     @objc func unlinkDevice(sender: UIButton) {
