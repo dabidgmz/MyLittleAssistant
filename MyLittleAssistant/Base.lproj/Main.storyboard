@@ -1139,6 +1139,24 @@
                                     <action selector="IzqCamara:" destination="XAD-Lu-D7b" eventType="touchUpInside" id="sTl-tL-pHE"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sqx-xx-DgG">
+                                <rect key="frame" x="24" y="736.66666666666663" width="49" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="47" id="5iE-5O-8ST"/>
+                                    <constraint firstAttribute="height" constant="31" id="pdt-xU-nIi"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="Notificacion:" destination="XAD-Lu-D7b" eventType="valueChanged" id="Kac-Rl-Erc"/>
+                                </connections>
+                            </switch>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alarm" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="fGg-aw-JGZ">
+                                <rect key="frame" x="35" y="692.66666666666663" width="33" height="38"/>
+                                <color key="tintColor" red="0.0039215686269999999" green="0.26274509800000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="33" id="E3O-xQ-jg0"/>
+                                    <constraint firstAttribute="height" constant="39" id="kPH-yT-pFN"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MsR-NH-J0c"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1161,9 +1179,12 @@
                             <constraint firstItem="wKd-1g-D05" firstAttribute="centerX" secondItem="PMo-3Z-3uo" secondAttribute="centerX" id="Rhq-gV-k7g"/>
                             <constraint firstItem="11d-eA-U3m" firstAttribute="leading" secondItem="MsR-NH-J0c" secondAttribute="leading" constant="20" id="Sdi-k7-5ZJ"/>
                             <constraint firstItem="PBP-7a-CHo" firstAttribute="top" secondItem="SI2-oH-u8c" secondAttribute="bottom" constant="180" id="WAh-UD-cxp"/>
+                            <constraint firstItem="fGg-aw-JGZ" firstAttribute="leading" secondItem="MsR-NH-J0c" secondAttribute="leading" constant="35" id="WQM-2I-jag"/>
+                            <constraint firstItem="fGg-aw-JGZ" firstAttribute="top" secondItem="VH1-xA-0p9" secondAttribute="bottom" constant="80" id="XRk-Pv-aM3"/>
                             <constraint firstItem="Slo-8h-yE2" firstAttribute="leading" secondItem="HCw-Z9-q3K" secondAttribute="trailing" constant="20" id="YTJ-Zg-d83"/>
                             <constraint firstItem="TWV-gD-gr8" firstAttribute="centerY" secondItem="PMo-3Z-3uo" secondAttribute="centerY" multiplier="0.15" id="Yp9-jZ-O56"/>
                             <constraint firstItem="MsR-NH-J0c" firstAttribute="trailing" secondItem="kfh-yb-Gdr" secondAttribute="trailing" constant="40" id="Zh6-Wd-H4K"/>
+                            <constraint firstItem="sqx-xx-DgG" firstAttribute="top" secondItem="fGg-aw-JGZ" secondAttribute="bottom" constant="5" id="c7H-JK-72d"/>
                             <constraint firstItem="2bL-gV-25Q" firstAttribute="top" secondItem="kfh-yb-Gdr" secondAttribute="bottom" constant="30" id="ddC-jk-UVn"/>
                             <constraint firstItem="kfh-yb-Gdr" firstAttribute="top" secondItem="SI2-oH-u8c" secondAttribute="bottom" constant="30" id="ed5-An-lrh"/>
                             <constraint firstItem="chV-87-JtP" firstAttribute="centerX" secondItem="PMo-3Z-3uo" secondAttribute="centerX" id="f7I-sQ-1HW"/>
@@ -1175,6 +1196,7 @@
                             <constraint firstItem="MsR-NH-J0c" firstAttribute="trailing" secondItem="SI2-oH-u8c" secondAttribute="trailing" constant="20" id="kwY-wH-hLo"/>
                             <constraint firstItem="QFY-Oa-xom" firstAttribute="top" secondItem="bf9-CP-7tA" secondAttribute="bottom" constant="10" id="oOU-02-eEq"/>
                             <constraint firstItem="11d-eA-U3m" firstAttribute="centerY" secondItem="PMo-3Z-3uo" secondAttribute="centerY" multiplier="0.15" id="oRk-MA-haD"/>
+                            <constraint firstItem="sqx-xx-DgG" firstAttribute="leading" secondItem="MsR-NH-J0c" secondAttribute="leading" constant="24" id="sxC-ru-gvM"/>
                             <constraint firstItem="bf9-CP-7tA" firstAttribute="leading" secondItem="MsR-NH-J0c" secondAttribute="leading" constant="55" id="uiN-IY-e29"/>
                             <constraint firstItem="chV-87-JtP" firstAttribute="top" secondItem="Slo-8h-yE2" secondAttribute="bottom" constant="30" id="yb6-cw-LK0"/>
                             <constraint firstItem="bf9-CP-7tA" firstAttribute="top" secondItem="SI2-oH-u8c" secondAttribute="bottom" constant="30" id="yql-Ky-SUR"/>
@@ -1739,11 +1761,11 @@
             <objects>
                 <viewController id="4dQ-og-exT" customClass="LinkDiviceViewController" customModule="MyLittleAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hb0-L9-xeh">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="869"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondoazul.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="8l1-zH-uvT">
-                                <rect key="frame" x="0.0" y="47" width="428" height="832"/>
+                                <rect key="frame" x="0.0" y="47" width="428" height="889"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link Divice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ar-gx-JQf">
                                 <rect key="frame" x="153" y="87" width="122" height="32"/>
@@ -1945,15 +1967,16 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="HGT-Oz-hXq"/>
-        <segue reference="ArX-bd-Q8l"/>
-        <segue reference="zJ9-gq-GW1"/>
-        <segue reference="n25-N8-D98"/>
+        <segue reference="22Z-mW-McM"/>
+        <segue reference="dbV-SV-L5d"/>
+        <segue reference="E9j-EE-5DE"/>
         <segue reference="fNr-Lc-GWY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BajarGarra.png" width="80" height="80"/>
         <image name="SubirGarra.png" width="80" height="80"/>
         <image name="abajoDevice.png" width="30" height="30"/>
+        <image name="alarm" catalog="system" width="123" height="128"/>
         <image name="arribaDevice.png" width="30" height="30"/>
         <image name="camera.fill" catalog="system" width="128" height="93"/>
         <image name="car" catalog="system" width="128" height="95"/>

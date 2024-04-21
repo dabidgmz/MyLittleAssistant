@@ -223,6 +223,18 @@ class CameraViewController: UIViewController {
     }
     
     
+    
+    @IBAction func Notificacion(_ sender: Any) {
+        if let switchControl = sender as? UISwitch {
+               //print("Tipo de sender:", type(of: switchControl))
+               if switchControl.isOn {
+                   PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/v")
+               } else {
+                   PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/b")
+               }
+           }
+    }
+    
     func PostControllersDevice(to url: String) {
         guard let url = URL(string: url) else {
             print("URL inválida")

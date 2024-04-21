@@ -399,9 +399,9 @@ class MenuViewController: UIViewController, ChartViewDelegate ,UNUserNotificatio
                         }
                         self.temperaturaValores = NUEVOSValores
                         DispatchQueue.main.async {
-                            self.checkTemperature()
-                            //self.updateLineChartWithStoredValues()
-                            //descomentar el metodo de notificaciones
+                            //self.checkTemperature()
+                            self.updateLineChartWithStoredValues()
+                            //descomentar el metodo de notificaciones .checkTemperature()
                         }
                     } else {
                         print("No se encontró el arreglo 'data' en el JSON")
@@ -474,7 +474,7 @@ class MenuViewController: UIViewController, ChartViewDelegate ,UNUserNotificatio
                         print("No se pudo convertir el JSON en un diccionario")
                         return
                     }
-                    print("JSON recibido:", json)
+                    //print("JSON recibido:", json)
                     if let dataArray = json["data"] as? [[String: Any]], let firstData = dataArray.first, let valorString = firstData["Valor"] as? String, let VALORDouble = Double(valorString) {
                         DispatchQueue.main.async {
                             //print("Valor :\(VALORDouble)")
