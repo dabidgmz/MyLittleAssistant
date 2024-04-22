@@ -207,7 +207,7 @@ class LinkDiviceViewController: UIViewController {
                         if !devicesData.isEmpty {
                             DispatchQueue.main.async {
                                 self.Back.isHidden = true
-                                //self.performSegue(withIdentifier: "sgLinkDevice", sender: self)
+                                self.performSegue(withIdentifier: "sgLinkDevice", sender: self)
                             }
                         } else {
                             print("No se encontraron dispositivos")
