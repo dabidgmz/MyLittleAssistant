@@ -20,6 +20,9 @@ class LinkDiviceViewController: UIViewController {
         VincularDivice()
     }
     
+    
+    @IBOutlet weak var Back: UIButton!
+    
     let userData = UserData.sharedData()
     var hasErrors = true
     var maxLenghts = [UITextField: Int]()
@@ -203,7 +206,8 @@ class LinkDiviceViewController: UIViewController {
                     if let devicesData = json["data"] as? [[String: Any]] {
                         if !devicesData.isEmpty {
                             DispatchQueue.main.async {
-                                self.performSegue(withIdentifier: "sgLinkDevice", sender: self)
+                                self.Back.isHidden = true
+                                //self.performSegue(withIdentifier: "sgLinkDevice", sender: self)
                             }
                         } else {
                             print("No se encontraron dispositivos")

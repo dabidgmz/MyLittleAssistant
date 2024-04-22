@@ -16,6 +16,9 @@ class MenuViewController: UIViewController, ChartViewDelegate ,UNUserNotificatio
     
     
     @IBOutlet weak var pesolbl: UILabel!
+    
+    
+    @IBOutlet weak var pesoIMg: UIImageView!
     var lineChart = LineChartView()
     var barChart = BarChartView()
     var gaugeView = GaugeView()
@@ -29,16 +32,18 @@ class MenuViewController: UIViewController, ChartViewDelegate ,UNUserNotificatio
         lineChart.delegate = self
         barChart.delegate = self
         fetchDevices()
-        PesoGet()
+        //PesoGet()
         VelocidadGet()
         TemperaturaGet()
         InclinacionGet()
         updateBarChartWithStoredValues()
         updateLineChartWithStoredValues()
-        startPollingPeso()
+        //startPollingPeso()
         startPollingVelocidad()
         startPollingInclinacion()
         startPollingTemperatura()
+        pesolbl.isHidden = true
+        pesoIMg.isHidden = true
     }
     override func viewDidLayoutSubviews()
     {

@@ -498,13 +498,14 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="flecha" destination="n3i-mJ-sW8" id="9Rl-c9-Tqq"/>
+                        <outlet property="pesoIMg" destination="VPf-e4-gu6" id="W39-It-Qle"/>
                         <outlet property="pesolbl" destination="umJ-nt-Ef0" id="uLb-tc-FNE"/>
                         <segue destination="4dQ-og-exT" kind="presentation" identifier="sgNoDevices" modalPresentationStyle="fullScreen" id="jTy-yq-lLc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZFr-dU-w8B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="979.90654205607473" y="-1214.2548596112313"/>
+            <point key="canvasLocation" x="397" y="-2125"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="9zv-yT-lza">
@@ -523,7 +524,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qpT-J2-EiK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1921" y="-2058"/>
+            <point key="canvasLocation" x="1206" y="-2841"/>
         </scene>
         <!--Ssp View Controller-->
         <scene sceneID="hJN-Ef-eX7">
@@ -1211,7 +1212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCv-x3-Zfx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1919.1588785046729" y="-1215.5507559395248"/>
+            <point key="canvasLocation" x="1150" y="-2125"/>
         </scene>
         <!--User View Controller-->
         <scene sceneID="RSA-G4-JfQ">
@@ -1374,7 +1375,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oiG-37-3NC" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1079" y="337"/>
+            <point key="canvasLocation" x="946" y="-104"/>
         </scene>
         <!--Video View Controller-->
         <scene sceneID="KCD-Ab-mhs">
@@ -1825,6 +1826,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0RK-d3-7os">
+                                <rect key="frame" x="33" y="88" width="51" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="5vE-Ed-ZD5"/>
+                                    <constraint firstAttribute="width" constant="51" id="mXz-k8-Bhp"/>
+                                </constraints>
+                                <color key="tintColor" red="0.0039215686269999999" green="0.26274509800000001" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.backward.fill" catalog="system"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="Tlp-0k-nvv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YiB-yU-TjW"/>
                         <constraints>
@@ -1834,10 +1848,12 @@
                             <constraint firstAttribute="bottom" secondItem="8l1-zH-uvT" secondAttribute="bottom" constant="-10" id="FtI-Jc-RIl"/>
                             <constraint firstItem="8l1-zH-uvT" firstAttribute="top" secondItem="YiB-yU-TjW" secondAttribute="top" id="GUW-EE-sj5"/>
                             <constraint firstItem="ZLj-li-Xaz" firstAttribute="centerX" secondItem="hb0-L9-xeh" secondAttribute="centerX" id="R6j-kM-6BN"/>
+                            <constraint firstItem="0RK-d3-7os" firstAttribute="top" secondItem="YiB-yU-TjW" secondAttribute="top" constant="41" id="RFU-fB-6We"/>
                             <constraint firstItem="0P5-fV-CVR" firstAttribute="top" secondItem="ZLj-li-Xaz" secondAttribute="bottom" constant="40" id="Sg8-jn-zrb"/>
                             <constraint firstItem="6Ar-gx-JQf" firstAttribute="top" secondItem="YiB-yU-TjW" secondAttribute="top" constant="40" id="hto-UU-jrI"/>
                             <constraint firstItem="0P5-fV-CVR" firstAttribute="centerX" secondItem="hb0-L9-xeh" secondAttribute="centerX" id="jKa-tC-AkV"/>
                             <constraint firstItem="UxA-YV-GhZ" firstAttribute="centerX" secondItem="hb0-L9-xeh" secondAttribute="centerX" id="joa-Oj-DBe"/>
+                            <constraint firstItem="0RK-d3-7os" firstAttribute="leading" secondItem="YiB-yU-TjW" secondAttribute="leading" constant="33" id="mL4-2C-uT2"/>
                             <constraint firstItem="UxA-YV-GhZ" firstAttribute="top" secondItem="0P5-fV-CVR" secondAttribute="bottom" constant="30" id="ogv-w7-eBl"/>
                             <constraint firstItem="dO1-wV-urE" firstAttribute="centerX" secondItem="hb0-L9-xeh" secondAttribute="centerX" id="q8f-z4-vQK"/>
                             <constraint firstItem="8l1-zH-uvT" firstAttribute="trailing" secondItem="YiB-yU-TjW" secondAttribute="trailing" id="thC-Fe-rk1"/>
@@ -1845,6 +1861,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Back" destination="0RK-d3-7os" id="cQt-1H-pKG"/>
                         <outlet property="Code_txt" destination="ZLj-li-Xaz" id="Xhz-sq-l9i"/>
                         <outlet property="Errors_txt" destination="UxA-YV-GhZ" id="MCv-PV-aSy"/>
                         <segue destination="wVL-2u-87C" kind="presentation" identifier="sgVincular" modalPresentationStyle="fullScreen" id="HGT-Oz-hXq"/>
@@ -1853,7 +1870,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7tX-sG-fNQ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-356" y="-1215"/>
+            <point key="canvasLocation" x="-430" y="-1422"/>
         </scene>
         <!--Scrol Divice View Controller-->
         <scene sceneID="8K3-CR-RSj">
@@ -1864,7 +1881,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondoazul.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="wQd-bE-Msp">
-                                <rect key="frame" x="0.0" y="47" width="428" height="845"/>
+                                <rect key="frame" x="0.0" y="47" width="428" height="796"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My divice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIA-xE-4UY">
                                 <rect key="frame" x="136.66666666666666" y="57" width="154.99999999999997" height="29"/>
@@ -1962,15 +1979,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rKc-WZ-ciq" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3225" y="-1195"/>
+            <point key="canvasLocation" x="2278" y="-2125"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="HGT-Oz-hXq"/>
-        <segue reference="22Z-mW-McM"/>
-        <segue reference="dbV-SV-L5d"/>
+        <segue reference="ppA-DY-Xh7"/>
+        <segue reference="jTy-yq-lLc"/>
+        <segue reference="dCu-ai-P1p"/>
         <segue reference="E9j-EE-5DE"/>
-        <segue reference="fNr-Lc-GWY"/>
+        <segue reference="EL0-wJ-ejt"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BajarGarra.png" width="80" height="80"/>
@@ -1978,6 +1995,7 @@
         <image name="abajoDevice.png" width="30" height="30"/>
         <image name="alarm" catalog="system" width="123" height="128"/>
         <image name="arribaDevice.png" width="30" height="30"/>
+        <image name="arrowshape.backward.fill" catalog="system" width="128" height="104"/>
         <image name="camera.fill" catalog="system" width="128" height="93"/>
         <image name="car" catalog="system" width="128" height="95"/>
         <image name="car.side.fill" catalog="system" width="128" height="58"/>
