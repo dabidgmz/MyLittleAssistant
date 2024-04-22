@@ -1836,6 +1836,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="arrowshape.backward.fill" catalog="system"/>
                                 <connections>
+                                    <action selector="Back:" destination="4dQ-og-exT" eventType="touchUpInside" id="2yt-ma-R7L"/>
                                     <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="Tlp-0k-nvv"/>
                                 </connections>
                             </button>
@@ -1866,6 +1867,7 @@
                         <outlet property="Errors_txt" destination="UxA-YV-GhZ" id="MCv-PV-aSy"/>
                         <segue destination="wVL-2u-87C" kind="presentation" identifier="sgVincular" modalPresentationStyle="fullScreen" id="HGT-Oz-hXq"/>
                         <segue destination="xrA-Zo-p3X" kind="presentation" identifier="sgLinkDevice" modalPresentationStyle="fullScreen" id="n25-N8-D98"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="sgBack" modalPresentationStyle="fullScreen" id="070-pQ-Pzj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7tX-sG-fNQ" sceneMemberID="firstResponder"/>
@@ -2084,7 +2086,7 @@
         <segue reference="jTy-yq-lLc"/>
         <segue reference="zJ9-gq-GW1"/>
         <segue reference="n25-N8-D98"/>
-        <segue reference="Tlp-0k-nvv"/>
+        <segue reference="070-pQ-Pzj"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BajarGarra.png" width="80" height="80"/>

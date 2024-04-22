@@ -220,14 +220,14 @@ class LinkDiviceViewController: UIViewController {
                 }
             } else if httpResponse.statusCode == 404 {
                 print("No se encontraron dispositivos")
-                DispatchQueue.main.async {
+                /*DispatchQueue.main.async {
                     let alertController = UIAlertController(title: "Error", message: "No se encontraron dispositivos.", preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "OK", style: .default) { _ in
                         self.performSegue(withIdentifier: "sgNoDevices", sender: self)
                     }
                     alertController.addAction(okAction)
                     self.present(alertController, animated: true, completion: nil)
-                }
+                }*/
             } else {
                 print("Error en el request. Status code:", httpResponse.statusCode)
             }
@@ -235,4 +235,7 @@ class LinkDiviceViewController: UIViewController {
         task.resume()
     }
 
+    @IBAction func Back(_ sender: Any) {
+        self.performSegue(withIdentifier: "sgBack", sender: self)
+    }
 }
