@@ -9,17 +9,12 @@ import UIKit
 import MapKit
 import AVKit
 import WebKit
-/*
-  se creo variables para asignar que era lo maximo que se podia ampliar la resolucion
-  se crearon metodos para sobrescirbir como funcionaba el reproductor de video y su ajuste de resolucion
- se comneto el codigo principal en caso de que se quiera regresar a su funcionalidad
- si gustas eliminar los metodos viewWillAppear y viewWillLayoutSubviews es de tu gusto fue la unica solucion que vi para que la resolucion se ajustara
- */
-
 class CameraViewController: UIViewController {
 
     @IBOutlet weak var webcam: UIView!
     
+    
+    @IBOutlet weak var map: UIButton!
     func highlightButton(_ button: UIButton) {
         let originalBackgroundColor = button.backgroundColor
         button.backgroundColor = .white
@@ -38,33 +33,13 @@ class CameraViewController: UIViewController {
     let coordenadasLugar = (latitud: 25.5315, longitud: -103.3219)
     override func viewDidLoad() {
         super.viewDidLoad()
-       /* guard let videoURL = URL(string: "https://cdn.pixabay.com/video/2020/08/27/48420-453832153_large.mp4") else {
-            print("La URL del video no es válida")
-            return
-        }
-        */
-        
         fetchDevices()
-        /*player = AVPlayer(url: videoURL)
-        playerLayer = AVPlayerLayer(player: player)
-        playerLayer?.videoGravity = .resizeAspectFill
-        webcam.layer.addSublayer(playerLayer!)*/
-        
+        showURLInputAlert()
     }
     
     override func viewWillAppear(_ animated: Bool) {
           super.viewWillAppear(animated)
           
-          guard let videoURL = URL(string: "https://cdn.pixabay.com/video/2020/08/27/48420-453832153_large.mp4") else {
-              print("La URL del video no es válida")
-              return
-          }
-          player = AVPlayer(url: videoURL)
-          playerLayer = AVPlayerLayer(player: player)
-          playerLayer?.videoGravity = .resizeAspectFill
-          webcam.layer.addSublayer(playerLayer!)
-          
-          player?.play()
       }
     
     
@@ -78,6 +53,41 @@ class CameraViewController: UIViewController {
             playerLayer.frame = CGRect(x: 0, y: 0, width: playerLayerWidth, height: webcam.bounds.height)
     }
 
+    func showURLInputAlert() {
+         let alertController = UIAlertController(title: "Cargar URL de video", message: "Por favor, ingresa la URL del video en directo", preferredStyle: .alert)
+         
+         alertController.addTextField { (textField) in
+             textField.placeholder = "URL del video en directo"
+         }
+         
+         let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+         let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
+             if let urlText = alertController.textFields?.first?.text, let videoURL = URL(string: urlText) {
+                 self.initializePlayer(with: videoURL)
+             } else {
+                 print("La URL del video no es válida")
+             }
+         }
+         
+         alertController.addAction(cancelAction)
+         alertController.addAction(okAction)
+         
+         present(alertController, animated: true, completion: nil)
+     }
+
+     func initializePlayer(with videoURL: URL) {
+         print("URL del video recibida:", videoURL)
+         let playerItem = AVPlayerItem(url: videoURL)
+         player = AVPlayer(playerItem: playerItem)
+         playerLayer = AVPlayerLayer(player: player)
+         playerLayer?.videoGravity = .resizeAspectFill
+         playerLayer?.frame = webcam.bounds
+         if let playerLayer = playerLayer {
+             webcam.layer.addSublayer(playerLayer)
+         }
+         player?.play()
+         print("Reproducción del video en directo iniciada")
+     }
     
     func fetchDevices() {
         let url = URL(string: "http://backend.mylittleasistant.online:8000/api/user/devices")!
@@ -165,6 +175,11 @@ class CameraViewController: UIViewController {
     }
     
     
+    
+    @IBAction func Stop(_ sender: Any) {
+            PostControllersDevice(to: "http://controller.mylittleasistant.online/api/mqtt/x")
+            highlightButton(sender as! UIButton)
+    }
     //Controles de Brazo Mecanico
     
     @IBAction func Subir(_ sender: Any) {
